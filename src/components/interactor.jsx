@@ -7,6 +7,11 @@ function Interactor(props) {
     const [expectedAnswer, setExpectedAnswer] = useState(props.debug.expected ?? null);
     const [answerStatus, setAnswerStatus] = useState("");
  
+
+    function handleRequestSubmit() {
+
+    }
+
     function handleAnswerSubmit(event) {
         event.preventDefault();
         setAnswerStatus(inputRef.current.value === expectedAnswer ? "correct" : "wrong");
@@ -25,14 +30,19 @@ function Interactor(props) {
     return <div id="interactor">
         <div id="problem-box">
             { problem }
+            <div id="correct-answer">
+                { expectedAnswer }
+            </div>
         </div>
         <div id="input-box">
-            <form onSubmit={ handleAnswerSubmit }>
-                <input type="text" ref={ inputRef } />
+            <form onSubmit={ handleAnswerSubmit } aria-label="submit-answer">
+                <input type="text" ref={ inputRef } aria-label="input-answer"/>
             </form>
         </div>
         <div id="answer-status-box">
             { getAnswerStatus() }
+        </div>
+        <div id="problem-request-box">
         </div>
     </div>
 }

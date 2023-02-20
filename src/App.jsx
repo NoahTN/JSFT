@@ -1,5 +1,5 @@
 import './App.css'
-import Interactor from './interactor'
+import Interactor from './components/interactor'
 
 function App() {
   return <div className="App">
