@@ -1,3 +1,5 @@
+import { OPTION_OBJECT } from "./options";
+
 export function getRandomWord(level, type) {
     if(type === "adjective") {
         type =  Math.floor(Math.random()*2) === 1 ? "ii-adjective" : "na-adjective";
@@ -7,8 +9,10 @@ export function getRandomWord(level, type) {
     return (data[index]);
 }
 
-export function generateProblem(level, request) {
+export function generateProblem(request) {
     const result = [];
+    const types = OPTION_OBJECT["Sentence Types"].filter((v, i) => request.options[i]);
+    const randomType = types[Math.floor(Math.random()*types.length)];
     for(let type of request.types) {
         if(!["na-particle", "grammar"].includes(type)) {
             result.push(getRandomWord(level, type));
