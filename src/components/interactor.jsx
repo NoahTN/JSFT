@@ -11,9 +11,11 @@ function Interactor(props) {
         if(!props.options) {
             const temp = {};
             Object.entries(OPTION_OBJECT).map(([k, v]) => {
-                temp[k] = Array(v.length).fill(false);
-                temp[k][0] = true;
+                temp[k] = Array(v.length).fill("");
+                temp[k][0] = v[0];
             })
+            temp["Particles"][0] = "";
+            temp["Grammar"][0] = "";
             return temp;
         }
     });
@@ -30,6 +32,11 @@ function Interactor(props) {
     function updateOptions(category, values) {
         const copy = {...options};
         copy[category] = values;
+        // Enable nouns and adjectives if Adjective-Noun type is checked
+        if(category === "Types" && values[1]) {
+            copy["Words"][0] = "Nouns"
+            copy["Words"][1] = "Adjectives";
+        } 
         setOptions(copy);
     }
 
@@ -62,6 +69,10 @@ function Interactor(props) {
             { getAnswerStatus() }
         </div>
         <div id="problem-request-box">
+            
+        </div>
+        <div id="hint-box">
+
         </div>
         <OptionBox 
             updateOptions={ updateOptions }

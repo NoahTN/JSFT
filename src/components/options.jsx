@@ -1,10 +1,11 @@
 import { useState } from "react"
-
+// Particles should have an advanced dropdown listing all of them
 export const OPTION_OBJECT = {
+    "Format": ["Romaji", "Translate"],
     "Words": ["Nouns", "Adjectives", "Verbs", "Adverbs"],
+    "Vocab": ["N5", "N4"],
     "Tenses": ["Plain", "Past", "Polite"],
-    "Sentence Types": ["Basic"],
-    "Level": ["N5", "N4", "N3"]
+    "Types": ["Single Word", "Adjecive-Noun", "Basic Sentence", "N5 Grammar", "N4 Grammar"],
 }
 
 function OptionBox(props) {
@@ -12,12 +13,10 @@ function OptionBox(props) {
         {Object.entries(props.initialSettings).map(([k, v]) => 
             <OptionGroup key={ k } name={ k } checked={ v } updateOptions={ props.updateOptions }/>
         )}
-        {props.debugOptions && Object.entries(OPTION_OBJECT).map(([k, v]) => 
-            <p key={ k }>Debug { k }: {v.filter((item, i) => 
-                props.initialSettings[k][i]).map(setting => 
-                    <span key={ setting }>{ setting } </span> 
-             )}</p>
-        )}
+        {props.debugOptions && Object.entries(props.initialSettings).map(([k, v]) =>  
+            <p key={ k }>Debug { k }: {
+                v.map(setting => {return setting && <span key={ setting }>{ setting } </span>}) 
+            }</p>)}
     </div>
 }
 
@@ -26,10 +25,15 @@ function OptionGroup(props) {
 
     function handleChange(i) {
         const copy = [...checked];
-        if(copy.reduce((sum, curr) => sum+curr, 0) < 2 && copy[i] === true) {
+        if(!["Particles", "Grammar"].includes(props.name) && copy.reduce((sum, curr) => sum + (curr.length > 0), 0) < 2 && copy[i]) {
             return;
         }
-        copy[i] = !copy[i];
+        if(copy[i]) {
+            copy[i] = "";
+        }
+        else {
+            copy[i] = OPTION_OBJECT[props.name][i];
+        }
         setChecked(copy);
         props.updateOptions(props.name, copy);
      }
