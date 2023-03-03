@@ -1,5 +1,24 @@
-import { getLast, getSlice } from "./helper";
+import { getLast, getSlice, getRandom } from "./helper";
 import { getTeForm } from "./conjugator";
+const GRAMMAR_OBJECT = require("../data/n5/grammar.json");
+
+
+function formatOutput(words) {
+    let children = [];
+    for(let w of words) {
+        if(w.children) {
+            children = children.concat(w.children);
+        }
+        else {
+            children.push(w);
+        }
+    }
+    return {
+        word: words.map(w => w.word).join(""),
+        romaji: words.map(w => w.romaji).join(" "),
+        children: children
+    }
+}
 
 export function getRandomWord(level, type) {
     level = level.toLowerCase();
@@ -13,47 +32,76 @@ export function getRandomWord(level, type) {
 }
 
 export function generateProblem(options) {
-    function getRandom(arr) {
-        return arr[Math.floor(Math.random() * arr.length)];
-    }
-    options = structuredClone(options);
-    for(let key of Object.keys(options)) {
-        options[key] = options[key].filter(v => v);
-    }
-    const result = [];
     const randomType = getRandom(options["Types"]);
+    const randomVLevel = () => getRandom(options["Vocab Level"]);
+    const randomGLevel = () => getRandom(options["Grammar Level"]);
 
     switch(randomType) {
-        case "Basic":
-            result.push(getRandomWord(getRandom(options["Vocab"]), getRandom(options["Words"])));
-            break;
+        case "Single Word":
+            return getRandomWord(randomVLevel(), getRandom(options["Words"]));
         case "Adjective-Noun":
-            result.push(getRandomWord(getRandom(options["Vocab"]), "Adjectives"));
-            result.push(getRandomWord(getRandom(options["Vocab"]), "Nouns"));
-            break;
+            const adjective = getRandomWord(randomVLevel(), "Adjectives");
+            const noun = getRandomWord(randomVLevel(), "Nouns");
+            if(adjective.type === "na-adjective") {
+                return formatOutput([adjective, GRAMMAR_OBJECT["な"], noun]);
+            }
+            return formatOutput([adjective, noun]);
         case "Basic Sentence":
-            result.push(getRandomWord(getRandom(options["Vocab"]), "Nouns"));
-            result.push(getRandomWord(getRandom(options["Vocab"]), getRandom(options["Particles"])));
-            result.push(getRandomWord(getRandom(options["Vocab"]), "Nouns"));
-            break;
-        case "N5-Grammar":
-            result.push(getN5Grammar("random", getRandom(options["Vocab"])));
-            break;
-
+            return generateSentence("Basic", randomVLevel(), randomGLevel());
     }
-    return result;
 }
 
-export function generateSentence(level, vocabLevel, grammarLevel) {
-    if(level === 0) { // Easy
-        // r
+export function generateSentence(level, vLevel, gLevel) {
+    let subject;
+    let object;
+    let verb;
+
+    if(level[0] === "B") { // Basic, includes n5 Grammar
+        subject = generateSubjectPart(level, vLevel, gLevel);
+        object = generateObjectPart(level, vLevel, gLevel);
+        verb = generateVerbPart(level, vLevel, gLevel);
     }
-    else if(level === 1) { // Medium
+    else if(level[0] === "R") { // Regular
 
     }
-    else { // Hard
+    else { // Complex
 
     }
+    // need recurisve word getter
+    return formatOutput([subject, object, verb]);
+}
+
+export function generateSubjectPart(level, vLevel, gLevel) {
+    function getSubjectParticle(gLevel) { 
+        if(gLevel === "N5") {
+            const particles = ["が", "で", "は"].map(p => GRAMMAR_OBJECT[p]);
+            return getRandom(particles);
+        }
+    }
+    const noun = getRandomWord(vLevel, "Nouns");
+    const subjectParticle = getSubjectParticle(gLevel);
+    return formatOutput([noun, subjectParticle]);
+}
+
+export function generateObjectPart(level, vLevel, gLevel) {
+    function getObjectParticle(gLevel) { 
+        if(gLevel === "N5") {
+            const particles = ["で", "に", "へ", "と", "から"].map(p => GRAMMAR_OBJECT[p]);
+            return getRandom(particles);
+        }
+    }
+    const noun = getRandomWord(vLevel, "Nouns");
+    const objectParticle =  getObjectParticle(gLevel);
+    return formatOutput([noun, objectParticle]);
+}
+
+export function generateVerbPart(level, vLevel, gLevel) {
+    return getRandomWord(vLevel, "Verbs");
+}
+
+
+export function modifyWord() {
+
 }
 
 

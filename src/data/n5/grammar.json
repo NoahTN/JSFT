@@ -211,6 +211,12 @@
     "romaji": "mou",
     "meaning": "already; anymore; again; other"
   },
+  "な": {
+    "type": "grammar",
+    "word": "な",
+    "romaji": "na",
+    "meaning": "na-adjective particle"
+  },
   "なあ": {
     "type": "grammar",
     "word": "なあ",
@@ -289,15 +295,9 @@
     "romaji": "nisuru",
     "meaning": "to decid eon"
   },
-  "に": {
-    "type": "grammar",
-    "word": "へ",
-    "romaji": "ni%2Fe",
-    "meaning": "to (indicates destination)"
-  },
   "へ": {
     "type": "grammar",
-    "word": "Fへ",
+    "word": "へ",
     "romaji": "ni%2Fe",
     "meaning": "to (indicates direction)"
   },
@@ -331,11 +331,11 @@
     "romaji": "nogasuki",
     "meaning": "to like doing something"
   },
-  "の中で_が一番": {
+  "の中で[A]が一番": {
     "type": "grammar",
     "word": "の中で[A]が一番",
     "romaji": "nonakade_gaichiban",
-    "meaning": "out of this group, _ is best"
+    "meaning": "out of this group, [A] is best"
   },
   "ので": {
     "type": "grammar",
@@ -347,13 +347,13 @@
     "type": "grammar",
     "word": "お",
     "romaji": "o",
-    "meaning": "politemarker; honorificprefixparticle"
+    "meaning": "polite marker; honorific prefix particle"
   },
   "ご": {
     "type": "grammar",
     "word": "ご",
     "romaji": "go",
-    "meaning": "politemarker; honorificprefixparticle"
+    "meaning": "polite marker; honorific prefix particle"
   },
   "を": {
     "type": "grammar",
@@ -413,49 +413,49 @@
     "type": "grammar",
     "word": "てある",
     "romaji": "tearu",
-    "meaning": "is%2Fhasbeendone(resultingstate)"
+    "meaning": "is/has been done (resulting state)"
   },
   "ている": {
     "type": "grammar",
     "word": "ている",
     "romaji": "teiru",
-    "meaning": "ongoingactionorcurrentstate"
+    "meaning": "ongoing action or current state"
   },
   "てから": {
     "type": "grammar",
     "word": "てから",
     "romaji": "tekara",
-    "meaning": "afterdoing~"
+    "meaning": "after doing"
   },
   "てください": {
     "type": "grammar",
     "word": "てください",
     "romaji": "tekudasai",
-    "meaning": "pleasedo"
+    "meaning": "please do"
   },
   "てはいけない": {
     "type": "grammar",
     "word": "てはいけない",
     "romaji": "tewaikenai",
-    "meaning": "mustnot; maynot; cannot"
+    "meaning": "must not; may not; cannot"
   },
   "てもいいです": {
     "type": "grammar",
     "word": "てもいいです",
     "romaji": "temoiidesu",
-    "meaning": "isOKto..; isalrightto..; mayI..%3F"
+    "meaning": "is OK to..; is alright to..; may I..?"
   },
   "と": {
     "type": "grammar",
     "word": "と",
     "romaji": "to",
-    "meaning": "and; with; as; connectingparticle"
+    "meaning": "and; with; as; connecting particle"
   },
   "とき": {
     "type": "grammar",
     "word": "とき",
     "romaji": "toki",
-    "meaning": "when; atthistime"
+    "meaning": "when; at this time"
   },
   "とても": {
     "type": "grammar",
@@ -467,42 +467,42 @@
     "type": "grammar",
     "word": "つもり",
     "romaji": "tsumori",
-    "meaning": "planto~; intendto~"
+    "meaning": "plan to; intend to"
   },
   "は": {
     "type": "grammar",
     "word": "は",
-    "romaji": "wa-topicmarker",
-    "meaning": "topicmarker"
+    "romaji": "wa",
+    "meaning": "topic marker"
   },
   "は〜より・・・です": {
     "type": "grammar",
     "word": "は〜より・・・です",
     "romaji": "wa~yori...desu",
-    "meaning": "[A]ismore~than[B]"
+    "meaning": "[A] is more ~ than [B]"
   },
   "はどうですか": {
     "type": "grammar",
     "word": "はどうですか",
     "romaji": "wadoudesuka",
-    "meaning": "howabout; howis"
+    "meaning": "how about; how is"
   },
   "や": {
     "type": "grammar",
     "word": "や",
     "romaji": "ya",
-    "meaning": "and; or; connectingparticle"
+    "meaning": "and; or; connecting particle"
   },
   "よ": {
     "type": "grammar",
     "word": "よ",
     "romaji": "yo",
-    "meaning": "youknow; emphasis(endingparticle)"
+    "meaning": "you know; emphasis (ending particle)"
   },
   "より～ほうが": {
     "type": "grammar",
     "word": "より～ほうが",
     "romaji": "yori~houga",
-    "meaning": "[A]ismorethan[B]"
+    "meaning": "[A] is more than [B]"
   }
 }

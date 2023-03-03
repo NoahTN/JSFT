@@ -3,9 +3,10 @@ import { useState } from "react"
 export const OPTION_OBJECT = {
     "Format": ["Romaji", "Translate"],
     "Words": ["Nouns", "Adjectives", "Verbs", "Adverbs"],
-    "Vocab": ["N5", "N4"],
+    "Vocab Level": ["N5", "N4"],
+    "Grammar Level": ["N5", "N4"],
     "Tenses": ["Plain", "Past", "Polite"],
-    "Types": ["Single Word", "Adjecive-Noun", "Easy Sentence", "Medium Sentence", "Hard Sentence"],
+    "Types": ["Single Word", "Noun-Adjective", "Basic Sentence", "Regular Sentence", "Complex Sentence"],
 }
 
 function OptionBox(props) {
@@ -25,6 +26,7 @@ function OptionGroup(props) {
 
     function handleChange(i) {
         const copy = [...checked];
+        // Checking sentence should automatically include at least noun, verb, think about adverbs and adjectives too
         if(!["Particles", "Grammar"].includes(props.name) && copy.reduce((sum, curr) => sum + (curr.length > 0), 0) < 2 && copy[i]) {
             return;
         }
