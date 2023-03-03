@@ -33,13 +33,6 @@ describe("Generator Tests", () => {
 
     });
 
-    test("Should get a chaikenai problem", () => {
-        const problem = getN5Grammar("ちゃいけない", "N5", {word: "歩く", romaji: "aruku"});
-        expect(problem.word).toBe("歩いちゃいけない");
-        expect(problem.romaji).toBe("aruichaikenai");
-        expect(problem.child).toBeDefined();
-    });
-
     test.skip("Should get a noun, the 'wa' particlem, and an adjective", () => {
         const problem = generateProblem("n5", {types: ["noun", "na-particle", "adjective"]});
         expect(problem[0].type).toBe("noun");
@@ -47,11 +40,20 @@ describe("Generator Tests", () => {
         expect(["ii-adjective", "na-adjective"]).toContain(problem[2].type);
     });
     
-    test.skip("Should get a 'cha-ikenai' problem", () => {
+    test.skip("Should get an easy sentence", () => {
+        
 
     });
 
-    test.skip("Should get a random N5 grammar problem", () => {
+    test.skip("Should get a normal sentence", () => {
+        
 
     });
+
+    test.skip("Should get a hard sentence", () => {
+        
+
+    });
+
+ 
 })

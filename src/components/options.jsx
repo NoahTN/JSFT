@@ -5,7 +5,7 @@ export const OPTION_OBJECT = {
     "Words": ["Nouns", "Adjectives", "Verbs", "Adverbs"],
     "Vocab": ["N5", "N4"],
     "Tenses": ["Plain", "Past", "Polite"],
-    "Types": ["Single Word", "Adjecive-Noun", "Basic Sentence", "N5 Grammar", "N4 Grammar"],
+    "Types": ["Single Word", "Adjecive-Noun", "Easy Sentence", "Medium Sentence", "Hard Sentence"],
 }
 
 function OptionBox(props) {

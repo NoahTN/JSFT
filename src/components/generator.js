@@ -44,10 +44,23 @@ export function generateProblem(options) {
     return result;
 }
 
-export function getN5Grammar(category, vocabLevel, child) {
+export function generateSentence(level, vocabLevel, grammarLevel) {
+    if(level === 0) { // Easy
+        // r
+    }
+    else if(level === 1) { // Medium
+
+    }
+    else { // Hard
+
+    }
+}
+
+
+export function getN5Grammar(category, vocabLevel, siblings=null) {
     const grammar = {
         "ちゃいけない": () => {
-            const verb = child ?? getRandomWord(vocabLevel, "verbs");
+            const verb = siblings["verb"] ?? getRandomWord(vocabLevel, "verbs");
             const teForm = getTeForm(verb);
             let wSuffix= "ちゃいけない";
             let rSuffix = "chaikenai";
@@ -55,7 +68,7 @@ export function getN5Grammar(category, vocabLevel, child) {
                 wSuffix = "じゃいけない";
                 rSuffix = "jaikenai"
             }
-            return {word: getSlice(teForm.word, 0, 1) + wSuffix, romaji: getSlice(teForm.romaji, 0, 2) + rSuffix, grammar: "ちゃいけない", child: verb}
+            return {word: getSlice(teForm.word, 0, 1) + wSuffix, romaji: getSlice(teForm.romaji, 0, 2) + rSuffix, grammar: "ちゃいけない", siblings: [verb]}
         }
     };
     if(category === "random") {
