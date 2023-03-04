@@ -66,10 +66,10 @@ export function generateProblem(options) {
     }
 }
 
-export function generateSentence(level, vLevel, gLevel, forceSOV=false) {
+export function generateSentence(level, vLevel, gLevel, forceOV=false) {
     if(level[0] === "B") { // Basic, includes n5 Grammar
         const noun  = getRandomWord(vLevel, "Nouns");
-        if(getRandomNumber(2) === 0 || forceSOV) { // Subject, Object, Verb (Da/Desu)
+        if(getRandomNumber(2) === 0 && !forceOV) { // Subject, Object, Verb (Da/Desu)
             let subject = formatOutput([noun, getSubjectParticle(gLevel)]);
             let object = {};
             if(getRandomNumber(2) === 0 && subject.word[subject.word.length-1] !== "で") {
