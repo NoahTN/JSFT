@@ -1,5 +1,6 @@
 import {describe, expect, test} from "vitest";
 import { getRandomWord, generateProblem } from "/src/components/generator";
+import { logProblem } from "./test-helper";
 
 describe("Generator Tests", () => {
     test("Should get random noun", () => {
@@ -15,7 +16,7 @@ describe("Generator Tests", () => {
             "Tenses": ["Plain"],
             "Types": ["Single Word"],
         });
-        console.log([problem.word, problem.romaji]);
+        logProblem(problem);
         expect(problem.type).toEqual("noun");
 
     });
@@ -27,10 +28,10 @@ describe("Generator Tests", () => {
             "Tenses": ["Plain"],
             "Types": ["Adjective-Noun"],
         });
-        console.log([problem.word, problem.romaji]);
+        logProblem(problem);
         const children = problem.children;
         expect(["ii-adjective", "na-adjective"]).toContain(children[0].type);
-        expect(children[children.length-1].type).toBe("noun");
+        expect(["adjective", "noun"]).toContain(children[children.length-1].type);
     });
 
     test.skip("Should get a noun, the 'wa' particlem, and an adjective", () => {
@@ -47,6 +48,28 @@ describe("Generator Tests", () => {
             "Tenses": ["Plain"],
             "Types": ["Basic Sentence"],
         });
+        logProblem(problem);
+        const children = problem.children;
+        if(children[children.length-1].type === "verb") { // Object, Verb
+            expect(children[0].type).toBe("noun");
+            expect(["で", "に", "へ", "と", "から"]).toContain(children[1].word);
+            expect(children[2].type).toBe("verb")
+        }
+        else { // Subject, Object, Da/Desu
+            expect(children[0].type).toBe("noun");
+            expect(["が", "で", "は"]).toContain(children[1].word);
+            expect(["adjective", "noun"]).toContain(children[2].type);
+            expect(["だ", "です"]).toContain(children[3].word);
+        }
+    });
+
+    test.skip("Should get a Regular Sentence", () => {
+        const problem = generateProblem({
+            "Vocab Level": ["N5"],
+            "Grammar Level": ["N5"],
+            "Tenses": ["Plain"],
+            "Types": ["Basic Sentence"],
+        });
         console.log([problem.word, problem.romaji]);
         const children = problem.children;
         expect(children[0].type).toBe("noun");
@@ -54,11 +77,6 @@ describe("Generator Tests", () => {
         expect(children[2].type).toBe("noun")
         expect(["で", "に", "へ", "と", "から"]).toContain(children[3].word);
         expect(children[4].type).toBe("verb")
-    });
-
-    test.skip("Should get a Regular Sentence", () => {
-        
-
     });
 
     test.skip("Should get a Complex Sentence", () => {

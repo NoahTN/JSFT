@@ -28,14 +28,19 @@ export function getTeForm(verb) {
         case "う":
         case "つ":
         case "る":
+            wSuffix = "って";
+            rSuffix = "tte";
             if(lastKana === "う")
                 suffixOffset = 1;
             else if(lastKana === "つ")
                 suffixOffset = 3;
-            wSuffix = "って";
-            rSuffix = "tte";
+            else {
+                if(["i", "e"].includes(verb.romaji[verb.romaji.length-3])) {
+                    wSuffix = "て";
+                    rSuffix = "te";
+                }
+            }
             break;
-        
     }
     return {
         form: "te", 

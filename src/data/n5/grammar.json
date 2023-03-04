@@ -8,7 +8,7 @@
   "だ": {
     "type": "grammar",
     "word": "だ",
-    "romaji": "desu",
+    "romaji": "da",
     "meaning": "to be"
   },
   "です": {
@@ -69,7 +69,7 @@
     "type": "grammar",
     "word": "が",
     "romaji": "ga",
-    "meaning": ["subject marker", "however; but"]
+    "meaning": "subject marker; however; but"
   },
   "がある": {
     "type": "grammar",
@@ -99,15 +99,13 @@
     "type": "grammar",
     "word": "一番",
     "romaji": "ichiban",
-    "meaning": "the most; the best",
-    "format": ["N,ga,G,V", "N,ga,G,A", "G,V", "G,A"]
+    "meaning": "the most; the best"
   },
   "一緒に": {
     "type": "grammar",
     "word": "一緒に",
     "romaji": "isshoni",
-    "meaning": "together",
-    "format": ["G,SENT-VERB", "N,to,G,SENT-VERB"]
+    "meaning": "together"
   },
   "いつも": {
     "type": "grammar",
@@ -298,7 +296,7 @@
   "へ": {
     "type": "grammar",
     "word": "へ",
-    "romaji": "ni%2Fe",
+    "romaji": "he",
     "meaning": "to (indicates direction)"
   },
   "の": {

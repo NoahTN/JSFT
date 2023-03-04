@@ -1,22 +1,37 @@
 import { getLast, getSlice, getRandom } from "./helper";
-import { getTeForm } from "./conjugator";
+import { applyN5Grammar } from "./grammar";
 const GRAMMAR_OBJECT = require("../data/n5/grammar.json");
 
 
 function formatOutput(words) {
+    // Maybe custom breakpoints too for subject, object, etc.
+    function addBreakpoint(word) {
+        const bLenW = breakpoints.words.length;
+        const bLenR = breakpoints.romaji.length;
+        breakpoints.words.push(bLenW ? (breakpoints.words[bLenW-1] + word.word.length) : word.word.length);
+        breakpoints.romaji.push(bLenR ? (breakpoints.romaji[bLenR-1] + word.romaji.length) : word.romaji.length);
+        breakpoints.types.push(word.type);
+    }
+    
     let children = [];
+    let breakpoints = {words: [], romaji: [], types: []};
     for(let w of words) {
         if(w.children) {
-            children = children.concat(w.children);
+            for(let c of w.children) {
+                children.push(c);
+                addBreakpoint(c);
+            }
         }
         else {
             children.push(w);
+            addBreakpoint(w);
         }
     }
     return {
         word: words.map(w => w.word).join(""),
         romaji: words.map(w => w.romaji).join(" "),
-        children: children
+        children: children,
+        breakpoints: breakpoints
     }
 }
 
@@ -51,15 +66,20 @@ export function generateProblem(options) {
     }
 }
 
-export function generateSentence(level, vLevel, gLevel) {
+export function generateSentence(level, vLevel, gLevel, forceOB=false) {
     let subject;
     let object;
     let verb;
 
     if(level[0] === "B") { // Basic, includes n5 Grammar
+        if(Math.floor(Math.random()*2) === 1 || forceOB) { // Object, Verb
+            object = generateObjectPart(level, vLevel, gLevel);
+            verb = generateVerbPart(level, vLevel, gLevel);
+            return formatOutput([object, verb]);
+        } // Subject, object, verb
         subject = generateSubjectPart(level, vLevel, gLevel);
-        object = generateObjectPart(level, vLevel, gLevel);
-        verb = generateVerbPart(level, vLevel, gLevel);
+        object = generateObjectPart(level, vLevel, gLevel, subject, "short");
+        verb = generateVerbPart(level, vLevel, gLevel, "short");
     }
     else if(level[0] === "R") { // Regular
 
@@ -83,45 +103,30 @@ export function generateSubjectPart(level, vLevel, gLevel) {
     return formatOutput([noun, subjectParticle]);
 }
 
-export function generateObjectPart(level, vLevel, gLevel) {
+export function generateObjectPart(level, vLevel, gLevel, subject, short="") {
     function getObjectParticle(gLevel) { 
         if(gLevel === "N5") {
             const particles = ["で", "に", "へ", "と", "から"].map(p => GRAMMAR_OBJECT[p]);
             return getRandom(particles);
         }
     }
-    const noun = getRandomWord(vLevel, "Nouns");
-    const objectParticle =  getObjectParticle(gLevel);
-    return formatOutput([noun, objectParticle]);
-}
-
-export function generateVerbPart(level, vLevel, gLevel) {
-    return getRandomWord(vLevel, "Verbs");
-}
-
-
-export function modifyWord() {
-
-}
-
-
-export function getN5Grammar(category, vocabLevel, siblings=null) {
-    const grammar = {
-        "ちゃいけない": () => {
-            const verb = siblings["verb"] ?? getRandomWord(vocabLevel, "verbs");
-            const teForm = getTeForm(verb);
-            let wSuffix= "ちゃいけない";
-            let rSuffix = "chaikenai";
-            if(getLast(teForm.word) == "で") {
-                wSuffix = "じゃいけない";
-                rSuffix = "jaikenai"
-            }
-            return {word: getSlice(teForm.word, 0, 1) + wSuffix, romaji: getSlice(teForm.romaji, 0, 2) + rSuffix, grammar: "ちゃいけない", siblings: [verb]}
-        }
-    };
-    if(category === "random") {
-        return grammar[Math.floor(Math.random() * grammar.length)];
-    }
-    return grammar[category]();
     
+    if(short) {
+        if(Math.floor(Math.random) === 1 && subject.word[subject.word.length-1] !== "で") {
+            return getRandomWord(vLevel, "Adjectives");
+            
+        }
+        return getRandomWord(vLevel, "Nouns");
+    }
+    const noun = getRandomWord(vLevel, "Nouns");
+    const objectParticle = getObjectParticle(gLevel);
+    return formatOutput([noun, objectParticle]);
+    
+}
+
+export function generateVerbPart(level, vLevel, gLevel, short="") {
+    if(short) {
+        return GRAMMAR_OBJECT[getRandom(["だ", "です"])];
+    }
+    return getRandomWord(vLevel, "Verbs");
 }
