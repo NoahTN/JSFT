@@ -1,4 +1,4 @@
-import { getLast, getSlice, getRandom } from "./helper";
+import { getLast, getSlice, getRandom, getRandomNumber } from "./helper";
 import { applyN5Grammar } from "./grammar";
 const GRAMMAR_OBJECT = require("../data/n5/grammar.json");
 
@@ -39,7 +39,7 @@ export function getRandomWord(level, type) {
     level = level.toLowerCase();
     type = type.toLowerCase();
     if(type === "adjectives") {
-        type =  Math.floor(Math.random()*2) === 1 ? "ii-adjectives" : "na-adjectives";
+        type =  Math.floor(Math.random()*2) === 1 ? "i-adjectives" : "na-adjectives";
     }
     const data = require(`../data/${level}/${type}.json`);
     const index = Math.floor(Math.random() * Object.keys(data).length);
@@ -66,20 +66,24 @@ export function generateProblem(options) {
     }
 }
 
-export function generateSentence(level, vLevel, gLevel, forceOB=false) {
-    let subject;
-    let object;
-    let verb;
-
+export function generateSentence(level, vLevel, gLevel, forceSOV=false) {
     if(level[0] === "B") { // Basic, includes n5 Grammar
-        if(Math.floor(Math.random()*2) === 1 || forceOB) { // Object, Verb
-            object = generateObjectPart(level, vLevel, gLevel);
-            verb = generateVerbPart(level, vLevel, gLevel);
-            return formatOutput([object, verb]);
-        } // Subject, object, verb
-        subject = generateSubjectPart(level, vLevel, gLevel);
-        object = generateObjectPart(level, vLevel, gLevel, subject, "short");
-        verb = generateVerbPart(level, vLevel, gLevel, "short");
+        const noun  = getRandomWord(vLevel, "Nouns");
+        if(getRandomNumber(2) === 0 || forceSOV) { // Subject, Object, Verb (Da/Desu)
+            let subject = formatOutput([noun, getSubjectParticle(gLevel)]);
+            let object = {};
+            if(getRandomNumber(2) === 0 && subject.word[subject.word.length-1] !== "で") {
+                object = getRandomWord(vLevel, "Adjectives");
+            }
+            else {
+                object = getRandomWord(vLevel, "Nouns");
+            }
+            const verb = GRAMMAR_OBJECT[getRandom(["だ", "です"])];
+            return formatOutput([subject, object, verb]);
+        } // Object, Verb
+        const object = formatOutput([noun, getObjectParticle(gLevel)]);
+        const verb =  getRandomWord(vLevel, "Verbs");
+        return formatOutput([object, verb]);
     }
     else if(level[0] === "R") { // Regular
 
@@ -88,45 +92,18 @@ export function generateSentence(level, vLevel, gLevel, forceOB=false) {
 
     }
     // need recurisve word getter
-    return formatOutput([subject, object, verb]);
 }
 
-export function generateSubjectPart(level, vLevel, gLevel) {
-    function getSubjectParticle(gLevel) { 
-        if(gLevel === "N5") {
-            const particles = ["が", "で", "は"].map(p => GRAMMAR_OBJECT[p]);
-            return getRandom(particles);
-        }
+function getSubjectParticle(gLevel) { 
+    if(gLevel === "N5") {
+        const particles = ["が", "で", "は"].map(p => GRAMMAR_OBJECT[p]);
+        return getRandom(particles);
     }
-    const noun = getRandomWord(vLevel, "Nouns");
-    const subjectParticle = getSubjectParticle(gLevel);
-    return formatOutput([noun, subjectParticle]);
 }
 
-export function generateObjectPart(level, vLevel, gLevel, subject, short="") {
-    function getObjectParticle(gLevel) { 
-        if(gLevel === "N5") {
-            const particles = ["で", "に", "へ", "と", "から"].map(p => GRAMMAR_OBJECT[p]);
-            return getRandom(particles);
-        }
+function getObjectParticle(gLevel) { 
+    if(gLevel === "N5") {
+        const particles = ["で", "に", "へ", "と", "から"].map(p => GRAMMAR_OBJECT[p]);
+        return getRandom(particles);
     }
-    
-    if(short) {
-        if(Math.floor(Math.random) === 1 && subject.word[subject.word.length-1] !== "で") {
-            return getRandomWord(vLevel, "Adjectives");
-            
-        }
-        return getRandomWord(vLevel, "Nouns");
-    }
-    const noun = getRandomWord(vLevel, "Nouns");
-    const objectParticle = getObjectParticle(gLevel);
-    return formatOutput([noun, objectParticle]);
-    
-}
-
-export function generateVerbPart(level, vLevel, gLevel, short="") {
-    if(short) {
-        return GRAMMAR_OBJECT[getRandom(["だ", "です"])];
-    }
-    return getRandomWord(vLevel, "Verbs");
 }

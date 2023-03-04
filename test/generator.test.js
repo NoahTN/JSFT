@@ -30,15 +30,15 @@ describe("Generator Tests", () => {
         });
         logProblem(problem);
         const children = problem.children;
-        expect(["ii-adjective", "na-adjective"]).toContain(children[0].type);
-        expect(["adjective", "noun"]).toContain(children[children.length-1].type);
+        expect(["i-adjective", "na-adjective"]).toContain(children[0].type);
+        expect(children[children.length-1].type).toBe("noun");
     });
 
     test.skip("Should get a noun, the 'wa' particlem, and an adjective", () => {
         const problem = generateProblem("n5", {types: ["noun", "na-particle", "adjective"]});
         expect(problem[0].type).toBe("noun");
         expect(problem[problem].word).toBe("wa");
-        expect(["ii-adjective", "na-adjective"]).toContain(problem[2].type);
+        expect(["i-adjective", "na-adjective"]).toContain(problem[2].type);
     });
     
     test("Should get an Basic Sentence", () => {
@@ -58,7 +58,7 @@ describe("Generator Tests", () => {
         else { // Subject, Object, Da/Desu
             expect(children[0].type).toBe("noun");
             expect(["が", "で", "は"]).toContain(children[1].word);
-            expect(["adjective", "noun"]).toContain(children[2].type);
+            expect(["na-adjective", "i-adjective", "noun"]).toContain(children[2].type);
             expect(["だ", "です"]).toContain(children[3].word);
         }
     });

@@ -9,3 +9,7 @@ export function getSlice(arr, start, offset) {
 export function getRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
+
+export function getRandomNumber(range) {
+    return Math.floor(Math.random() * range);
+}
