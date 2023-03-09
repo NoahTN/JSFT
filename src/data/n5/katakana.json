@@ -1,1 +1,368 @@
-[{"type":"katakana","word":"アパート","romaji":"apaato","meaning":"apartment"},{"type":"katakana","word":"バス","romaji":"basu","meaning":"bus"},{"type":"katakana","word":"バター","romaji":"bataa","meaning":"butter"},{"type":"katakana","word":"ベッド","romaji":"beddo","meaning":"bed"},{"type":"katakana","word":"ボールペン","romaji":"boorupen","meaning":"ball-pointpen"},{"type":"katakana","word":"ボタン","romaji":"botan","meaning":"button"},{"type":"katakana","word":"デパート","romaji":"depaato","meaning":"departmentstore"},{"type":"katakana","word":"ドア","romaji":"doa","meaning":"door"},{"type":"katakana","word":"エレベーター","romaji":"erebeetaa","meaning":"elevator"},{"type":"katakana","word":"フィルム","romaji":"firumu","meaning":"film"},{"type":"katakana","word":"フォーク","romaji":"fooku","meaning":"fork"},{"type":"katakana","word":"ギター","romaji":"gitaa","meaning":"guitar"},{"type":"katakana","word":"グラム","romaji":"guramu","meaning":"gram"},{"type":"katakana","word":"ハンカチ","romaji":"hankachi","meaning":"handkerchief"},{"type":"katakana","word":"ホテル","romaji":"hoteru","meaning":"hotel"},{"type":"katakana","word":"カメラ","romaji":"kamera","meaning":"camera"},{"type":"katakana","word":"カップ","romaji":"kappu","meaning":"cup"},{"type":"katakana","word":"カレー","romaji":"karee","meaning":"curry"},{"type":"katakana","word":"カレンダー","romaji":"karendaa","meaning":"calendar"},{"type":"katakana","word":"キログラム","romaji":"kiroguramu","meaning":"kilogram"},{"type":"katakana","word":"キロメートル","romaji":"kiromeetoru","meaning":"kilometer"},{"type":"katakana","word":"コーヒー","romaji":"koohii","meaning":" C offee"},{"type":"katakana","word":"コート","romaji":"kooto","meaning":"coat"},{"type":"katakana","word":"コピー","romaji":"kopii","meaning":"copy%3B photocopy"},{"type":"katakana","word":"コップ","romaji":"koppu","meaning":"glass%3B cup"},{"type":"katakana","word":"クラス","romaji":"kurasu","meaning":"class"},{"type":"katakana","word":"マッチ","romaji":"macchi","meaning":"match"},{"type":"katakana","word":"メートル","romaji":"meetoru","meaning":"metre%3B meter"},{"type":"katakana","word":"ナイフ","romaji":"naifu","meaning":"knife"},{"type":"katakana","word":"ネクタイ","romaji":"nekutai","meaning":"tie%3B necktie"},{"type":"katakana","word":"ノート","romaji":"nooto","meaning":"notebook"},{"type":"katakana","word":"ニュース","romaji":"nyuusu","meaning":"news"},{"type":"katakana","word":"パーティー","romaji":"paatii","meaning":"party"},{"type":"katakana","word":"パン","romaji":"pan","meaning":"bread"},{"type":"katakana","word":"ページ","romaji":"peeji","meaning":"page"},{"type":"katakana","word":"ペン","romaji":"pen","meaning":"pen"},{"type":"katakana","word":"ペット","romaji":"petto","meaning":"pet"},{"type":"katakana","word":"ポケット","romaji":"poketto","meaning":"pocket"},{"type":"katakana","word":"ポスト","romaji":"posuto","meaning":"post"},{"type":"katakana","word":"プール","romaji":"puuru","meaning":"swimmingpool"},{"type":"katakana","word":"ラジオ","romaji":"rajiio","meaning":"radio"},{"type":"katakana","word":"レコード","romaji":"rekoodo","meaning":"record"},{"type":"katakana","word":"レストラン","romaji":"resutoran","meaning":"restaurant"},{"type":"katakana","word":"セーター","romaji":"seetaa","meaning":"sweater%3B jumper"},{"type":"katakana","word":"シャツ","romaji":"shatsu","meaning":"shirt"},{"type":"katakana","word":"シャワー","romaji":"shawaa","meaning":"shower"},{"type":"katakana","word":"スカート","romaji":"sukaato","meaning":"skirt"},{"type":"katakana","word":"スポーツ","romaji":"supootsu","meaning":"sport%3B sports"},{"type":"katakana","word":"スプーン","romaji":"supuun","meaning":"spoon"},{"type":"katakana","word":"スリッパ","romaji":"surippa","meaning":"slipper%3B slippers"},{"type":"katakana","word":"ストーブ","romaji":"sutoobu","meaning":"heater%3B stove"},{"type":"katakana","word":"タクシー","romaji":"takushii","meaning":"taxi"},{"type":"katakana","word":"テーブル","romaji":"teeburu","meaning":"table"},{"type":"katakana","word":"テープ","romaji":"teepu","meaning":"tape"},{"type":"katakana","word":"テープレコーダー","romaji":"teepurekoodaa","meaning":"taperecorder"},{"type":"katakana","word":"テレビ","romaji":"terebi","meaning":"television%3B TV"},{"type":"katakana","word":"テスト","romaji":"tesuto","meaning":"examination%3B quiz%3B test"},{"type":"katakana","word":"トイレ","romaji":"toire","meaning":"toilet"},{"type":"katakana","word":"ワイシャツ","romaji":"waishatsu","meaning":"shirt"},{"type":"katakana","word":"ゼロ","romaji":"zero","meaning":"zero"},{"type":"katakana","word":"ズボン","romaji":"zubon","meaning":"trousers%3B pants"}]
+{
+  "アパート": {
+    "type": "katakana",
+    "word": "アパート",
+    "romaji": "apaato",
+    "meaning": "apartment"
+  },
+  "バス": {
+    "type": "katakana",
+    "word": "バス",
+    "romaji": "basu",
+    "meaning": "bus"
+  },
+  "バター": {
+    "type": "katakana",
+    "word": "バター",
+    "romaji": "bataa",
+    "meaning": "butter"
+  },
+  "ベッド": {
+    "type": "katakana",
+    "word": "ベッド",
+    "romaji": "beddo",
+    "meaning": "bed"
+  },
+  "ボールペン": {
+    "type": "katakana",
+    "word": "ボールペン",
+    "romaji": "boorupen",
+    "meaning": "ball-pointpen"
+  },
+  "ボタン": {
+    "type": "katakana",
+    "word": "ボタン",
+    "romaji": "botan",
+    "meaning": "button"
+  },
+  "デパート": {
+    "type": "katakana",
+    "word": "デパート",
+    "romaji": "depaato",
+    "meaning": "departmentstore"
+  },
+  "ドア": {
+    "type": "katakana",
+    "word": "ドア",
+    "romaji": "doa",
+    "meaning": "door"
+  },
+  "エレベーター": {
+    "type": "katakana",
+    "word": "エレベーター",
+    "romaji": "erebeetaa",
+    "meaning": "elevator"
+  },
+  "フィルム": {
+    "type": "katakana",
+    "word": "フィルム",
+    "romaji": "firumu",
+    "meaning": "film"
+  },
+  "フォーク": {
+    "type": "katakana",
+    "word": "フォーク",
+    "romaji": "fooku",
+    "meaning": "fork"
+  },
+  "ギター": {
+    "type": "katakana",
+    "word": "ギター",
+    "romaji": "gitaa",
+    "meaning": "guitar"
+  },
+  "グラム": {
+    "type": "katakana",
+    "word": "グラム",
+    "romaji": "guramu",
+    "meaning": "gram"
+  },
+  "ハンカチ": {
+    "type": "katakana",
+    "word": "ハンカチ",
+    "romaji": "hankachi",
+    "meaning": "handkerchief"
+  },
+  "ホテル": {
+    "type": "katakana",
+    "word": "ホテル",
+    "romaji": "hoteru",
+    "meaning": "hotel"
+  },
+  "カメラ": {
+    "type": "katakana",
+    "word": "カメラ",
+    "romaji": "kamera",
+    "meaning": "camera"
+  },
+  "カップ": {
+    "type": "katakana",
+    "word": "カップ",
+    "romaji": "kappu",
+    "meaning": "cup"
+  },
+  "カレー": {
+    "type": "katakana",
+    "word": "カレー",
+    "romaji": "karee",
+    "meaning": "curry"
+  },
+  "カレンダー": {
+    "type": "katakana",
+    "word": "カレンダー",
+    "romaji": "karendaa",
+    "meaning": "calendar"
+  },
+  "キログラム": {
+    "type": "katakana",
+    "word": "キログラム",
+    "romaji": "kiroguramu",
+    "meaning": "kilogram"
+  },
+  "キロメートル": {
+    "type": "katakana",
+    "word": "キロメートル",
+    "romaji": "kiromeetoru",
+    "meaning": "kilometer"
+  },
+  "コーヒー": {
+    "type": "katakana",
+    "word": "コーヒー",
+    "romaji": "koohii",
+    "meaning": " C offee"
+  },
+  "コート": {
+    "type": "katakana",
+    "word": "コート",
+    "romaji": "kooto",
+    "meaning": "coat"
+  },
+  "コピー": {
+    "type": "katakana",
+    "word": "コピー",
+    "romaji": "kopii",
+    "meaning": "copy; photocopy"
+  },
+  "コップ": {
+    "type": "katakana",
+    "word": "コップ",
+    "romaji": "koppu",
+    "meaning": "glass; cup"
+  },
+  "クラス": {
+    "type": "katakana",
+    "word": "クラス",
+    "romaji": "kurasu",
+    "meaning": "class"
+  },
+  "マッチ": {
+    "type": "katakana",
+    "word": "マッチ",
+    "romaji": "macchi",
+    "meaning": "match"
+  },
+  "メートル": {
+    "type": "katakana",
+    "word": "メートル",
+    "romaji": "meetoru",
+    "meaning": "metre; meter"
+  },
+  "ナイフ": {
+    "type": "katakana",
+    "word": "ナイフ",
+    "romaji": "naifu",
+    "meaning": "knife"
+  },
+  "ネクタイ": {
+    "type": "katakana",
+    "word": "ネクタイ",
+    "romaji": "nekutai",
+    "meaning": "tie; necktie"
+  },
+  "ノート": {
+    "type": "katakana",
+    "word": "ノート",
+    "romaji": "nooto",
+    "meaning": "notebook"
+  },
+  "ニュース": {
+    "type": "katakana",
+    "word": "ニュース",
+    "romaji": "nyuusu",
+    "meaning": "news"
+  },
+  "パーティー": {
+    "type": "katakana",
+    "word": "パーティー",
+    "romaji": "paatii",
+    "meaning": "party"
+  },
+  "パン": {
+    "type": "katakana",
+    "word": "パン",
+    "romaji": "pan",
+    "meaning": "bread"
+  },
+  "ページ": {
+    "type": "katakana",
+    "word": "ページ",
+    "romaji": "peeji",
+    "meaning": "page"
+  },
+  "ペン": {
+    "type": "katakana",
+    "word": "ペン",
+    "romaji": "pen",
+    "meaning": "pen"
+  },
+  "ペット": {
+    "type": "katakana",
+    "word": "ペット",
+    "romaji": "petto",
+    "meaning": "pet"
+  },
+  "ポケット": {
+    "type": "katakana",
+    "word": "ポケット",
+    "romaji": "poketto",
+    "meaning": "pocket"
+  },
+  "ポスト": {
+    "type": "katakana",
+    "word": "ポスト",
+    "romaji": "posuto",
+    "meaning": "post"
+  },
+  "プール": {
+    "type": "katakana",
+    "word": "プール",
+    "romaji": "puuru",
+    "meaning": "swimmingpool"
+  },
+  "ラジオ": {
+    "type": "katakana",
+    "word": "ラジオ",
+    "romaji": "rajiio",
+    "meaning": "radio"
+  },
+  "レコード": {
+    "type": "katakana",
+    "word": "レコード",
+    "romaji": "rekoodo",
+    "meaning": "record"
+  },
+  "レストラン": {
+    "type": "katakana",
+    "word": "レストラン",
+    "romaji": "resutoran",
+    "meaning": "restaurant"
+  },
+  "セーター": {
+    "type": "katakana",
+    "word": "セーター",
+    "romaji": "seetaa",
+    "meaning": "sweater; jumper"
+  },
+  "シャツ": {
+    "type": "katakana",
+    "word": "シャツ",
+    "romaji": "shatsu",
+    "meaning": "shirt"
+  },
+  "シャワー": {
+    "type": "katakana",
+    "word": "シャワー",
+    "romaji": "shawaa",
+    "meaning": "shower"
+  },
+  "スカート": {
+    "type": "katakana",
+    "word": "スカート",
+    "romaji": "sukaato",
+    "meaning": "skirt"
+  },
+  "スポーツ": {
+    "type": "katakana",
+    "word": "スポーツ",
+    "romaji": "supootsu",
+    "meaning": "sport; sports"
+  },
+  "スプーン": {
+    "type": "katakana",
+    "word": "スプーン",
+    "romaji": "supuun",
+    "meaning": "spoon"
+  },
+  "スリッパ": {
+    "type": "katakana",
+    "word": "スリッパ",
+    "romaji": "surippa",
+    "meaning": "slipper; slippers"
+  },
+  "ストーブ": {
+    "type": "katakana",
+    "word": "ストーブ",
+    "romaji": "sutoobu",
+    "meaning": "heater; stove"
+  },
+  "タクシー": {
+    "type": "katakana",
+    "word": "タクシー",
+    "romaji": "takushii",
+    "meaning": "taxi"
+  },
+  "テーブル": {
+    "type": "katakana",
+    "word": "テーブル",
+    "romaji": "teeburu",
+    "meaning": "table"
+  },
+  "テープ": {
+    "type": "katakana",
+    "word": "テープ",
+    "romaji": "teepu",
+    "meaning": "tape"
+  },
+  "テープレコーダー": {
+    "type": "katakana",
+    "word": "テープレコーダー",
+    "romaji": "teepurekoodaa",
+    "meaning": "taperecorder"
+  },
+  "テレビ": {
+    "type": "katakana",
+    "word": "テレビ",
+    "romaji": "terebi",
+    "meaning": "television; TV"
+  },
+  "テスト": {
+    "type": "katakana",
+    "word": "テスト",
+    "romaji": "tesuto",
+    "meaning": "examination; quiz; test"
+  },
+  "トイレ": {
+    "type": "katakana",
+    "word": "トイレ",
+    "romaji": "toire",
+    "meaning": "toilet"
+  },
+  "ワイシャツ": {
+    "type": "katakana",
+    "word": "ワイシャツ",
+    "romaji": "waishatsu",
+    "meaning": "shirt"
+  },
+  "ゼロ": {
+    "type": "katakana",
+    "word": "ゼロ",
+    "romaji": "zero",
+    "meaning": "zero"
+  },
+  "ズボン": {
+    "type": "katakana",
+    "word": "ズボン",
+    "romaji": "zubon",
+    "meaning": "trousers; pants"
+  }
+}

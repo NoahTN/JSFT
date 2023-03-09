@@ -4,14 +4,14 @@ import { logProblem } from "./test-helper";
 
 describe("Generator Tests", () => {
     test("Should get random noun", () => {
-        const noun = getRandomWord("n5", "nouns");
+        const noun = getRandomWord("n5", "noun");
         console.log([noun.word, noun.romaji]);
         expect(noun.type).toBe("noun");
     });
 
     test("Should get a N5 Single Noun Problem", () => {
         const problem = generateProblem({
-            "Words": ["Nouns"],
+            "Words": ["Noun"],
             "Vocab Level": ["N5"],
             "Tenses": ["Plain"],
             "Types": ["Single Word"],
@@ -23,7 +23,7 @@ describe("Generator Tests", () => {
 
     test("Should get a N5 Adjective-Noun Problem", () => {
         const problem = generateProblem({
-            "Words": ["Nouns", "Adjectives"],
+            "Words": ["Noun", "Adjective"],
             "Vocab Level": ["N5"],
             "Tenses": ["Plain"],
             "Types": ["Adjective-Noun"],

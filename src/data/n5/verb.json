@@ -1,0 +1,1073 @@
+{
+  "abiru": {
+    "type": "verb",
+    "word": "浴びる",
+    "romaji": "abiru",
+    "meaning": "tobathe, toshower",
+    "wStem": "浴び",
+    "rStem": "abi",
+    "category": "ichidan"
+  },
+  "ageru": {
+    "type": "verb",
+    "word": "上げる",
+    "romaji": "ageru",
+    "meaning": "toraise; toelevate",
+    "wStem": "上げ",
+    "rStem": "age",
+    "category": "ichidan"
+  },
+  "akeru": {
+    "type": "verb",
+    "word": "開ける",
+    "romaji": "akeru",
+    "meaning": "toopen",
+    "wStem": "開け",
+    "rStem": "ake",
+    "category": "ichidan"
+  },
+  "aku": {
+    "type": "verb",
+    "word": "開く",
+    "romaji": "aku",
+    "meaning": "toopen",
+    "wStem": "開",
+    "rStem": "a",
+    "category": "godan"
+  },
+  "arau": {
+    "type": "verb",
+    "word": "洗う",
+    "romaji": "arau",
+    "meaning": "towash",
+    "wStem": "洗",
+    "rStem": "ara",
+    "category": "godan"
+  },
+  "aru": {
+    "type": "verb",
+    "word": "ある",
+    "romaji": "aru",
+    "meaning": "tobe, tohave",
+    "wStem": "あ",
+    "rStem": "a",
+    "category": "godan"
+  },
+  "aruku": {
+    "type": "verb",
+    "word": "歩く",
+    "romaji": "aruku",
+    "meaning": "towalk",
+    "wStem": "歩",
+    "rStem": "aru",
+    "category": "godan"
+  },
+  "asobu": {
+    "type": "verb",
+    "word": "遊ぶ",
+    "romaji": "asobu",
+    "meaning": "toplay",
+    "wStem": "遊",
+    "rStem": "aso",
+    "category": "godan"
+  },
+  "au": {
+    "type": "verb",
+    "word": "会う",
+    "romaji": "au",
+    "meaning": "tomeet",
+    "wStem": "会",
+    "rStem": "a",
+    "category": "godan"
+  },
+  "benkyousuru": {
+    "type": "verb",
+    "word": "勉強する",
+    "romaji": "benkyousuru",
+    "meaning": "tostudy",
+    "category": "irregular-suru",
+    "wStem": "勉強",
+    "rStem": "benkyou"
+  },
+  "chigau": {
+    "type": "verb",
+    "word": "違う",
+    "romaji": "chigau",
+    "meaning": "todiffer",
+    "wStem": "違",
+    "rStem": "chiga",
+    "category": "godan"
+  },
+  "dasu": {
+    "type": "verb",
+    "word": "出す",
+    "romaji": "dasu",
+    "meaning": "totakeout; togetout; ",
+    "wStem": "出",
+    "rStem": "da",
+    "category": "godan"
+  },
+  "dekakeru": {
+    "type": "verb",
+    "word": "出かける",
+    "romaji": "dekakeru",
+    "meaning": "togoout; toleave; todepart",
+    "wStem": "出かけ",
+    "rStem": "dekake",
+    "category": "ichidan"
+  },
+  "denwasuru": {
+    "type": "verb",
+    "word": "電話する",
+    "romaji": "denwasuru",
+    "meaning": "tocall",
+    "category": "irregular-suru",
+    "wStem": "電話",
+    "rStem": "denwa"
+  },
+  "deru": {
+    "type": "verb",
+    "word": "出る",
+    "romaji": "deru",
+    "meaning": "toleave; toexit",
+    "wStem": "出",
+    "rStem": "de",
+    "category": "ichidan"
+  },
+  "fuku": {
+    "type": "verb",
+    "word": "吹く",
+    "romaji": "fuku",
+    "meaning": "toblow",
+    "wStem": "吹",
+    "rStem": "fu",
+    "category": "godan"
+  },
+  "furu": {
+    "type": "verb",
+    "word": "降る",
+    "romaji": "furu",
+    "meaning": "tofall",
+    "wStem": "降",
+    "rStem": "fu",
+    "category": "godan"
+  },
+  "hairu": {
+    "type": "verb",
+    "word": "入る",
+    "romaji": "hairu",
+    "meaning": "toenter; togointo",
+    "wStem": "入",
+    "rStem": "hai",
+    "category": "godan"
+  },
+  "hajimaru": {
+    "type": "verb",
+    "word": "始まる",
+    "romaji": "hajimaru",
+    "meaning": "tobegin",
+    "wStem": "始ま",
+    "rStem": "hajima",
+    "category": "godan"
+  },
+  "haku": {
+    "type": "verb",
+    "word": "履く",
+    "romaji": "haku",
+    "meaning": "towear, toputontrousers",
+    "wStem": "履",
+    "rStem": "ha",
+    "category": "godan"
+  },
+  "hanasu": {
+    "type": "verb",
+    "word": "話す",
+    "romaji": "hanasu",
+    "meaning": "tospeak; totalk",
+    "wStem": "話",
+    "rStem": "hana",
+    "category": "godan"
+  },
+  "hareru": {
+    "type": "verb",
+    "word": "晴れる",
+    "romaji": "hareru",
+    "meaning": "tobesunny",
+    "wStem": "晴れ",
+    "rStem": "hare",
+    "category": "ichidan"
+  },
+  "haru": {
+    "type": "verb",
+    "word": "貼る",
+    "romaji": "haru",
+    "meaning": "tostick; topaste",
+    "wStem": "貼",
+    "rStem": "ha",
+    "category": "godan"
+  },
+  "hashiru": {
+    "type": "verb",
+    "word": "走る",
+    "romaji": "hashiru",
+    "meaning": "torun",
+    "wStem": "走",
+    "rStem": "hashi",
+    "category": "godan"
+  },
+  "hataraku": {
+    "type": "verb",
+    "word": "働く",
+    "romaji": "hataraku",
+    "meaning": "towork",
+    "wStem": "働",
+    "rStem": "hatara",
+    "category": "godan"
+  },
+  "hiku": {
+    "type": "verb",
+    "word": "引く",
+    "romaji": "hiku",
+    "meaning": "topull",
+    "wStem": "引",
+    "rStem": "hi",
+    "category": "godan"
+  },
+  "hiku_31": {
+    "type": "verb",
+    "word": "弾く",
+    "romaji": "hiku",
+    "meaning": "toplay",
+    "wStem": "弾",
+    "rStem": "hi",
+    "category": "godan"
+  },
+  "iku": {
+    "type": "verb",
+    "word": "行く",
+    "romaji": "iku",
+    "meaning": "togo; tomove",
+    "wStem": "行",
+    "rStem": "i",
+    "category": "godan"
+  },
+  "ireru": {
+    "type": "verb",
+    "word": "入れる",
+    "romaji": "ireru",
+    "meaning": "toputin; toletin",
+    "wStem": "入れ",
+    "rStem": "ire",
+    "category": "ichidan"
+  },
+  "iru": {
+    "type": "verb",
+    "word": "居る",
+    "romaji": "iru",
+    "meaning": "tobe, tohave",
+    "wStem": "居",
+    "rStem": "i",
+    "category": "ichidan"
+  },
+  "iru_35": {
+    "type": "verb",
+    "word": "要る",
+    "romaji": "iru",
+    "meaning": "tobeneeded",
+    "wStem": "要",
+    "rStem": "i",
+    "category": "ichidan"
+  },
+  "iu": {
+    "type": "verb",
+    "word": "言う",
+    "romaji": "iu",
+    "meaning": "tosay; tocall",
+    "wStem": "言",
+    "rStem": "i",
+    "category": "godan"
+  },
+  "jugyousuru": {
+    "type": "verb",
+    "word": "授業する",
+    "romaji": "jugyousuru",
+    "meaning": "togivealecture",
+    "category": "irregular-suru",
+    "wStem": "授業",
+    "rStem": "jugyou"
+  },
+  "kaeru": {
+    "type": "verb",
+    "word": "帰る",
+    "romaji": "kaeru",
+    "meaning": "togoback​",
+    "wStem": "帰",
+    "rStem": "kae",
+    "category": "godan"
+  },
+  "kaesu": {
+    "type": "verb",
+    "word": "返す",
+    "romaji": "kaesu",
+    "meaning": "toreturnsomething",
+    "wStem": "返",
+    "rStem": "kae",
+    "category": "godan"
+  },
+  "kakaru": {
+    "type": "verb",
+    "word": "掛かる",
+    "romaji": "kakaru",
+    "meaning": "totake(time, money)",
+    "wStem": "掛か",
+    "rStem": "kaka",
+    "category": "godan"
+  },
+  "kakeru": {
+    "type": "verb",
+    "word": "掛ける",
+    "romaji": "kakeru",
+    "meaning": "tohangup; tomake(acall)​; ",
+    "wStem": "掛け",
+    "rStem": "kake",
+    "category": "ichidan"
+  },
+  "kaku": {
+    "type": "verb",
+    "word": "書く",
+    "romaji": "kaku",
+    "meaning": "towrite",
+    "wStem": "書",
+    "rStem": "ka",
+    "category": "godan"
+  },
+  "kariru": {
+    "type": "verb",
+    "word": "借りる",
+    "romaji": "kariru",
+    "meaning": "toborrow",
+    "wStem": "借り",
+    "rStem": "kari",
+    "category": "ichidan"
+  },
+  "kasu": {
+    "type": "verb",
+    "word": "貸す",
+    "romaji": "kasu",
+    "meaning": "tolend; toloan",
+    "wStem": "貸",
+    "rStem": "ka",
+    "category": "godan"
+  },
+  "kau": {
+    "type": "verb",
+    "word": "買う",
+    "romaji": "kau",
+    "meaning": "tobuy; topurchase",
+    "wStem": "買",
+    "rStem": "ka",
+    "category": "godan"
+  },
+  "kekkonsuru": {
+    "type": "verb",
+    "word": "結婚する",
+    "romaji": "kekkonsuru",
+    "meaning": "tomarry",
+    "category": "irregular-suru",
+    "wStem": "結婚",
+    "rStem": "kekkon"
+  },
+  "kesu": {
+    "type": "verb",
+    "word": "消す",
+    "romaji": "kesu",
+    "meaning": "toerase, toturnoffpower",
+    "wStem": "消",
+    "rStem": "ke",
+    "category": "godan"
+  },
+  "kieru": {
+    "type": "verb",
+    "word": "消える",
+    "romaji": "kieru",
+    "meaning": "todisappear",
+    "wStem": "消え",
+    "rStem": "kie",
+    "category": "ichidan"
+  },
+  "kiku": {
+    "type": "verb",
+    "word": "聞く",
+    "romaji": "kiku",
+    "meaning": "tohear; tolisten; toask",
+    "wStem": "聞",
+    "rStem": "ki",
+    "category": "godan"
+  },
+  "kiru": {
+    "type": "verb",
+    "word": "切る",
+    "romaji": "kiru",
+    "meaning": "tocut",
+    "wStem": "切",
+    "rStem": "ki",
+    "category": "godan"
+  },
+  "kiru_53": {
+    "type": "verb",
+    "word": "着る",
+    "romaji": "kiru",
+    "meaning": "towear",
+    "wStem": "着",
+    "rStem": "ki",
+    "category": "ichidan"
+  },
+  "komaru": {
+    "type": "verb",
+    "word": "困る",
+    "romaji": "komaru",
+    "meaning": "tobetroubled",
+    "wStem": "困",
+    "rStem": "koma",
+    "category": "godan"
+  },
+  "kopiisuru": {
+    "type": "verb",
+    "word": "コピーする",
+    "romaji": "kopiisuru",
+    "meaning": "tocopy",
+    "category": "irregular-suru",
+    "wStem": "コピー",
+    "rStem": "kopii"
+  },
+  "kotaeru": {
+    "type": "verb",
+    "word": "答える",
+    "romaji": "kotaeru",
+    "meaning": "toanswer",
+    "wStem": "答え",
+    "rStem": "kotae",
+    "category": "ichidan"
+  },
+  "kumoru": {
+    "type": "verb",
+    "word": "曇る",
+    "romaji": "kumoru",
+    "meaning": "tobecomecloudy",
+    "wStem": "曇",
+    "rStem": "kumo",
+    "category": "godan"
+  },
+  "kuru": {
+    "type": "verb",
+    "word": "来る",
+    "romaji": "kuru",
+    "meaning": "tocome",
+    "category": "irregular-kuru",
+    "wStem": "来",
+    "rStem": "ku"
+  },
+  "magaru": {
+    "type": "verb",
+    "word": "曲がる",
+    "romaji": "magaru",
+    "meaning": "toturn, tobend",
+    "wStem": "曲が",
+    "rStem": "maga",
+    "category": "godan"
+  },
+  "matsu": {
+    "type": "verb",
+    "word": "待つ",
+    "romaji": "matsu",
+    "meaning": "towait​",
+    "wStem": "待",
+    "rStem": "ma",
+    "category": "godan"
+  },
+  "migaku": {
+    "type": "verb",
+    "word": "磨く",
+    "romaji": "migaku",
+    "meaning": "topolish; tobrush(teeth)",
+    "wStem": "磨",
+    "rStem": "miga",
+    "category": "godan"
+  },
+  "miru": {
+    "type": "verb",
+    "word": "見る",
+    "romaji": "miru",
+    "meaning": "tosee; tolook",
+    "wStem": "見",
+    "rStem": "mi",
+    "category": "ichidan"
+  },
+  "miseru": {
+    "type": "verb",
+    "word": "見せる",
+    "romaji": "miseru",
+    "meaning": "toshow; todisplay",
+    "wStem": "見せ",
+    "rStem": "mise",
+    "category": "ichidan"
+  },
+  "motsu": {
+    "type": "verb",
+    "word": "持つ",
+    "romaji": "motsu",
+    "meaning": "tohold",
+    "wStem": "持",
+    "rStem": "mo",
+    "category": "godan"
+  },
+  "naku": {
+    "type": "verb",
+    "word": "鳴く",
+    "romaji": "naku",
+    "meaning": "animalnoise.tochirp",
+    "wStem": "鳴",
+    "rStem": "na",
+    "category": "godan"
+  },
+  "nakusu": {
+    "type": "verb",
+    "word": "無くす",
+    "romaji": "nakusu",
+    "meaning": "tolose(something)",
+    "wStem": "無く",
+    "rStem": "naku",
+    "category": "godan"
+  },
+  "naraberu": {
+    "type": "verb",
+    "word": "並べる",
+    "romaji": "naraberu",
+    "meaning": "tolineup, tosetup",
+    "wStem": "並べ",
+    "rStem": "narabe",
+    "category": "ichidan"
+  },
+  "narabu": {
+    "type": "verb",
+    "word": "並ぶ",
+    "romaji": "narabu",
+    "meaning": "tolineup",
+    "wStem": "並",
+    "rStem": "nara",
+    "category": "godan"
+  },
+  "narau": {
+    "type": "verb",
+    "word": "習う",
+    "romaji": "narau",
+    "meaning": "tobetaught; tolearn",
+    "wStem": "習",
+    "rStem": "nara",
+    "category": "godan"
+  },
+  "neru": {
+    "type": "verb",
+    "word": "寝る",
+    "romaji": "neru",
+    "meaning": "tosleep",
+    "wStem": "寝",
+    "rStem": "ne",
+    "category": "ichidan"
+  },
+  "noboru": {
+    "type": "verb",
+    "word": "登る",
+    "romaji": "noboru",
+    "meaning": "toclimb",
+    "wStem": "登",
+    "rStem": "nobo",
+    "category": "godan"
+  },
+  "nomu": {
+    "type": "verb",
+    "word": "飲む",
+    "romaji": "nomu",
+    "meaning": "todrink",
+    "wStem": "飲",
+    "rStem": "no",
+    "category": "godan"
+  },
+  "noru": {
+    "type": "verb",
+    "word": "乗る",
+    "romaji": "noru",
+    "meaning": "togeton(train, plane, etc.)",
+    "wStem": "乗",
+    "rStem": "no",
+    "category": "godan"
+  },
+  "nugu": {
+    "type": "verb",
+    "word": "脱ぐ",
+    "romaji": "nugu",
+    "meaning": "totakeoffclothes",
+    "wStem": "脱",
+    "rStem": "nu",
+    "category": "godan"
+  },
+  "oboeru": {
+    "type": "verb",
+    "word": "覚える",
+    "romaji": "oboeru",
+    "meaning": "toremember",
+    "wStem": "覚え",
+    "rStem": "oboe",
+    "category": "ichidan"
+  },
+  "okiru": {
+    "type": "verb",
+    "word": "起きる",
+    "romaji": "okiru",
+    "meaning": "togetup; towakeup",
+    "wStem": "起き",
+    "rStem": "oki",
+    "category": "ichidan"
+  },
+  "oku": {
+    "type": "verb",
+    "word": "置く",
+    "romaji": "oku",
+    "meaning": "toput; toplace​",
+    "wStem": "置",
+    "rStem": "o",
+    "category": "godan"
+  },
+  "oriru": {
+    "type": "verb",
+    "word": "降りる",
+    "romaji": "oriru",
+    "meaning": "togetoff",
+    "wStem": "降り",
+    "rStem": "ori",
+    "category": "ichidan"
+  },
+  "oshieru": {
+    "type": "verb",
+    "word": "教える",
+    "romaji": "oshieru",
+    "meaning": "toteach",
+    "wStem": "教え",
+    "rStem": "oshie",
+    "category": "ichidan"
+  },
+  "osu": {
+    "type": "verb",
+    "word": "押す",
+    "romaji": "osu",
+    "meaning": "topush; topress​",
+    "wStem": "押",
+    "rStem": "o",
+    "category": "godan"
+  },
+  "owaru": {
+    "type": "verb",
+    "word": "終る",
+    "romaji": "owaru",
+    "meaning": "tofinish; toend",
+    "wStem": "終",
+    "rStem": "owa",
+    "category": "godan"
+  },
+  "oyogu": {
+    "type": "verb",
+    "word": "泳ぐ",
+    "romaji": "oyogu",
+    "meaning": "toswim",
+    "wStem": "泳",
+    "rStem": "oyo",
+    "category": "godan"
+  },
+  "renshuusuru": {
+    "type": "verb",
+    "word": "練習する",
+    "romaji": "renshuusuru",
+    "meaning": "topractice",
+    "category": "irregular-suru",
+    "wStem": "練習",
+    "rStem": "renshuu"
+  },
+  "ryokousuru": {
+    "type": "verb",
+    "word": "旅行する",
+    "romaji": "ryokousuru",
+    "meaning": "totravel",
+    "category": "irregular-suru",
+    "wStem": "旅行",
+    "rStem": "ryokou"
+  },
+  "ryourisuru": {
+    "type": "verb",
+    "word": "料理する",
+    "romaji": "ryourisuru",
+    "meaning": "tocook",
+    "category": "irregular-suru",
+    "wStem": "料理",
+    "rStem": "ryouri"
+  },
+  "saku": {
+    "type": "verb",
+    "word": "咲く",
+    "romaji": "saku",
+    "meaning": "tobloom",
+    "wStem": "咲",
+    "rStem": "sa",
+    "category": "godan"
+  },
+  "sanposuru": {
+    "type": "verb",
+    "word": "散歩する",
+    "romaji": "sanposuru",
+    "meaning": "togoforawalk",
+    "category": "irregular-suru",
+    "wStem": "散歩",
+    "rStem": "sanpo"
+  },
+  "sasu": {
+    "type": "verb",
+    "word": "差す",
+    "romaji": "sasu",
+    "meaning": "tostretchouthands, toraisean",
+    "wStem": "差",
+    "rStem": "sa",
+    "category": "godan"
+  },
+  "sentakusuru": {
+    "type": "verb",
+    "word": "洗濯する",
+    "romaji": "sentakusuru",
+    "meaning": "towashlaundry",
+    "category": "irregular-suru",
+    "wStem": "洗濯",
+    "rStem": "sentaku"
+  },
+  "shigotosuru": {
+    "type": "verb",
+    "word": "仕事する",
+    "romaji": "shigotosuru",
+    "meaning": "towork",
+    "category": "irregular-suru",
+    "wStem": "仕事",
+    "rStem": "shigoto"
+  },
+  "shimaru": {
+    "type": "verb",
+    "word": "閉まる",
+    "romaji": "shimaru",
+    "meaning": "toclose, tobeclosed",
+    "wStem": "閉ま",
+    "rStem": "shima",
+    "category": "godan"
+  },
+  "shimeru": {
+    "type": "verb",
+    "word": "締める",
+    "romaji": "shimeru",
+    "meaning": "totie; tofasten; totighten​",
+    "wStem": "締め",
+    "rStem": "shime",
+    "category": "ichidan"
+  },
+  "shimeru_101": {
+    "type": "verb",
+    "word": "閉める",
+    "romaji": "shimeru",
+    "meaning": "toclose; toshut",
+    "wStem": "閉め",
+    "rStem": "shime",
+    "category": "ichidan"
+  },
+  "shinu": {
+    "type": "verb",
+    "word": "死ぬ",
+    "romaji": "shinu",
+    "meaning": "todie",
+    "wStem": "死",
+    "rStem": "shi",
+    "category": "godan"
+  },
+  "shiru": {
+    "type": "verb",
+    "word": "知る",
+    "romaji": "shiru",
+    "meaning": "toknow",
+    "wStem": "知",
+    "rStem": "shi",
+    "category": "godan"
+  },
+  "shitsumonsuru": {
+    "type": "verb",
+    "word": "質問する",
+    "romaji": "shitsumonsuru",
+    "meaning": "toaskaquestion",
+    "category": "irregular-suru",
+    "wStem": "質問",
+    "rStem": "shitsumon"
+  },
+  "soujisuru": {
+    "type": "verb",
+    "word": "掃除する",
+    "romaji": "soujisuru",
+    "meaning": "toclean",
+    "category": "irregular-suru",
+    "wStem": "掃除",
+    "rStem": "souji"
+  },
+  "sumu": {
+    "type": "verb",
+    "word": "住む",
+    "romaji": "sumu",
+    "meaning": "tolivein",
+    "wStem": "住",
+    "rStem": "su",
+    "category": "godan"
+  },
+  "suu": {
+    "type": "verb",
+    "word": "吸う",
+    "romaji": "suu",
+    "meaning": "tosmoke, tosuck",
+    "wStem": "吸",
+    "rStem": "su",
+    "category": "godan"
+  },
+  "suwaru": {
+    "type": "verb",
+    "word": "座る",
+    "romaji": "suwaru",
+    "meaning": "tosit",
+    "wStem": "座",
+    "rStem": "suwa",
+    "category": "godan"
+  },
+  "taberu": {
+    "type": "verb",
+    "word": "食べる",
+    "romaji": "taberu",
+    "meaning": "toeat",
+    "wStem": "食べ",
+    "rStem": "tabe",
+    "category": "ichidan"
+  },
+  "tanomu": {
+    "type": "verb",
+    "word": "頼む",
+    "romaji": "tanomu",
+    "meaning": "toask",
+    "wStem": "頼",
+    "rStem": "tano",
+    "category": "godan"
+  },
+  "tatsu": {
+    "type": "verb",
+    "word": "立つ",
+    "romaji": "tatsu",
+    "meaning": "tostand",
+    "wStem": "立",
+    "rStem": "ta",
+    "category": "godan"
+  },
+  "tesutosuru": {
+    "type": "verb",
+    "word": "テストする",
+    "romaji": "tesutosuru",
+    "meaning": "totakeatest",
+    "category": "irregular-suru",
+    "wStem": "テスト",
+    "rStem": "tesuto"
+  },
+  "tobu": {
+    "type": "verb",
+    "word": "飛ぶ",
+    "romaji": "tobu",
+    "meaning": "tofly; tohop",
+    "wStem": "飛",
+    "rStem": "to",
+    "category": "godan"
+  },
+  "tomaru": {
+    "type": "verb",
+    "word": "止まる",
+    "romaji": "tomaru",
+    "meaning": "tostop",
+    "wStem": "止ま",
+    "rStem": "toma",
+    "category": "godan"
+  },
+  "toru": {
+    "type": "verb",
+    "word": "撮る",
+    "romaji": "toru",
+    "meaning": "totakeaphotoorrecordafilm",
+    "wStem": "撮",
+    "rStem": "to",
+    "category": "godan"
+  },
+  "toru_118": {
+    "type": "verb",
+    "word": "取る",
+    "romaji": "toru",
+    "meaning": "totake",
+    "wStem": "取",
+    "rStem": "to",
+    "category": "godan"
+  },
+  "tsukareru": {
+    "type": "verb",
+    "word": "疲れる",
+    "romaji": "tsukareru",
+    "meaning": "togettired",
+    "wStem": "疲れ",
+    "rStem": "tsukare",
+    "category": "ichidan"
+  },
+  "tsukau": {
+    "type": "verb",
+    "word": "使う",
+    "romaji": "tsukau",
+    "meaning": "touse",
+    "wStem": "使",
+    "rStem": "tsuka",
+    "category": "godan"
+  },
+  "tsukeru": {
+    "type": "verb",
+    "word": "付ける",
+    "romaji": "tsukeru",
+    "meaning": "toturnon",
+    "wStem": "付け",
+    "rStem": "tsuke",
+    "category": "ichidan"
+  },
+  "tsuku": {
+    "type": "verb",
+    "word": "着く",
+    "romaji": "tsuku",
+    "meaning": "toarriveat",
+    "wStem": "着",
+    "rStem": "tsu",
+    "category": "godan"
+  },
+  "tsukuru": {
+    "type": "verb",
+    "word": "作る",
+    "romaji": "tsukuru",
+    "meaning": "tomake",
+    "wStem": "作",
+    "rStem": "tsuku",
+    "category": "godan"
+  },
+  "tsutomeru": {
+    "type": "verb",
+    "word": "勤める",
+    "romaji": "tsutomeru",
+    "meaning": "toworkforsomeone",
+    "wStem": "勤め",
+    "rStem": "tsutome",
+    "category": "ichidan"
+  },
+  "umareru": {
+    "type": "verb",
+    "word": "生まれる",
+    "romaji": "umareru",
+    "meaning": "tobeborn",
+    "wStem": "生まれ",
+    "rStem": "umare",
+    "category": "ichidan"
+  },
+  "uru": {
+    "type": "verb",
+    "word": "売る",
+    "romaji": "uru",
+    "meaning": "tosell",
+    "wStem": "売",
+    "rStem": "u",
+    "category": "godan"
+  },
+  "utau": {
+    "type": "verb",
+    "word": "歌う",
+    "romaji": "utau",
+    "meaning": "tosing",
+    "wStem": "歌",
+    "rStem": "uta",
+    "category": "godan"
+  },
+  "wakaru": {
+    "type": "verb",
+    "word": "分かる",
+    "romaji": "wakaru",
+    "meaning": "tounderstand",
+    "wStem": "分か",
+    "rStem": "waka",
+    "category": "godan"
+  },
+  "wasureru": {
+    "type": "verb",
+    "word": "忘れる",
+    "romaji": "wasureru",
+    "meaning": "toforget",
+    "wStem": "忘れ",
+    "rStem": "wasure",
+    "category": "ichidan"
+  },
+  "wataru": {
+    "type": "verb",
+    "word": "渡る",
+    "romaji": "wataru",
+    "meaning": "togoacross",
+    "wStem": "渡",
+    "rStem": "wata",
+    "category": "godan"
+  },
+  "watasu": {
+    "type": "verb",
+    "word": "渡す",
+    "romaji": "watasu",
+    "meaning": "tohandover",
+    "wStem": "渡",
+    "rStem": "wata",
+    "category": "godan"
+  },
+  "yaru": {
+    "type": "verb",
+    "word": "やる",
+    "romaji": "yaru",
+    "meaning": "todo",
+    "wStem": "や",
+    "rStem": "ya",
+    "category": "godan"
+  },
+  "yasumu": {
+    "type": "verb",
+    "word": "休む",
+    "romaji": "yasumu",
+    "meaning": "tobeabsent; torest",
+    "wStem": "休",
+    "rStem": "yasu",
+    "category": "godan"
+  },
+  "yobu": {
+    "type": "verb",
+    "word": "呼ぶ",
+    "romaji": "yobu",
+    "meaning": "tocallout",
+    "wStem": "呼",
+    "rStem": "yo",
+    "category": "godan"
+  },
+  "yomu": {
+    "type": "verb",
+    "word": "読む",
+    "romaji": "yomu",
+    "meaning": "toread",
+    "wStem": "読",
+    "rStem": "yo",
+    "category": "godan"
+  }
+}

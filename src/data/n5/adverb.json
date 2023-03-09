@@ -1,0 +1,229 @@
+{
+  "ちょっと": {
+    "type": "adverb",
+    "word": "ちょっと",
+    "romaji": "chotto",
+    "meaning": "alittle"
+  },
+  "丁度": {
+    "type": "adverb",
+    "word": "丁度",
+    "kana": "ちょうど",
+    "romaji": "choudo",
+    "meaning": "exactly"
+  },
+  "大丈夫": {
+    "type": "adverb",
+    "word": "大丈夫",
+    "kana": "だいじょうぶ",
+    "romaji": "daijoubu",
+    "meaning": "OK; okay; alright"
+  },
+  "だんだん": {
+    "type": "adverb",
+    "word": "だんだん",
+    "romaji": "dandan",
+    "meaning": "gradually"
+  },
+  "どう": {
+    "type": "adverb",
+    "word": "どう",
+    "romaji": "dou",
+    "meaning": "how(about); inwhatway"
+  },
+  "どうも": {
+    "type": "adverb",
+    "word": "どうも",
+    "romaji": "doumo",
+    "meaning": "much(thanks); very(sorry)"
+  },
+  "どうして": {
+    "type": "adverb",
+    "word": "どうして",
+    "romaji": "doushite",
+    "meaning": "why; forwhatreason"
+  },
+  "どうぞ": {
+    "type": "adverb",
+    "word": "どうぞ",
+    "romaji": "douzo",
+    "meaning": "please"
+  },
+  "初めて": {
+    "type": "adverb",
+    "word": "初めて",
+    "kana": "はじめて",
+    "romaji": "hajimete",
+    "meaning": "forthefirsttime"
+  },
+  "一人": {
+    "type": "adverb",
+    "word": "一人",
+    "kana": "ひとり",
+    "romaji": "hitori",
+    "meaning": "byoneself; alone"
+  },
+  "一番": {
+    "type": "adverb",
+    "word": "一番",
+    "kana": "いちばん",
+    "romaji": "ichiban",
+    "meaning": "numberone; 1st, best; most"
+  },
+  "いかが": {
+    "type": "adverb",
+    "word": "いかが",
+    "romaji": "ikaga",
+    "meaning": "howabout; inwhatway"
+  },
+  "いくら": {
+    "type": "adverb",
+    "word": "いくら",
+    "romaji": "ikura",
+    "meaning": "howmuch%3F; howmany%3F"
+  },
+  "いくつ": {
+    "type": "adverb",
+    "word": "いくつ",
+    "romaji": "ikutsu",
+    "meaning": "howmany%3F, howold%3F"
+  },
+  "色々": {
+    "type": "adverb",
+    "word": "色々",
+    "kana": "いろいろ",
+    "romaji": "iroiro",
+    "meaning": "various"
+  },
+  "一緒に": {
+    "type": "adverb",
+    "word": "一緒に",
+    "kana": "いっしょに",
+    "romaji": "isshoni",
+    "meaning": "together"
+  },
+  "いつも": {
+    "type": "adverb",
+    "word": "いつも",
+    "romaji": "itsumo",
+    "meaning": "always; usually"
+  },
+  "結構": {
+    "type": "adverb",
+    "word": "結構",
+    "kana": "けっこう",
+    "romaji": "kekkou",
+    "meaning": "splendid, enough"
+  },
+  "まだ": {
+    "type": "adverb",
+    "word": "まだ",
+    "romaji": "mada",
+    "meaning": "still; notyet"
+  },
+  "まだ～ていません": {
+    "type": "adverb",
+    "word": "まだ～ていません",
+    "romaji": "mada ~te imasen",
+    "meaning": "havenotyet~"
+  },
+  "前に": {
+    "type": "adverb",
+    "word": "前に",
+    "kana": "まえに",
+    "romaji": "maeni",
+    "meaning": "before; infrontof~"
+  },
+  "真っ直ぐ": {
+    "type": "adverb",
+    "word": "真っ直ぐ",
+    "kana": "まっすぐ",
+    "romaji": "massugu",
+    "meaning": "straightahead, direct"
+  },
+  "みんな": {
+    "type": "adverb",
+    "word": "みんな",
+    "romaji": "minna",
+    "meaning": "all; everyone; everybody"
+  },
+  "もっと": {
+    "type": "adverb",
+    "word": "もっと",
+    "romaji": "motto",
+    "meaning": "more; longer; further"
+  },
+  "もう": {
+    "type": "adverb",
+    "word": "もう",
+    "romaji": "mou",
+    "meaning": "already; anymore; again"
+  },
+  "何故": {
+    "type": "adverb",
+    "word": "何故",
+    "kana": "なぜ",
+    "romaji": "naze",
+    "meaning": "why; how"
+  },
+  "同じ": {
+    "type": "adverb",
+    "word": "同じ",
+    "kana": "おなじ",
+    "romaji": "onaji",
+    "meaning": "same"
+  },
+  "直ぐに": {
+    "type": "adverb",
+    "word": "直ぐに",
+    "kana": "すぐに",
+    "romaji": "suguni",
+    "meaning": "immediately; instantly"
+  },
+  "少し": {
+    "type": "adverb",
+    "word": "少し",
+    "kana": "すこし",
+    "romaji": "sukoshi",
+    "meaning": "alittle(bit); few; "
+  },
+  "多分": {
+    "type": "adverb",
+    "word": "多分",
+    "kana": "たぶん",
+    "romaji": "tabun",
+    "meaning": "perhaps; probably"
+  },
+  "大変": {
+    "type": "adverb",
+    "word": "大変",
+    "kana": "たいへん",
+    "romaji": "taihen",
+    "meaning": "very; greatly; terribly"
+  },
+  "時々": {
+    "type": "adverb",
+    "word": "時々",
+    "kana": "ときどき",
+    "romaji": "tokidoki",
+    "meaning": "sometimes; attimes"
+  },
+  "とても": {
+    "type": "adverb",
+    "word": "とても",
+    "romaji": "totemo",
+    "meaning": "very; exceedingly"
+  },
+  "よく": {
+    "type": "adverb",
+    "word": "よく",
+    "romaji": "yoku",
+    "meaning": "often, well"
+  },
+  "ゆっくり": {
+    "type": "adverb",
+    "word": "ゆっくり",
+    "romaji": "yukkuri",
+    "meaning": "slowly"
+  }
+}

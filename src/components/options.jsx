@@ -2,7 +2,7 @@ import { useState } from "react"
 // Particles should have an advanced dropdown listing all of them
 export const OPTION_OBJECT = {
     "Format": ["Romaji", "Translate"],
-    "Words": ["Nouns", "Adjectives", "Verbs", "Adverbs"],
+    "Words": ["Noun", "Adjective", "Verb", "Adverb"],
     "Vocab Level": ["N5", "N4"],
     "Grammar Level": ["N5", "N4"],
     "Tenses": ["Plain", "Past", "Polite"],
