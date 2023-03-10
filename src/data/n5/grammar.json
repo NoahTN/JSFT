@@ -6,15 +6,17 @@
     "meaning": "must not do"
   },
   "だ": {
-    "type": "grammar",
+    "type": "verb*",
     "word": "だ",
     "romaji": "da",
+    "category": "da/desu",
     "meaning": "to be"
   },
   "です": {
-    "type": "grammar",
+    "type": "verb*",
     "word": "です",
     "romaji": "desu",
+    "category": "da/desu",
     "meaning": "to be (polite)"
   },
   "だけ": {

@@ -1,6 +1,7 @@
 import {describe, expect, test} from "vitest";
 import { getRandomWord, generateProblem } from "/src/components/generator";
 import { logProblem } from "./test-helper";
+import { generateSentence } from "../src/components/generator";
 
 describe("Generator Tests", () => {
     test("Should get random noun", () => {
@@ -9,7 +10,7 @@ describe("Generator Tests", () => {
         expect(noun.type).toBe("noun");
     });
 
-    test("Should get a N5 Single Noun Problem", () => {
+    test("Should get a n5 single noun problem", () => {
         const problem = generateProblem({
             "Words": ["Noun"],
             "Vocab Level": ["N5"],
@@ -21,7 +22,7 @@ describe("Generator Tests", () => {
 
     });
 
-    test("Should get a N5 Adjective-Noun Problem", () => {
+    test("Should get a n5 adjective-noun problem", () => {
         const problem = generateProblem({
             "Words": ["Noun", "Adjective"],
             "Vocab Level": ["N5"],
@@ -33,50 +34,66 @@ describe("Generator Tests", () => {
         expect(["i-adjective", "na-adjective"]).toContain(children[0].type);
         expect(children[children.length-1].type).toBe("noun");
     });
-
-    test.skip("Should get a noun, the 'wa' particlem, and an adjective", () => {
-        const problem = generateProblem("n5", {types: ["noun", "na-particle", "adjective"]});
-        expect(problem[0].type).toBe("noun");
-        expect(problem[problem].word).toBe("wa");
-        expect(["i-adjective", "na-adjective"]).toContain(problem[2].type);
-    });
     
-    test("Should get an Basic Sentence", () => {
-        const problem = generateProblem({
+    test("Should get an basic sentence", () => {
+        const options = {
             "Vocab Level": ["N5"],
             "Grammar Level": ["N5"],
             "Tenses": ["Plain"],
             "Types": ["Basic Sentence"],
-        });
-        logProblem(problem);
-        const children = problem.children;
-        if(children[children.length-1].type === "verb") { // Object, Verb
-            expect(children[0].type).toBe("noun");
-            expect(["で", "に", "へ", "と", "から"]).toContain(children[1].word);
-            expect(children[2].type).toBe("verb")
-        }
-        else { // Subject, Object, Da/Desu
-            expect(children[0].type).toBe("noun");
-            expect(["が", "で", "は"]).toContain(children[1].word);
-            expect(["na-adjective", "i-adjective", "noun"]).toContain(children[2].type);
-            expect(["だ", "です"]).toContain(children[3].word);
-        }
-    });
+        };
+        const sentenceOV = generateSentence(options, "OV");
+        logProblem(sentenceOV);
+        let children = sentenceOV.children;
+        expect(children[0].type).toBe("noun");
+        expect(["が", "は", "で", "に", "へ", "と", "から"]).toContain(children[1].word);
+        expect(children[2].type).toBe("verb");
 
-    test.skip("Should get a Regular Sentence", () => {
-        const problem = generateProblem({
-            "Vocab Level": ["N5"],
-            "Grammar Level": ["N5"],
-            "Tenses": ["Plain"],
-            "Types": ["Basic Sentence"],
-        });
-        console.log([problem.word, problem.romaji]);
-        const children = problem.children;
+        const sentenceSOV = generateSentence(options, "SOV");
+        logProblem(sentenceSOV);
+        children = sentenceSOV.children;
         expect(children[0].type).toBe("noun");
         expect(["が", "で", "は"]).toContain(children[1].word);
-        expect(children[2].type).toBe("noun")
-        expect(["で", "に", "へ", "と", "から"]).toContain(children[3].word);
-        expect(children[4].type).toBe("verb")
+        expect(["na-adjective", "i-adjective", "noun"]).toContain(children[2].type);
+        expect(children[3].type).toBe("verb*");
+    });
+
+    test("Should get a basic object-verb sentence with a past-negative conjugated verb", () => {
+        const options = {
+            "Vocab Level": ["N5"],
+            "Grammar Level": ["N5"],
+            "Tenses": ["Past-Negative"],
+            "Types": ["Basic Sentence"],
+        }
+        const sentence = generateSentence(options, "OV");
+        logProblem(sentence);
+        const children = sentence.children;
+        expect(children[0].type).toBe("noun");
+        expect(["が", "は", "で", "に", "へ", "と", "から"]).toContain(children[1].word);
+        expect(children[2].type).toBe("verb");
+        expect(children[2].form).toBe("past-negative");
+    });
+
+    test("Should get a basic subject-object-verb sentence with a past-negative conjugated da/desu", () => {
+        const options = {
+            "Vocab Level": ["N5"],
+            "Grammar Level": ["N5"],
+            "Tenses": ["Past-Negative"],
+            "Types": ["Basic Sentence"],
+        }
+        const sentence = generateSentence(options, "SOV");
+        logProblem(sentence);
+        const children = sentence.children;
+        expect(children[0].type).toBe("noun");
+        expect(["が", "で", "は"]).toContain(children[1].word);
+        expect(["na-adjective", "i-adjective", "noun"]).toContain(children[2].type);
+        if(children[3].form) {
+            expect(children[3].form).toBe("past-negative");
+        }
+        else {
+            expect(children[3].type).toBe("verb*");
+        }
+        
     });
 
     test.skip("Should get a Complex Sentence", () => {

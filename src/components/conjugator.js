@@ -1,18 +1,21 @@
 import { getLast, getSlice } from "./helper";
 
 export function getMasuForm(verb) {
-    const output = {form: "masu", verb: verb};
+    const output = {type: "verb", form: "masu", verb: verb};
     const map = {
        "う": ["い", "i"],
        "く": ["き", "ki"],
        "す": ["し", "shi"],
        "つ": ["ち", "chi"],
        "ぬ": ["に", "ni"],
-       "ふ": ["ひ", "hi"],
        "む": ["み", "mi"],
-       "る": ["り", "ri"]
+       "る": ["り", "ri"],
+       "ぐ": ["ぎ", "gi"],
+       "ぶ": ["ぎ", "ba"],
     };
-
+    if(verb.word === "desu") {
+        return verb;
+    }
     if(verb.category[1] === "r") {
         if(verb.category === "irregular-suru") {
             output.word = verb.wStem + "します";
@@ -41,12 +44,23 @@ export function getNegativeForm(verb) {
         "す": ["さ", "sa"],
         "つ": ["た", "ta"],
         "ぬ": ["な", "na"],
-        "ふ": ["は", "ha"],
         "む": ["ま", "ma"],
-        "る": ["ら", "ra"]
+        "る": ["ら", "ra"],
+        "ぐ": ["が", "ga"],
+        "ぶ": ["ば", "ba"]
      };
-    const output = {form: "negative"};
-    if(verb.category[1] === "r") {
+    const output = {type: "verb", form: "negative", verb: verb};
+    if(verb.category[2] === "/") {
+        if(verb.romaji === "da") {
+            output.word = "じゃない";
+            output.romaji = "janai";
+        }
+        else {
+            output.word = "じゃありません";
+            output.romaji = "jaarimasen";
+        }
+    }
+    else if(verb.category[1] === "r") {
         if(verb.category === "irregular-suru") {
             output.word = verb.wStem + "しない"
             output.romaji = verb.rStem + "shinai"
@@ -82,8 +96,18 @@ export function getNegativeForm(verb) {
 }
 
 export function getPastForm(verb) {
-    const output = {form: "past", verb: verb};
-    if(verb.category[1] === "r") {
+    const output = {type: "verb", form: "past", verb: verb};
+    if(verb.category[2] === "/") {
+        if(verb.romaji === "da") {
+            output.word = "だった";
+            output.romaji = "datta";
+        }
+        else {
+            output.word = "でした";
+            output.romaji = "deshita";
+        }
+    }
+    else if(verb.category[1] === "r") {
         if(verb.category === "irregular-suru") {
             output.word = verb.wStem + "した";
             output.romaji = verb.rStem + "shita";
@@ -140,9 +164,26 @@ export function getPastForm(verb) {
 }
 
 export function getPastNegaitveForm(verb) {
+    if(verb.category[2] === "/") {
+        const output = {
+            form: "past-negative",
+            type: "verb*",
+            verb: verb
+        }
+        if(verb.romaji === "da") {
+            output.word = "じゃなかった";
+            output.romaji = "janakatta";
+        }
+        else {
+            output.word = "じゃありませんでした";
+            output.romaji = "jaarimasendeshita";
+        }
+        return output;
+    }
     const negative = getNegativeForm(verb);
     return {
         form: "past-negative",
+        type: "verb",
         word: negative.wStem + "かった",
         romaji: negative.rStem + "katta",
         verb: verb
@@ -150,7 +191,7 @@ export function getPastNegaitveForm(verb) {
 }
 
 export function getTeForm(verb) {
-    const output = {form: "te", verb: verb};
+    const output = {type: "verb", form: "te", verb: verb};
     // Make sure to handle exceptions up here
     if(verb.category[1] === "r") {
         if(verb.category === "irregular-suru") {

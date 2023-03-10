@@ -1,9 +1,12 @@
 import {describe, expect, test} from "vitest";
 import { getMasuForm, getNegativeForm, getPastForm, getPastNegaitveForm, getTeForm } from "../src/components/conjugator";
 const n5Verbs = require("../src/data/n5/verb.json");
+const n5Grammar = require("../src/data/n5/grammar.json");
 
 
 describe("Conjugator Tests", () => {
+    const da = n5Grammar["だ"];
+    const desu = n5Grammar["です"];
     const benkyousuru = n5Verbs["benkyousuru"];
     const kuru = n5Verbs["kuru"];
     const taberu = n5Verbs["taberu"];
@@ -66,5 +69,16 @@ describe("Conjugator Tests", () => {
         expect(getTeForm(kiru)).toEqual(expect.objectContaining({word: "切って", romaji: "kitte"}));
         expect(getTeForm(kuru)).toEqual(expect.objectContaining({word: "来て", romaji: "kite"}));
         expect(getTeForm(toru)).toEqual(expect.objectContaining({word: "撮って", romaji: "totte"}));
+    });
+
+    test("Should get the past, negative, and past-negative form of da and desu", () => {
+        expect(getPastForm(da)).toEqual(expect.objectContaining({word: "だった", romaji: "datta"}));
+        expect(getPastForm(desu)).toEqual(expect.objectContaining({word: "でした", romaji: "deshita"}));
+        
+        expect(getNegativeForm(da)).toEqual(expect.objectContaining({word: "じゃない", romaji: "janai"}));
+        expect(getNegativeForm(desu)).toEqual(expect.objectContaining({word: "じゃありません", romaji: "jaarimasen"}));
+
+        expect(getPastNegaitveForm(da)).toEqual(expect.objectContaining({word: "じゃなかった", romaji: "janakatta"}));
+        expect(getPastNegaitveForm(desu)).toEqual(expect.objectContaining({word: "じゃありませんでした", romaji: "jaarimasendeshita"}));
     });
 })

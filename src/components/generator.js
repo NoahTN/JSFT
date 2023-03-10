@@ -1,59 +1,104 @@
 import { getLast, getSlice, getRandom, getRandomNumber } from "./helper";
 import { applyN5Grammar } from "./grammar";
-const GRAMMAR_OBJECT = require("../data/n5/grammar.json");
+import { getMasuForm, getNegativeForm, getPastForm, getPastNegaitveForm, getTeForm } from "./conjugator";
+import GRAMMAR_OBJECT from "../data/n5/grammar.json"
+import { DATA_OBJECT } from "./data";
+
+
+const randomVLevel = (options) => getRandom(options["Vocab Level"]);
+const randomGLevel = (options) => getRandom(options["Grammar Level"]);
 
 export function getRandomWord(level, type) {
     level = level.toLowerCase();
     type = type.toLowerCase();
     if(type === "adjective") {
-        type =  Math.floor(Math.random()*2) === 1 ? "i-adjective" : "na-adjective";
+        type =  getRandomNumber(2) === 0 ? "i-adjective" : "na-adjective";
     }
-    const data = require(`../data/${level}/${type}.json`);
-    const index = Math.floor(Math.random() * Object.keys(data).length);
-    return (data[Object.keys(data)[index]]);
+    const data = DATA_OBJECT[level][type];
+    const key = getRandom(Object.keys(data));
+    return data[key];
 }
 
 export function generateProblem(options) {
     const randomType = getRandom(options["Types"]);
-    const randomVLevel = () => getRandom(options["Vocab Level"]);
-    const randomGLevel = () => getRandom(options["Grammar Level"]);
 
     switch(randomType) {
         case "Single Word":
-            return getRandomWord(randomVLevel(), getRandom(options["Words"]));
+            const wordCategory = getRandom(options["Words"]);
+            if(wordCategory === "Verb") {
+                return getRandomVerbForm(randomVLevel(options), options["Tenses"])
+            }
+            return getRandomWord(randomVLevel(options), wordCategory);
         case "Adjective-Noun":
-            const adjective = getRandomWord(randomVLevel(), "Adjective");
-            const noun = getRandomWord(randomVLevel(), "Noun");
+            const adjective = getRandomWord(randomVLevel(options), "Adjective");
+            const noun = getRandomWord(randomVLevel(options), "Noun");
             if(adjective.type === "na-adjective") {
                 return formatOutput([adjective, GRAMMAR_OBJECT["な"], noun]);
             }
             return formatOutput([adjective, noun]);
         case "Basic Sentence":
-            return generateSentence("Basic", randomVLevel(), randomGLevel());
+            return generateSentence(options);
     }
 }
 
-export function generateSentence(level, vLevel, gLevel, forceOV=false) {
-    if(level[0] === "B") { // Basic, includes n5 Grammar
-        const noun  = getRandomWord(vLevel, "Noun");
-        if(getRandomNumber(2) === 0 && !forceOV) { // Subject, Object, Verb (Da/Desu)
-            let subject = formatOutput([noun, getSubjectParticle(gLevel)]);
-            let object = {};
-            if(getRandomNumber(2) === 0 && subject.word[subject.word.length-1] !== "で") {
-                object = getRandomWord(vLevel, "Adjective");
-            }
-            else {
-                object = getRandomWord(vLevel, "Noun");
-            }
-            const verb = GRAMMAR_OBJECT[getRandom(["だ", "です"])];
-            return formatOutput([subject, object, verb]);
-        } // Object, Verb
-        const object = formatOutput([noun, getObjectParticle(gLevel)]);
-        const verb =  getRandomWord(vLevel, "Verb");
-        return formatOutput([object, verb]);
+function getRandomVerbForm(level, tenses) {
+    const verb = getRandomWord(level, "verb");
+    const tense = getRandom(tenses);
+    const conjugator = {
+        "Plain": (verb) => verb,
+        "Masu": (verb) => getMasuForm(verb),
+        "Past": (verb) => getPastForm(verb),
+        "Negative": (verb) => getNegativeForm(verb),
+        "Past-Negative": (verb) => getPastNegaitveForm(verb),
+        "Te": (verb) => getTeForm(verb)
     }
-    else if(level[0] === "R") { // Regular
+    return conjugator[tense](verb);
+}
 
+function getRandomDaDesuForm(tenses) {
+    const verb = GRAMMAR_OBJECT[getRandom(["だ", "です"])];
+    const tense = getRandom(tenses.filter(t => ["Plain", "Masu", "Past", "Negative", "Past-Negative"].includes(t)));
+    const conjugator = {
+        "Plain": (verb) => verb,
+        "Masu": GRAMMAR_OBJECT["です"],
+        "Past": (verb) => getPastForm(verb),
+        "Negative": (verb) => getNegativeForm(verb),
+        "Past-Negative": (verb) => getPastNegaitveForm(verb)
+    }
+    return conjugator[tense](verb);
+}
+
+function getSOVSentence(options) {
+    let noun  = getRandomWord(randomVLevel(options), "Noun");
+    let subject = formatOutput([noun, getSubjectParticle(randomGLevel(options))]);
+    let object = {};
+    if(getRandomNumber(2) === 0 && subject.word[subject.word.length-1] !== "で")
+        object = getRandomWord(randomVLevel(options), "Adjective");
+    else
+        object = getRandomWord(randomVLevel(options), "Noun");
+    let verb = getRandomDaDesuForm(options["Tenses"]);
+    return formatOutput([subject, object, verb]);
+}
+
+function getOVSentence(options) {
+    let noun  = getRandomWord(randomVLevel(options), "Noun");
+    let object = formatOutput([noun, getObjectParticle(randomGLevel(options))]);
+    let verb =  getRandomVerbForm(randomVLevel(options), options["Tenses"]);
+    return formatOutput([object, verb]);
+}
+
+export function generateSentence(options, force="") {
+    const typeIndex = options["Types"].indexOf("Basic Sentence");
+    let difficulty = getRandom(options["Types"]).slice(typeIndex);
+
+    if(difficulty[0] === "B") { // Basic
+        if((getRandomNumber(2) === 0 && force !== "OV") || force === "SOV") {
+            return getSOVSentence(options);
+        }
+        return getOVSentence(options);
+    }
+    else if(difficulty[0] === "R") { // Regular, includes n5 grammar
+        
     }
     else { // Complex
 
@@ -67,10 +112,10 @@ function getSubjectParticle(gLevel) {
         return getRandom(particles);
     }
 }
-
+// Need to tag SOME nouns with stuff like location for use with ni, de, he, etc.
 function getObjectParticle(gLevel) { 
     if(gLevel === "N5") {
-        const particles = ["で", "に", "へ", "と", "から"].map(p => GRAMMAR_OBJECT[p]);
+        const particles = ["が", "は", "で", "に", "へ", "と", "から"].map(p => GRAMMAR_OBJECT[p]);
         return getRandom(particles);
     }
 }

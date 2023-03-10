@@ -4,7 +4,7 @@ import OptionBox, { OPTION_OBJECT } from "./options";
 
 function Interactor(props) {
     const inputRef = useRef();
-    const [problem, setProblem] = useState(props?.debug?.problem ?? null)
+    const [problem, setProblem] = useState(null);
     const [expectedAnswer, setExpectedAnswer] = useState(props?.debug?.expected ?? null);
     const [answerStatus, setAnswerStatus] = useState("");
     const [options, setOptions] = useState(() => {
@@ -14,11 +14,23 @@ function Interactor(props) {
                 temp[k] = Array(v.length).fill("");
                 temp[k][0] = v[0];
             })
-            temp["Particles"][0] = "";
-            temp["Grammar"][0] = "";
             return temp;
         }
     });
+
+    useEffect(() => {
+        console.log(problem);
+    }, [problem]);
+
+    function handleGenerateProblem() {
+        const temp = {...options};
+        for(let key of Object.keys(temp)) {
+            temp[key] = temp[key].filter(value => value);
+        }
+        const generated = generateProblem(temp);
+        setProblem(generated);
+        setExpectedAnswer(generated.romaji);
+    }
 
     function handleRequestSubmit() {
 
@@ -52,11 +64,13 @@ function Interactor(props) {
 
     return <div id="interactor">
         <div id="problem-box">
-            { problem }
+            <div id="prompt">
+                { problem?.word }
+            </div>
             <div id="correct-answer">
                 { expectedAnswer }
             </div>
-            <button onClick={() => generateProblem(options)}>
+            <button onClick={ handleGenerateProblem }>
                 Generate
             </button>
         </div>

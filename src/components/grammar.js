@@ -1,13 +1,14 @@
 import { getLast, getSlice, getRandom } from "./helper";
 import { getTeForm } from "./conjugator";
-const GRAMMAR_OBJECT = require("../data/n5/grammar.json");
+import GRAMMAR_OBJECT from "../data/n5/grammar.json";
 
-export function applyN5Grammar(problem, level, vocabLevel, category="") {
+export function applyN5Grammar(problem, difficulty, vocabLevel, category="") {
     function getPossibleModifications() {
         const output = [];
         const verbIndex = problem.breakpoints.types.indexOf("verb");
-        if(verbIndex !== -1 && !problem.children[verbIndex].conjugation) {
+        if(verbIndex !== -1 && !problem.children[verbIndex].form) {
             output.push("ちゃいけない");
+           // output.push("だけ");
         }
         return output;
     }
@@ -44,12 +45,12 @@ export function applyN5Grammar(problem, level, vocabLevel, category="") {
     //     return getRandom(Object.entries(grammar));
     // }
 
-    if(level[0] === "B") {
-        // Apply one grammar
-    }
-    else if(level[0] === "R") {
-        // Apply up to two grammar
-    }
-    return grammar[category]();
+    // if(difficulty[0] === "B") {
+    //     // Apply one grammar
+    // }
+    // else if(difficulty[0] === "R") {
+    //     // Apply up to two grammar
+    // }
+    // return grammar[category]();
     
 }
