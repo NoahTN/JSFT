@@ -1,12 +1,13 @@
 import { useState } from "react"
+import "./styles/options.css";
 // Particles should have an advanced dropdown listing all of them
 export const OPTION_OBJECT = {
     "Format": ["Romaji", "Translate"],
     "Words": ["Noun", "Adjective", "Verb", "Adverb"],
     "Vocab Level": ["N5", "N4"],
-    "Grammar Level": ["N5", "N4"],
     "Tenses": ["Plain", "Masu", "Past", "Negative", "Past-Negative", "Te"],
-    "Types": ["Single Word", "Adjective-Noun", "Basic Sentence", "Regular Sentence", "Complex Sentence"],
+    "Types": ["Single Word", "Adjective-Noun", "Basic Sentence", "N5 Grammar"],
+    "Extra": ["Hints"]
 }
 
 function OptionBox(props) {
@@ -27,7 +28,7 @@ function OptionGroup(props) {
     function handleChange(i) {
         const copy = [...checked];
         // Checking sentence should automatically include at least noun, verb, think about adverbs and adjectives too
-        if(!["Particles", "Grammar"].includes(props.name) && copy.reduce((sum, curr) => sum + (curr.length > 0), 0) < 2 && copy[i]) {
+        if(!["Extra"].includes(props.name) && copy.reduce((sum, curr) => sum + (curr.length > 0), 0) < 2 && copy[i]) {
             return;
         }
         if(copy[i]) {
@@ -46,6 +47,7 @@ function OptionGroup(props) {
             <Option
                 key={ item }
                 label={ item }
+                group={ props.name }
                 handleChange={() => handleChange(index)}
                 isChecked={ checked[index] }
             />
@@ -54,15 +56,17 @@ function OptionGroup(props) {
 }
 
 function Option(props) {
-    return <label className="option">
+    return <>
        <input
           type="checkbox"
+          id={ props.group + "_" + props.label }
+          className="option-input"
           aria-label= { props.label }
           onChange={ props.handleChange }
           checked={ props.isChecked }
        />
-       { props.label }
-    </label>
+       <label className="option-label" htmlFor={ props.group + "_" + props.label }>{ props.label }</label>
+    </>
 }
 
 export default OptionBox;

@@ -69,6 +69,7 @@ describe("Conjugator Tests", () => {
         expect(getTeForm(kiru)).toEqual(expect.objectContaining({word: "切って", romaji: "kitte"}));
         expect(getTeForm(kuru)).toEqual(expect.objectContaining({word: "来て", romaji: "kite"}));
         expect(getTeForm(toru)).toEqual(expect.objectContaining({word: "撮って", romaji: "totte"}));
+        expect(getTeForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強して", romaji: "benkyoushite"}));
     });
 
     test("Should get the past, negative, and past-negative form of da and desu", () => {

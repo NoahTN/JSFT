@@ -39,7 +39,7 @@ export function applyN5Grammar(problem, difficulty, vocabLevel, category="") {
         return grammar[category]();
     }
     const randomGrammar = getRandom(getPossibleModifications());
-    return grammar[randomGrammar[0]]();
+    return grammar[randomGrammar]();
 
     // if(!category) {
     //     return getRandom(Object.entries(grammar));

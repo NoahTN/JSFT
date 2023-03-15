@@ -195,8 +195,8 @@ export function getTeForm(verb) {
     // Make sure to handle exceptions up here
     if(verb.category[1] === "r") {
         if(verb.category === "irregular-suru") {
-            output.word = "して";
-            output.romaji = "shite";
+            output.word = getSlice(verb.word, 0, 2) + "して";
+            output.romaji = getSlice(verb.romaji, 0, 4) + "shite";
         }
         else {
             output.word = verb.wStem + "て";
