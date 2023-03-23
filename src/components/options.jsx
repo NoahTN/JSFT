@@ -2,14 +2,13 @@ import { useState } from "react"
 import "./styles/options.css";
 // Particles should have an advanced dropdown listing all of them
 export const OPTION_OBJECT = {
-    "Format": ["Romaji", "Translate"],
     "Words": ["Noun", "Adjective", "Verb", "Adverb"],
     "Vocab Level": ["N5", "N4"],
-    "Tenses": ["Plain", "Masu", "Past", "Negative", "Past-Negative", "Te"],
+    "Tenses": ["Plain", "Polite", "Past", "Negative", "Te", "Provisional", "Conditional", 
+               "Imperative", "Volitional", "Potential", "Passive", "Causative"],
     "Types": ["Single Word", "Adjective-Noun", "Basic Sentence", "N5 Grammar"],
-    "Extra": ["Hints"]
+    "Extra": ["Hints", "Display Characters"]
 }
-
 function OptionBox(props) {
     return <div id="options-box">
         {Object.entries(props.initialSettings).map(([k, v]) => 

@@ -1,8 +1,8 @@
 {
   "ちゃいけない": {
     "type": "grammar",
-    "word": ["ちゃいけない", "じゃいけない"],
-    "romaji": ["chaikenai", "jaikenai"],
+    "word": "ちゃいけない/じゃいけない",
+    "romaji": "chaikenai/jaikenai",
     "meaning": "must not do"
   },
   "だ": {
@@ -16,6 +16,7 @@
     "type": "verb*",
     "word": "です",
     "romaji": "desu",
+    "form": "polite",
     "category": "da/desu",
     "meaning": "to be (polite)"
   },
@@ -71,7 +72,7 @@
     "type": "grammar",
     "word": "が",
     "romaji": "ga",
-    "meaning": "subject marker; however; but"
+    "meaning": "subject marker"
   },
   "がある": {
     "type": "grammar",

@@ -18,6 +18,10 @@
     border-radius: 10px;
 }
 
+#options-box {
+    display: inline-block;
+}
+
 .option-label:hover {
     cursor: pointer;
     background: #454545;

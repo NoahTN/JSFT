@@ -23,9 +23,15 @@ export function applyN5Grammar(problem, difficulty, vocabLevel, category="") {
                 rSuffix = "jaikenai"
             }
             problem.word = getSlice(problem.word, 0, problem.children[verbIndex].word.length) + getSlice(teForm.word, 0, 1) + wSuffix;
-            problem.romaji = getSlice(problem.romaji, 0, problem.children[verbIndex].romaji.length) + getSlice(teForm.romaji, 0, 2) + rSuffix;
+            let offset = 2;
+            if(teForm.word[teForm.word.length-2] === "っ") {
+                offset = 3;
+                rSuffix = "cchaikenai";
+            }
+            console.log(getSlice(teForm.word, 0, 2));
+            problem.romaji = getSlice(problem.romaji, 0, problem.children[verbIndex].romaji.length) + getSlice(teForm.romaji, 0, offset) + rSuffix;
             problem.children.push(GRAMMAR_OBJECT["ちゃいけない"]);
-            problem.children[verbIndex].conjugation = "te-form";
+            problem.children[verbIndex] = teForm;
             problem.breakpoints.words[problem.breakpoints.words.length-1] -= (problem.children[verbIndex].word.length - teForm.word.length);
             problem.breakpoints.words.push(getLast(problem.breakpoints.words)+wSuffix.length);
             problem.breakpoints.romaji[problem.breakpoints.romaji.length-1] -= (problem.children[verbIndex].romaji.length - teForm.romaji.length);
@@ -39,6 +45,10 @@ export function applyN5Grammar(problem, difficulty, vocabLevel, category="") {
         return grammar[category]();
     }
     const randomGrammar = getRandom(getPossibleModifications());
+    // No possible modifcations
+    if(!randomGrammar) {
+        return null;
+    }
     return grammar[randomGrammar]();
 
     // if(!category) {

@@ -1,4 +1,3 @@
-import './App.css'
 import Interactor from './components/interactor'
 
 function App() {

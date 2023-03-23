@@ -4,7 +4,7 @@ import { logProblem } from "./test-helper";
 import { generateSentence } from "../src/components/generator";
 
 describe("Generator Tests", () => {
-    test("Should get random noun", () => {
+    test("Should get a random noun", () => {
         const noun = getRandomWord("n5", "noun");
         console.log([noun.word, noun.romaji]);
         expect(noun.type).toBe("noun");
@@ -22,7 +22,7 @@ describe("Generator Tests", () => {
 
     });
 
-    test("Should get a n5 adjective-noun problem", () => {
+    test("Should get an n5 adjective-noun problem", () => {
         const problem = generateProblem({
             "Words": ["Noun", "Adjective"],
             "Vocab Level": ["N5"],
@@ -42,14 +42,14 @@ describe("Generator Tests", () => {
             "Tenses": ["Plain"],
             "Types": ["Basic Sentence"],
         };
-        const sentenceOV = generateSentence(options, "OV");
+        const sentenceOV = generateSentence(options, {"sentence-form": "OV"});
         logProblem(sentenceOV);
         let children = sentenceOV.children;
         expect(children[0].type).toBe("noun");
         expect(["が", "は", "で", "に", "へ", "と", "から"]).toContain(children[1].word);
         expect(children[2].type).toBe("verb");
 
-        const sentenceSOV = generateSentence(options, "SOV");
+        const sentenceSOV = generateSentence(options, {"sentence-form": "SOV"});
         logProblem(sentenceSOV);
         children = sentenceSOV.children;
         expect(children[0].type).toBe("noun");
@@ -65,7 +65,7 @@ describe("Generator Tests", () => {
             "Tenses": ["Past-Negative"],
             "Types": ["Basic Sentence"],
         }
-        const sentence = generateSentence(options, "OV");
+        const sentence = generateSentence(options, {"sentence-form": "OV"});
         logProblem(sentence);
         const children = sentence.children;
         expect(children[0].type).toBe("noun");
@@ -81,7 +81,7 @@ describe("Generator Tests", () => {
             "Tenses": ["Past-Negative"],
             "Types": ["Basic Sentence"],
         }
-        const sentence = generateSentence(options, "SOV");
+        const sentence = generateSentence(options, {"sentence-form": "SOV"});
         logProblem(sentence);
         const children = sentence.children;
         expect(children[0].type).toBe("noun");

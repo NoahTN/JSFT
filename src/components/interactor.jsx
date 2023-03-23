@@ -16,7 +16,7 @@ function Interactor(props) {
             const temp = {};
             Object.entries(OPTION_OBJECT).map(([k, v]) => {
                 temp[k] = Array(v.length).fill("");
-                if(true || k !== "Extra") {
+                if(k !== "Extra") {
                     temp[k][0] = v[0];
                 }
             })
@@ -38,7 +38,7 @@ function Interactor(props) {
         setHintInfo([]);
         setIsCorrect(null);
         setProblem(generated);
-        createPrompt(generated);
+        createPrompt(generated,  temp["Extra"].includes("Display Characters"));
     }
 
     function handleRequestSubmit() {
@@ -66,11 +66,14 @@ function Interactor(props) {
         const copy = {...options};
         copy[category] = values;
         // Enable nouns and adjectives if Adjective-Noun type is checked
-     
+        
         if(category === "Types" && values[1]) {
             copy["Words"][0] = "Nouns"
             copy["Words"][1] = "Adjectives";
         } 
+        else if(category === "Extra") {
+            createPrompt(problem, values[1]);
+        }
         setOptions(copy);
     }
 
@@ -90,14 +93,16 @@ function Interactor(props) {
         setHintInfo(output);
     }
     
-    function createPrompt(data) {
-        const promptType = getRandom(options["Format"].filter(o => o));
-        if(promptType === "Romaji") {
+    function createPrompt(data, displayChars) {
+        if(displayChars) {
             setPrompt(data.word);
         }
         else {
             if(data.children) {
-                setPrompt(data.children.map(c => c.meaning).join(" | "));
+                setPrompt(data.children.map(c => c.meaning ?? c.verb.meaning + ` (${c.form})`).join(" | "));
+            }
+            else if(data.verb) {
+                setPrompt(data.verb.meaning + ` (${data.form})`);
             }
             else {
                 setPrompt(data.meaning);
@@ -110,9 +115,9 @@ function Interactor(props) {
     function getHints() {
         if(problem && options["Extra"][0]) {
             if(problem.children) {
-                return problem.children.map(c => 
-                    <Hint key={ c.meaning } word={ c } onClick={ handleHintClick }/>
-                );
+                return problem.children.map(c => {
+                    return <Hint key={ c.word + c.romaji } word={ c } onClick={ handleHintClick }/>
+                });
             }
             return <Hint word={ problem } onClick={ handleHintClick }/>
         }

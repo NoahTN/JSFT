@@ -15,4 +15,4 @@ export const DATA_OBJECT = {
         "katakana":n5Katakana
     }
     
-} 
+}

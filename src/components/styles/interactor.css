@@ -9,11 +9,11 @@
 }
 
 #hint-box {
-    height: 4rem;
+    min-height: 4rem;
 }
 
 #hint-info {
-    height: 1.5rem;
+    min-height: 1.5rem;
 }
 
 #hint-info > span {
