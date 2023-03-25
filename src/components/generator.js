@@ -1,4 +1,4 @@
-import { getLast, getSlice, getRandom, getRandomNumber } from "./helper";
+import {  getRandom, getRandomNumber } from "./helper";
 import { applyN5Grammar } from "./grammar";
 import { getPoliteForm, getNegativeForm, getPastForm, getTeForm } from "./conjugator";
 import GRAMMAR_OBJECT from "../data/n5/grammar.json"

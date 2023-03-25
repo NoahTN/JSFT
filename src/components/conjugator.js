@@ -1,380 +1,191 @@
-import { getLast, getSlice } from "./helper";
 import GRAMMAR_OBJECT from "../data/n5/grammar.json";
+import { conjugate, conjugateAuxiliaries } from "kamiya-codec";
+import { isHiragana, toRomaji } from "wanakana";
 
 
-export function getPoliteForm(verb, form="") {
-    if(form === "negative") {
-        if(verb.category[2] === "/") {
-            return {
-                form: "polite-negative",
-                type: "verb*",
-                word:"じゃありません",
-                romaji: "jaarimasen",
-                verb: verb
-            };
-        }
-        verb = getPoliteForm(verb);
-        verb.form = "polite-negative";
-        verb.word = getSlice(verb.word, 0, 1) + "せん";
-        verb.romaji = getSlice(verb.romaji, 0, 2)  + "sen";
-        return verb;
+function isIchidan(verb) {
+    return verb.category[0] === "i";
+}
+
+function doConjugation(form, aux, verb, formName, kuruRomaji="ko") {
+    const output = {type: "verb", form: formName, verb: verb, category: verb.category};
+    let index = 0;
+    if(formName === "provisional") {
+        index = 1;
     }
 
-    const output = {type: "verb", form: "polite", verb: verb, category: verb.category};
-    const map = {
-       "う": ["い", "i"],
-       "く": ["き", "ki"],
-       "す": ["し", "shi"],
-       "つ": ["ち", "chi"],
-       "ぬ": ["に", "ni"],
-       "む": ["み", "mi"],
-       "る": ["り", "ri"],
-       "ぐ": ["ぎ", "gi"],
-       "ぶ": ["ぎ", "ba"],
-    };
-    if(verb.category[2] === "/") {
-        return GRAMMAR_OBJECT["です"];
+    if(verb.category === "irregular-suru") {
+        output.word = verb.wStem + conjugateAuxiliaries("する", aux, form)[index];
+        output.romaji = verb.rStem + toRomaji(output.word.slice(verb.wStem.length));
     }
-    if(verb.category[1] === "r") {
-        if(verb.category === "irregular-suru") {
-            output.word = verb.wStem + "します";
-            output.romaji = verb.rStem + "shimasu";
-        }
-        else {
-            output.word = verb.wStem + "ます";
-            output.romaji = getSlice(verb.rStem, 0, 1) + "imasu";
-        }
+    else if(verb.category === "irregular-kuru") {
+        output.word = conjugateAuxiliaries("来る", aux, form)[index];
+        output.romaji = kuruRomaji + toRomaji(output.word.slice(1));
+        
     }
-    else if(verb.category[1] === "c") {
-        output.word = getSlice(verb.word, 0, 1) + "ます";
-        output.romaji = getSlice(verb.romaji, 0, 2) + "masu";
+    else if(verb.type === "verb*") {
+        if(form === "Negative") {
+            output.word = verb.romaji === "da" ? "じゃない" : "じゃありません";
+        }
+        else if(form === "Ta") {
+            output.word = verb.romaji === "da" ? "だった" : "でした";
+        }
+        output.romaji = toRomaji(output.word);
     }
     else {
-        output.word = verb.wStem + map[getLast(verb.word)][0] + "ます";
-        output.romaji = verb.rStem + map[getLast(verb.word)][1]  + "masu";
+        if(formName === "volitional" && !isIchidan(verb)) {
+            index = 1;
+        }
+        output.word = conjugateAuxiliaries(verb.word, aux, form, isIchidan(verb))[index];
+        output.romaji = verb.rStem + toRomaji(output.word.slice(verb.wStem.length));
     }
     return output;
+}
+
+export function getPoliteForm(verb, form="polite") {
+    if(form !== "polite") {
+        return doConjugation("Negative", ["Masu"], verb, form, "ki");
+    }
+    return doConjugation("Dictionary", ["Masu"], verb, form, "ki");
 }
 
 export function getPastForm(verb, form="") {
     if(form === "polite") {
-        verb = getPoliteForm(verb);
-        verb.form = "past-polite"
-        verb.word = getSlice(verb.word, 0, 1) + "した";
-        verb.romaji = getSlice(verb.romaji, 0, 2) + "shita";
-        return verb;
+        return doConjugation("Ta", ["Masu"], verb, "past-polite", "ki");
     }
     else if(form === "negative") {
-        if(verb.category[2] === "/") {
-            verb.form = "past-negative";
-            if(verb.romaji === "da") {
-                verb.word = "じゃなかった";
-                verb.romaji = "janakatta";
-            }
-            else {
-               verb.word = "じゃありませんでした";
-               verb.romaji = "jaarimasendeshita";
-            }
-            return verb;
+        if(verb.type === "verb*") {
+            let output = {type: "verb", form: "past-negative", verb: verb, category: verb.category};
+            output.word = verb.romaji === "da" ? "じゃなかった" : "じゃありませんでした"
+            output.romaji = toRomaji(output.word);
+            return output;
         }
-        verb = getNegativeForm(verb);
-        verb.form = "past-negative";
-        verb.word = verb.wStem + "かった";
-        verb.romaji = verb.rStem +"katta";
-        return verb;
+        return doConjugation("Ta", ["Nai"], verb, "past-negative");
     }
     else if(form === "polite-negative") {
-        verb = getPoliteForm(verb, "negative");
-        verb.form ="past-poilte-negative"
-        verb.word = getSlice(verb.word, 0, 2) + "せんでした";
-        verb.romaji = getSlice(verb.romaji, 0, 3)  + "sendeshita"
-        return verb;
+        if(verb.type === "verb*") {
+            let output = {type: "verb", form: "past-polite-negative", verb: verb, category: verb.category};
+            output.word = "じゃありませんでした";
+            output.romaji = toRomaji(output.word);
+            return output;
+        }
+        let output = doConjugation("Negative", ["Masu"], verb, "past-polite-negative", "ki");
+        output.word +=  "でした";
+        output.romaji += "deshita";
+        return output;
     }
 
-    const output = {type: "verb", form: "past", verb: verb, category: verb.category};
-    if(verb.category[2] === "/") {
-        if(verb.romaji === "da") {
-            output.word = "だった";
-            output.romaji = "datta";
-        }
-        else {
-            output.word = "でした";
-            output.romaji = "deshita";
-        }
-    }
-    else if(verb.category[1] === "r") {
-        if(verb.category === "irregular-suru") {
-            output.word = verb.wStem + "した";
-            output.romaji = verb.rStem + "shita";
-        }
-        else {
-            output.word = verb.wStem + "た";
-            output.romaji = getSlice(verb.rStem, 0, 3) + "ita";
-        }
-    }
-    else if(verb.category[1] === "c") {
-        output.word = verb.wStem + "た";
-        output.romaji = verb.rStem + "ta";
-    }
-    else {
-        let wSuffix = "";
-        let rSuffix = "";
-        switch(getLast(verb.word)) {
-            case "く":
-                if(verb.word === "行く") {
-                    wSuffix = "った";
-                    rSuffix = "tta";
-                }
-                else {
-                    wSuffix = "いだ";
-                    rSuffix = "ita";
-                }     
-                break;
-            case "す":
-                wSuffix = "しだ";
-                rSuffix = "shita";
-                break;
-            case "ぶ":
-            case "む":
-            case "ぬ":
-                wSuffix = "んだ";
-                rSuffix = "nda";
-                break;
-            case "ぐ":
-                wSuffix = "いだ";
-                rSuffix = "ida";
-                break;
-            case "う":
-            case "つ":
-            case "る":
-                wSuffix = "った";
-                rSuffix = "tta";
-                break;
-                
-        }
-        output.word = verb.wStem + wSuffix,
-        output.romaji = verb.rStem + rSuffix
-    }
-    return output;
+    return doConjugation("Ta", [], verb, form, "ki");
 }
 
+
 export function getNegativeForm(verb) {
-    const map = {
-        "う": ["あ", "a"],
-        "く": ["か", "ka"],
-        "す": ["さ", "sa"],
-        "つ": ["た", "ta"],
-        "ぬ": ["な", "na"],
-        "む": ["ま", "ma"],
-        "る": ["ら", "ra"],
-        "ぐ": ["が", "ga"],
-        "ぶ": ["ば", "ba"]
-    };
-    const output = {type: "verb", form: "negative", verb: verb, category: verb.category};
-    if(verb.category[2] === "/") {
-        if(verb.romaji === "da") {
-            output.word = "じゃない";
-            output.romaji = "janai";
-        }
-        else {
-            output.word = "じゃありません";
-            output.romaji = "jaarimasen";
-        }
+    if(verb.type === "verb*") {
+        return doConjugation("Negative", [], verb, "negative");
     }
-    else if(verb.category[1] === "r") {
-        if(verb.category === "irregular-suru") {
-            output.word = verb.wStem + "しない"
-            output.romaji = verb.rStem + "shinai"
-        }
-        else {
-            output.word = getSlice(verb.wStem, 0, 2) + "来ない";
-            output.romaji = getSlice(verb.rStem, 0, 4) + "konai";
-        }
-    }
-    else if(verb.category[1] === "c") {
-        output.word = verb.wStem + "ない";
-        output.romaji = verb.rStem + "nai";
-    }
-    else {
-        if(getLast(verb.word) === "う") {
-            output.word = verb.wStem + "わない";
-            output.romaji = verb.rStem + "wanai";
-        }
-        else {
-            output.word = verb.wStem + map[getLast(verb.word)][0] + "ない";
-            output.romaji = verb.rStem + map[getLast(verb.word)][1] + "nai";
-        }
-    }
-    if(verb.romaji === "kuru") {
-        output.wStem = "来な";
-        output.rStem = "kona";
-    }
-    else {
-        output.wStem = getSlice(output.word, 0, 1);
-        output.rStem = getSlice(output.romaji, 0, 1);
-    }
-    return output;
+    return doConjugation("Dictionary", ["Nai"], verb, "negative");
 }
 
 export function getTeForm(verb, form="", nakuteForm=false) {
     if(form === "negative") {
-        if(verb.category[1] === "r") {
-            verb = getNegativeForm(verb);
-            verb.word = verb.wStem + (nakuteForm ? "くて" : "いで");
-            verb.romaji = verb.rStem + (nakuteForm ? "kute" : "ide");
+        let output = doConjugation("Te", ["Nai"], verb, "te-negative", "ko");
+        if(!nakuteForm) {
+            output.word = output.word.slice(0, -3) + "ないで";
+            output.romaji = output.romaji.slice(0, -6) + "naide";
         }
-        else if(verb.category[1] === "c") {
-            verb.word = verb.verb.wStem + (nakuteForm ? "なくて" : "ないで");
-            verb.romaji = verb.verb.rStem + (nakuteForm ? "nakute" : "naide");
-            verb.verb = verb;
-        }
-        else {
-            verb = getNegativeForm(verb);
-            verb.word = getSlice(verb.word, 0, 1) + (nakuteForm ? "くて" : "いで");
-            verb.romaji = getSlice(verb.romaji, 0, 1) + (nakuteForm ? "kute" : "ide");
-        }
-        verb.form = "te-negative";
-        return verb;
+        return output;
     }
-
-    const output = {type: "verb", form: "te", verb: verb, category: verb.category};
-    // Make sure to handle exceptions up here
-    if(verb.category[1] === "r") {
-        if(verb.category === "irregular-suru") {
-            output.word = getSlice(verb.word, 0, 2) + "して";
-            output.romaji = getSlice(verb.romaji, 0, 4) + "shite";
-        }
-        else {
-            output.word = verb.wStem + "て";
-            output.romaji = getSlice(verb.rStem, 0, 1) + "ite";
-        }
-    }   
-    else if(verb.category[1] === "c") {
-        output.word = verb.wStem + "て";
-        output.romaji = verb.rStem + "te";
-    }
-    else {
-        let wSuffix = "";
-        let rSuffix = "";
-        switch(getLast(verb.word)) {
-            case "く":
-                wSuffix = "いて";
-                rSuffix = "ite";
-                break;
-            case "す":
-                wSuffix = "して";
-                rSuffix = "shite";
-                break;
-            case "ぶ":
-            case "む":
-            case "ぬ":
-                wSuffix = "んで";
-                rSuffix = "nde";
-                break;
-            case "ぐ":
-                wSuffix = "いで";
-                rSuffix = "ide";
-                break;
-            case "う":
-            case "つ":
-            case "る":
-                wSuffix = "って";
-                rSuffix = "tte";
-                break;
-        }
-        output.word = verb.wStem + wSuffix,
-        output.romaji = verb.rStem + rSuffix
-    }
-    return output;
+    return  doConjugation("Te", [], verb, "te", "ki");
    
 }
 
 export function getProvisionalForm(verb, form="") {
     if(form === "negative") {
-        if(verb.category[1] === "r") {
-            if(verb.category === "irregular-suru") {
-                verb.word = verb.wStem + "しなければ";
-                verb.romaji = verb.rStem + "shinakereba";
-            }
-            else {
-                verb.word = "来なければ";
-                verb.romaji = "konakereba";
-            }
-            verb.form = "provisional-negative";
-            return verb;
-        }
-        else if(verb.category[1] === "c") {
-            verb.word = verb.wStem + "ければ";
-            verb.romaji = verb.rStem + "kereba";
-            verb.form = "provisional-negative";
-            return verb;
-        }
-        verb = getNegativeForm(verb);
-        verb.form = "provisional-negative";
-        verb.word = getSlice(verb.word, 0, 1) + "ければ";
-        verb.romaji = getSlice(verb.romaji, 0, 1) + "kereba";
-        return verb;
+        return doConjugation("Conditional", ["Nai"], verb, "provisional-negative");
     }
+    return doConjugation("Conditional", [], verb, "provisional");
+}
 
-    const output = {type: "verb", form: "provisional", verb: verb, category: verb.category};
-    if(verb.category[1] === "r") {
+export function getConditionalForm(verb, form="") {
+    if(form === "negative") {
+        return doConjugation("Tara", ["Nai"], verb, "conditional-negative");
+    }
+    return doConjugation("Tara", [], verb, "conditional", "ki");
+}
+
+export function getImperativeForm(verb, form="") {
+    return doConjugation("Imperative", [], verb, "imperative");
+}
+
+export function getVolitionalForm(verb, form="") {
+    if(form === "polite") {
+        return doConjugation("Volitional", ["Masu"], verb, "volitional-polite", "ki");
+    }
+    return doConjugation("Volitional", [], verb, "volitional");
+}
+
+export function getPotentialForm(verb, form="") {
+    if(form === "negative") {
         if(verb.category === "irregular-suru") {
-            output.word = verb.wStem + "すれば";
-            output.romaji = verb.rStem + "sureba";
+            return {type: "verb", form: "potential", word: verb.wStem + "できない", romaji: verb.rStem + "dekinai", verb: verb, category: verb.category};
+        }
+        else if(verb.category === "irregular-kuru") {
+            return {type: "verb", form: "potential", word: "来られない", romaji: "korarenai", verb: verb, category: verb.category};
+        }
+        else if(isIchidan(verb)) {
+            let output = doConjugation("Negative", ["Potential"], verb, "potential");
+            output.word = output.word.slice(0, -1) + "ら" + output.word.slice(-1) + "ない";
+            output.romaji = output.romaji.slice(0, -2) + "ra" + output.romaji.slice(-2) + "nai";
+            return output;
         }
         else {
-            output.word = "来れば";
-            output.romaji = "koreba";
+            let output = doConjugation("Negative", ["Potential"], verb, "potential-negative");
+            output.word += "ない"
+            output.romaji += "nai";
+            return output;
         }
     }
-    else if(verb.category[1] === "c") {
-        output.word = verb.wStem + "れば";
-        output.romaji = verb.rStem + "reba";
+    else if(form === "past-negative") {
+        let output = getPotentialForm(verb, "negative");
+        output.word = output.word.slice(0, -1) + "かった";
+        output.romaji = output.romaji.slice(0, -1) + "katta";
+        return output;
     }
-    else {
-        let wSuffix = "";
-        let rSuffix = "";
-        switch(getLast(verb.word)) {
-            case "く":
-                wSuffix = "けば";
-                rSuffix = "keba";  
-                break;
-            case "す":
-                wSuffix = "せば";
-                rSuffix = "seba";
-                break;
-            case "ぶ":
-                wSuffix = "べば";
-                rSuffix = "beba";
-                break;
-            case "む":
-                wSuffix = "めば";
-                rSuffix = "meba";
-                break;
-            case "ぬ":
-                wSuffix = "ねば";
-                rSuffix = "neba";
-                break;
-            case "ぐ":
-                wSuffix = "げば";
-                rSuffix = "geba";
-                break;
-            case "う":
-                wSuffix = "えば";
-                rSuffix = "eba";
-                break;
-            case "つ":
-                wSuffix = "てば";
-                rSuffix = "teba";
-                break;
-            case "る":
-                wSuffix = "れば";
-                rSuffix = "reba";
-                break;
-                
-        }
-        output.word = verb.wStem + wSuffix,
-        output.romaji = verb.rStem + rSuffix
+
+    if(verb.category === "irregular-suru") {
+        return {type: "verb", form: "potential", word: verb.wStem + "できる", romaji: verb.rStem + "dekiru", verb: verb, category: verb.category};
     }
-    return output;
+    else if(verb.category === "irregular-kuru") {
+        return {type: "verb", form: "potential", word: "来られる", romaji: "korareru", verb: verb, category: verb.category};
+    }
+    else if(isIchidan(verb)) {
+        let output = doConjugation("Dictionary", ["Potential"], verb, "potential");
+        output.word = output.word.slice(0, -2) + "ら" + output.word.slice(-2);
+        output.romaji = output.romaji.slice(0, -4) + "ra" + output.romaji.slice(-4);
+        return output;
+    }
+    return doConjugation("Dictionary", ["Potential"], verb, "potential");
+}
+
+export function getPassiveForm(verb, form="") {
+    if(form === "past") {
+        let output = doConjugation("Dictionary", ["ReruRareru"], verb, "passive-past");
+        output.word = output.word.slice(0, -1) + "た";
+        output.romaji = output.romaji.slice(0, -2) + "ta";
+        return output;
+    }
+    return doConjugation("Dictionary", ["ReruRareru"], verb, "passive");
+}
+
+export function getCausativeForm(verb, form="") {
+    if(form === "passive") {
+        return doConjugation("Dictionary", ["CausativePassive"], verb, "causative-passive");
+    }
+    else if(form === "passive-past") {
+        let output = doConjugation("Dictionary", ["CausativePassive"], verb, "causative-passive-past");
+        output.word = output.word.slice(0, -1) + "た";
+        output.romaji = output.romaji.slice(0, -2) + "ta";
+        return output;
+    }
+    return doConjugation("Dictionary", ["SeruSaseru"], verb, "causative");
 }

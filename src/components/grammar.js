@@ -1,4 +1,4 @@
-import { getLast, getSlice, getRandom } from "./helper";
+import { getLast, getRandom } from "./helper";
 import { getTeForm } from "./conjugator";
 import GRAMMAR_OBJECT from "../data/n5/grammar.json";
 
@@ -22,14 +22,14 @@ export function applyN5Grammar(problem, difficulty, vocabLevel, category="") {
                 wSuffix = "じゃいけない";
                 rSuffix = "jaikenai"
             }
-            problem.word = getSlice(problem.word, 0, problem.children[verbIndex].word.length) + getSlice(teForm.word, 0, 1) + wSuffix;
+            problem.word = problem.word.slice(0, -problem.children[verbIndex].word.length) + teForm.word.slice(0, -1)+ wSuffix;
             let offset = 2;
             if(teForm.word[teForm.word.length-2] === "っ") {
                 offset = 3;
                 rSuffix = "cchaikenai";
             }
-            console.log(getSlice(teForm.word, 0, 2));
-            problem.romaji = getSlice(problem.romaji, 0, problem.children[verbIndex].romaji.length) + getSlice(teForm.romaji, 0, offset) + rSuffix;
+            console.log(teForm.word.slice(0, -2));
+            problem.romaji = problem.romaji.slice(0, -problem.children[verbIndex].romaji.length) + teForm.romaji.slice(0, -offset) + rSuffix;
             problem.children.push(GRAMMAR_OBJECT["ちゃいけない"]);
             problem.children[verbIndex] = teForm;
             problem.breakpoints.words[problem.breakpoints.words.length-1] -= (problem.children[verbIndex].word.length - teForm.word.length);
