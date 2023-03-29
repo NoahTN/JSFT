@@ -81,13 +81,13 @@ function Interactor(props) {
         const output = [
             ["Type", word.type],
             ["Romaji", word.romaji],
-            ["Meaning", word.meaning ?? word.verb.meaning],
+            ["Meaning", word.meaning || word?.verb?.meaning || word.adjective.meaning],
         ];
         if(word.category) {
             output.push(["Category", word.category]);
         }
         if(word.form) {
-            output.unshift(["Original", word.verb.word]);
+            output.unshift(["Original", word?.verb?.word || word.adjective.word]);
             output.push(["Form", word.form]);
         }
         setHintInfo(output);
@@ -99,10 +99,13 @@ function Interactor(props) {
         }
         else {
             if(data.children) {
-                setPrompt(data.children.map(c => c.meaning ?? c.verb.meaning + ` (${c.form})`).join(" | "));
+                setPrompt(data.children.map(c => c.meaning ?? (c?.verb?.meaning || c.adjective.meaning) + ` (${c.form})`).join(" | "));
             }
             else if(data.verb) {
                 setPrompt(data.verb.meaning + ` (${data.form})`);
+            }
+            else if(data.adjective) {
+                setPrompt(data.adjective.meaning + ` (${data.form})`);
             }
             else {
                 setPrompt(data.meaning);

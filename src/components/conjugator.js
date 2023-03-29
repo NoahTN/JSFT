@@ -42,6 +42,63 @@ function doConjugation(form, aux, verb, formName, kuruRomaji="ko") {
     return output;
 }
 
+export function getAdjectiveForm(adj, form="") {
+    if(form === "plain") {
+        return adj;
+    }
+
+    const output = {type: adj.type, form:form, adjective: adj};
+    const isIAdjective = adj.type === "i-adjective";
+    const offset = isIAdjective ? -1 : Infinity;
+    if(adj.romaji === "ii") {
+        let map = {
+            "polite": "いいです",
+            "past": "よかった",
+            "negative": "よくない",
+            "past-polite": "よかったです",
+            "past-negative": "よくなかった",
+            "polite-negative": "よくないです",
+            "past-polite-negative": "よくなかったです"
+        };
+        output.word = map[form];
+        output.romaji = toRomaji(map[form]);
+        return output;
+    }
+    
+    switch(form) {
+        case "polite":
+            output.word = adj.word + "です";
+            output.romaji = adj.romaji + "desu";
+            break;
+        case "past":
+            output.word = adj.word.slice(0, offset) + (isIAdjective ? "かった" : "だった");
+            output.romaji = adj.romaji.slice(0, offset) + (isIAdjective ?  "katta" : "datta");
+            break;
+        case "negative":
+            output.word = adj.word.slice(0, offset) + (isIAdjective ? "くない" : "じゃない");
+            output.romaji = adj.romaji.slice(0, offset) + (isIAdjective ?  "kunai" : "janai");
+            break;
+        case "past-polite":
+            output.word = adj.word.slice(0, offset) + (isIAdjective ? "かったです" : "でした");
+            output.romaji = adj.romaji.slice(0, offset) + (isIAdjective ?  "kattadesu" : "deshita");
+            break;
+        case "past-negative":
+            output.word = adj.word.slice(0, offset) + (isIAdjective ? "くなかった" : "じゃなかった");
+            output.romaji = adj.romaji.slice(0, offset) + (isIAdjective ?  "kunakatta" : "janakatta");
+            break;
+        case "polite-negative":
+            output.word = adj.word.slice(0, offset) + (isIAdjective ? "くありません" : "じゃありません");
+            output.romaji = adj.romaji.slice(0, offset) + (isIAdjective ?  "kuarimasen" : "jaarimasen");
+            break;
+        case "past-polite-negative":
+            output.word = adj.word.slice(0, offset) + (isIAdjective ? "くありませんでした" : "じゃありませんでした");
+            output.romaji = adj.romaji.slice(0, offset) + (isIAdjective ?  "kuarimasendeshita" : "jaarimasendeshita");
+            break;
+    }
+        
+    return output;
+}
+
 export function getPoliteForm(verb, form="polite") {
     if(form !== "polite") {
         return doConjugation("Negative", ["Masu"], verb, form, "ki");
@@ -75,7 +132,7 @@ export function getPastForm(verb, form="") {
         return output;
     }
 
-    return doConjugation("Ta", [], verb, form, "ki");
+    return doConjugation("Ta", [], verb, "past", "ki");
 }
 
 

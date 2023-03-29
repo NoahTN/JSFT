@@ -1,418 +1,425 @@
 {
-  "危ない": {
+  "abunai": {
     "type": "i-adjective",
     "word": "危ない",
     "kana": "あぶない",
     "romaji": "abunai",
     "meaning": "dangerous"
   },
-  "赤い": {
+  "akai": {
     "type": "i-adjective",
     "word": "赤い",
     "kana": "あかい",
     "romaji": "akai",
     "meaning": "red; crimson; scarlet"
   },
-  "明るい": {
+  "akarui": {
     "type": "i-adjective",
     "word": "明るい",
     "kana": "あかるい",
     "romaji": "akarui",
     "meaning": "bright; light"
   },
-  "甘い": {
+  "amai": {
     "type": "i-adjective",
     "word": "甘い",
     "kana": "あまい",
     "romaji": "amai",
     "meaning": "sweet; sugary; naive"
   },
-  "青い": {
+  "aoi": {
     "type": "i-adjective",
     "word": "青い",
     "kana": "あおい",
     "romaji": "aoi",
     "meaning": "blue; azure"
   },
-  "新しい": {
+  "atarashii": {
     "type": "i-adjective",
     "word": "新しい",
     "kana": "あたらしい",
     "romaji": "atarashii",
     "meaning": "new; fresh; recent; latest"
   },
-  "暖かい": {
+  "atatakai": {
     "type": "i-adjective",
     "word": "暖かい",
     "kana": "あたたかい",
     "romaji": "atatakai",
     "meaning": "warm"
   },
-  "厚い": {
+  "atsui": {
     "type": "i-adjective",
     "word": "厚い",
     "kana": "あつい",
     "romaji": "atsui",
     "meaning": "thick"
   },
-  "暑い": {
+  "atsui_11": {
     "type": "i-adjective",
     "word": "暑い",
     "kana": "あつい",
     "romaji": "atsui",
     "meaning": "hot; sultry(weather)"
   },
-  "熱い": {
+  "atsui_12": {
     "type": "i-adjective",
     "word": "熱い",
     "kana": "あつい",
     "romaji": "atsui",
     "meaning": "hot(temperature)"
   },
-  "小さい": {
+  "chiisai": {
     "type": "i-adjective",
     "word": "小さい",
     "kana": "ちいさい",
     "romaji": "chiisai",
     "meaning": "small; little; tiny"
   },
-  "近い": {
+  "chikai": {
     "type": "i-adjective",
     "word": "近い",
     "kana": "ちかい",
     "romaji": "chikai",
     "meaning": "near; close"
   },
-  "古い": {
+  "furui": {
     "type": "i-adjective",
     "word": "古い",
     "kana": "ふるい",
     "romaji": "furui",
     "meaning": "old(notusedforpeople)"
   },
-  "太い": {
+  "futoi": {
     "type": "i-adjective",
     "word": "太い",
     "kana": "ふとい",
     "romaji": "futoi",
     "meaning": "fat; thick"
   },
-  "早い": {
+  "hayai": {
     "type": "i-adjective",
     "word": "早い",
     "kana": "はやい",
     "romaji": "hayai",
     "meaning": "fast; early"
   },
-  "速い": {
+  "hayai_18": {
     "type": "i-adjective",
     "word": "速い",
     "kana": "はやい",
     "romaji": "hayai",
     "meaning": "fast; quick; hasty; brisk"
   },
-  "低い": {
+  "hikui": {
     "type": "i-adjective",
     "word": "低い",
     "kana": "ひくい",
     "romaji": "hikui",
     "meaning": "short, low"
   },
-  "広い": {
+  "hiroi": {
     "type": "i-adjective",
     "word": "広い",
     "kana": "ひろい",
     "romaji": "hiroi",
     "meaning": "spacious; vast; wide"
   },
-  "欲しい": {
+  "hoshii": {
     "type": "i-adjective",
     "word": "欲しい",
     "kana": "ほしい",
     "romaji": "hoshii",
     "meaning": "want"
   },
-  "細い": {
+  "hosoi": {
     "type": "i-adjective",
     "word": "細い",
     "kana": "ほそい",
     "romaji": "hosoi",
     "meaning": "thin; slender"
   },
-  "忙しい": {
+  "isogashii": {
     "type": "i-adjective",
     "word": "忙しい",
     "kana": "いそがしい",
     "romaji": "isogashii",
     "meaning": "busy"
   },
-  "痛い": {
+  "itai": {
     "type": "i-adjective",
     "word": "痛い",
     "kana": "いたい",
     "romaji": "itai",
     "meaning": "painful; sore"
   },
-  "辛い": {
+  "karai": {
     "type": "i-adjective",
     "word": "辛い",
     "kana": "からい",
     "romaji": "karai",
     "meaning": "spicy"
   },
-  "軽い": {
+  "karui": {
     "type": "i-adjective",
     "word": "軽い",
     "kana": "かるい",
     "romaji": "karui",
     "meaning": "light"
   },
-  "可愛い": {
+  "kawaii": {
     "type": "i-adjective",
     "word": "可愛い",
     "kana": "かわいい",
     "romaji": "kawaii",
     "meaning": "cute"
   },
-  "黄色い": {
+  "kiiroi": {
     "type": "i-adjective",
     "word": "黄色い",
     "kana": "きいろい",
     "romaji": "kiiroi",
     "meaning": "yellow"
   },
-  "汚い": {
+  "kitanai": {
     "type": "i-adjective",
     "word": "汚い",
     "kana": "きたない",
     "romaji": "kitanai",
     "meaning": "dirty"
   },
-  "暗い": {
+  "kurai": {
     "type": "i-adjective",
     "word": "暗い",
     "kana": "くらい",
     "romaji": "kurai",
     "meaning": "dark; gloomy; murky"
   },
-  "黒い": {
+  "kuroi": {
     "type": "i-adjective",
     "word": "黒い",
     "kana": "くろい",
     "romaji": "kuroi",
     "meaning": "black"
   },
-  "丸い": {
+  "marui": {
     "type": "i-adjective",
     "word": "丸い",
     "kana": "まるい",
     "romaji": "marui",
     "meaning": "round, circular"
   },
-  "不味い": {
+  "mazui": {
     "type": "i-adjective",
     "word": "不味い",
     "kana": "まずい",
     "romaji": "mazui",
     "meaning": "unpleasant"
   },
-  "短い": {
+  "mijikai": {
     "type": "i-adjective",
     "word": "短い",
     "kana": "みじかい",
     "romaji": "mijikai",
     "meaning": "short"
   },
-  "難しい": {
+  "muzukashii": {
     "type": "i-adjective",
     "word": "難しい",
     "kana": "むずかしい",
     "romaji": "muzukashii",
     "meaning": "difficult"
   },
-  "長い": {
+  "nagai": {
     "type": "i-adjective",
     "word": "長い",
     "kana": "ながい",
     "romaji": "nagai",
     "meaning": "long(distance); long(time)"
   },
-  "温い": {
+  "nurui": {
     "type": "i-adjective",
     "word": "温い",
     "kana": "ぬるい",
     "romaji": "nurui",
     "meaning": "lukewarm"
   },
-  "美味しい": {
+  "oishii": {
     "type": "i-adjective",
     "word": "美味しい",
     "kana": "おいしい",
     "romaji": "oishii",
     "meaning": "delicious"
   },
-  "重い": {
+  "omoi": {
     "type": "i-adjective",
     "word": "重い",
     "kana": "おもい",
     "romaji": "omoi",
     "meaning": "heavy"
   },
-  "面白い": {
+  "omoshiroi": {
     "type": "i-adjective",
     "word": "面白い",
     "kana": "おもしろい",
     "romaji": "omoshiroi",
     "meaning": "interesting"
   },
-  "多い": {
+  "ooi": {
     "type": "i-adjective",
     "word": "多い",
     "kana": "おおい",
     "romaji": "ooi",
     "meaning": "many; numerous"
   },
-  "大きい": {
+  "ookii": {
     "type": "i-adjective",
     "word": "大きい",
     "kana": "おおきい",
     "romaji": "ookii",
     "meaning": "big; large; great; important"
   },
-  "遅い": {
+  "osoi": {
     "type": "i-adjective",
     "word": "遅い",
     "kana": "おそい",
     "romaji": "osoi",
     "meaning": "slow; time-consuming; late"
   },
-  "寒い": {
+  "samui": {
     "type": "i-adjective",
     "word": "寒い",
     "kana": "さむい",
     "romaji": "samui",
     "meaning": "cold"
   },
-  "狭い": {
+  "semai": {
     "type": "i-adjective",
     "word": "狭い",
     "kana": "せまい",
     "romaji": "semai",
     "meaning": "narrow"
   },
-  "白い": {
+  "shiroi": {
     "type": "i-adjective",
     "word": "白い",
     "kana": "しろい",
     "romaji": "shiroi",
     "meaning": "white"
   },
-  "少ない": {
+  "sukunai": {
     "type": "i-adjective",
     "word": "少ない",
     "kana": "すくない",
     "romaji": "sukunai",
     "meaning": "few; alittle; scarce"
   },
-  "涼しい": {
+  "suzushii": {
     "type": "i-adjective",
     "word": "涼しい",
     "kana": "すずしい",
     "romaji": "suzushii",
     "meaning": "refreshing, cool"
   },
-  "高い": {
+  "takai": {
     "type": "i-adjective",
     "word": "高い",
     "kana": "たかい",
     "romaji": "takai",
     "meaning": "high; tall; expensive"
   },
-  "楽しい": {
+  "tanoshii": {
     "type": "i-adjective",
     "word": "楽しい",
     "kana": "たのしい",
     "romaji": "tanoshii",
     "meaning": "enjoyable; fun"
   },
-  "遠い": {
+  "tooi": {
     "type": "i-adjective",
     "word": "遠い",
     "kana": "とおい",
     "romaji": "tooi",
     "meaning": "far"
   },
-  "詰まらない": {
+  "tsumaranai": {
     "type": "i-adjective",
     "word": "詰まらない",
     "kana": "つまらない",
     "romaji": "tsumaranai",
     "meaning": "boring"
   },
-  "冷たい": {
+  "tsumetai": {
     "type": "i-adjective",
     "word": "冷たい",
     "kana": "つめたい",
     "romaji": "tsumetai",
     "meaning": "coldtothetouch"
   },
-  "強い": {
+  "tsuyoi": {
     "type": "i-adjective",
     "word": "強い",
     "kana": "つよい",
     "romaji": "tsuyoi",
     "meaning": "powerful"
   },
-  "煩い": {
+  "urusai": {
     "type": "i-adjective",
     "word": "煩い",
     "kana": "うるさい",
     "romaji": "urusai",
     "meaning": "noisy, annoying"
   },
-  "薄い": {
+  "usui": {
     "type": "i-adjective",
     "word": "薄い",
     "kana": "うすい",
     "romaji": "usui",
     "meaning": "thin; weak"
   },
-  "若い": {
+  "wakai": {
     "type": "i-adjective",
     "word": "若い",
     "kana": "わかい",
     "romaji": "wakai",
     "meaning": "young"
   },
-  "悪い": {
+  "warui": {
     "type": "i-adjective",
     "word": "悪い",
     "kana": "わるい",
     "romaji": "warui",
     "meaning": "bad; poor; undesirable"
   },
-  "易しい": {
+  "yasashii": {
     "type": "i-adjective",
     "word": "易しい",
     "kana": "やさしい",
     "romaji": "yasashii",
     "meaning": "easy, simple"
   },
-  "安い": {
+  "yasui": {
     "type": "i-adjective",
     "word": "安い",
     "kana": "やすい",
     "romaji": "yasui",
     "meaning": "cheap; inexpensive"
   },
-  "良い": {
+  "yoi": {
     "type": "i-adjective",
     "word": "良い",
-    "kana": "よい%2Fいい",
-    "romaji": "yoi%2Fii",
+    "kana": "いい",
+    "romaji": "yoi",
     "meaning": "good"
   },
-  "弱い": {
+  "ii": {
+    "type": "i-adjective",
+    "word": "いい",
+    "kana": "いい",
+    "romaji": "ii",
+    "meaning": "good"
+  },
+  "yowai": {
     "type": "i-adjective",
     "word": "弱い",
     "kana": "よわい",
