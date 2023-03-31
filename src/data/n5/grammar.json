@@ -80,10 +80,10 @@
     "romaji": "gaaru",
     "meaning": "there is; is (non-living things)"
   },
-  "がほしい": {
+  "欲しい": {
     "type": "grammar",
-    "word": "がほしい",
-    "romaji": "gahoshii",
+    "word": "欲しい",
+    "romaji": "hoshii",
     "meaning": "to want something"
   },
   "がいる": {
@@ -266,12 +266,6 @@
     "romaji": "naru",
     "meaning": "to become"
   },
-  "んです": {
-    "type": "grammar",
-    "word": "んです",
-    "romaji": "ndesu",
-    "meaning": "to explain something; emphasis"
-  },
   "ね": {
     "type": "grammar",
     "word": "ね",
@@ -308,10 +302,16 @@
     "romaji": "no",
     "meaning": "possessive particle"
   },
-  "のです": {
+  "んです": {
     "type": "grammar",
-    "word": "のです",
-    "romaji": "nodesu",
+    "word": "んです",
+    "romaji": "ndesu",
+    "meaning": "to explain something; emphasis (polite)"
+  },
+  "んだ": {
+    "type": "grammar",
+    "word": "んだ",
+    "romaji": "nda",
     "meaning": "to explain something; emphasis"
   },
   "のが下手": {

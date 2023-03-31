@@ -43,6 +43,7 @@ function doConjugation(form, aux, verb, formName, kuruRomaji="ko") {
 }
 
 export function getAdjectiveForm(adj, form="") {
+    form = form.toLowerCase();
     if(form === "plain") {
         return adj;
     }

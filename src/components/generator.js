@@ -205,33 +205,34 @@ function getObjectParticle() {
 }
 
 function formatOutput(words) {
-    // Maybe custom breakpoints too for subject, object, etc.
-    function addBreakpoint(word) {
-        const bLenW = breakpoints.words.length;
-        const bLenR = breakpoints.romaji.length;
-        breakpoints.words.push(bLenW ? (breakpoints.words[bLenW-1] + word.word.length) : word.word.length);
-        breakpoints.romaji.push(bLenR ? (breakpoints.romaji[bLenR-1] + word.romaji.length) : word.romaji.length);
-        breakpoints.types.push(word.type);
-    }
+    // // Maybe custom breakpoints too for subject, object, etc.
+    
     
     let children = [];
-    let breakpoints = {words: [], romaji: [], types: []};
+    //let breakpoints = {words: [], romaji: []};
+    let types = [];
+    let set = new Set();
     for(let w of words) {
         if(w.children) {
             for(let c of w.children) {
                 children.push(c);
-                addBreakpoint(c);
+                // addBreakpoint(c);
+                types.push(c.type);
+                set.add(c.type);
             }
         }
         else {
             children.push(w);
-            addBreakpoint(w);
+           // addBreakpoint(w);
+            types.push(w.type);
+            set.add(w.type);
         }
     }
     return {
         word: words.map(w => w.word).join(""),
         romaji: words.map(w => w.romaji).join(" "),
         children: children,
-        breakpoints: breakpoints
-    }
+        types: types,
+        set: set
+    };
 }
