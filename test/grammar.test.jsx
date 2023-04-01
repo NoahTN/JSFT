@@ -106,4 +106,18 @@ describe("Grammar Tests", () => {
         expect(modified.word).toMatch(/欲しくない$/);
         expect(modified.romaji).toMatch(/hoshikunai$/);
     });
+
+    test("Should apply the hougaii grammar to an n5 sentence", () => {
+        let modified = applyN5Grammar(problem, options.Tenses, "Basic Sentence", "N5", "hougaii");
+        logProblem(modified, false, true);
+        expect(modified.word).toMatch(/方がいい$/);
+        expect(modified.romaji).toMatch(/hougaii$/);
+    });
+
+    test("Should apply the ichiban grammar to an n5 sentence", () => {
+        let modified = applyN5Grammar(problem, options.Tenses, "Basic Sentence", "N5", "hougaii");
+        logProblem(modified, false, true);
+        expect(modified.word).toMatch(/方がいい$/);
+        expect(modified.romaji).toMatch(/hougaii$/);
+    });
 });

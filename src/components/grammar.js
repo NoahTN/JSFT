@@ -1,32 +1,32 @@
-import { getLast, getRandom, getRandomNumber } from "./helper";
-import { getAdjectiveForm, getTeForm } from "./conjugator";
+import { getLast, getRandom, coinFlipHeads, stringSplice } from "./helper";
+import { getAdjectiveForm, getNegativeForm, getPastForm, getTeForm } from "./conjugator";
 import GRAMMAR_OBJECT from "../data/n5/grammar.json";
 import { DATA_OBJECT } from "./data";
-import { generateSentence } from "./generator";
 
 export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force="") {
-    const hasPlainVerb = checkHasPlainVerb(problem);
-    const hasDaDesu = checkHasDaDesu(problem);
+    const verbIndex = getPlainVerbIndex(problem);
+    const daDesuIndex = getDaDesuIndex(problem);
     const hasModifiableParticle = getParticleIndex(problem) !== -1;
+    const commonTenses = new Set(["Plain", "Past", "Negative"]);
 
     function getPossibleModifications() {
         const output = [];
-        if(hasPlainVerb) {
+        if(verbIndex !== -1) {
             output.push("chaikenai");
             output.push("hoshii");
+            output.push("hougaii");
         }
-        if(hasDaDesu) {
+        if(daDesuIndex !== -1) {
             output.push("darou");
             output.push("ndesu");
             output.push("doushite");
         }
-        output.push(...["dake", "ka", "donna", " douyatte"]);
+        output.push(...["dake", "ka", "donna", "douyatte", "ichiban"]);
 
         return output;
     }
     const grammar = {
         "chaikenai": () => {
-            const verbIndex = problem.types.indexOf("verb");
             const teForm = getTeForm(problem.children[verbIndex]);
             let wSuffix= "ちゃいけない";
             let rSuffix = "chaikenai";
@@ -43,11 +43,11 @@ export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force=""
             problem.romaji = problem.romaji.slice(0, -problem.children[verbIndex].romaji.length) + teForm.romaji.slice(0, -offset) + rSuffix;
             problem.children.push(GRAMMAR_OBJECT["ちゃいけない"]);
             problem.children[verbIndex] = teForm;
-            problem.types.push("chaikenai");
+            problem.indices["grammar"].push(problem.children.length-1);
             return problem;
         },
         "dake": () => {
-            let possible = getPossibleTargets(problem, hasPlainVerb);
+            let possible = getPossibleTargets(problem);
             return applyModifyWord(problem, possible, "だけ");
         },
         "darou": () => {
@@ -65,7 +65,7 @@ export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force=""
                 problem.word = problem.word.slice(0, -last.word.length);
                 problem.romaji = problem.romaji.slice(0, -last.romaji.length);
                 problem.children.pop();
-                problem.types.pop();
+                problem.indices["grammar"].pop();
             }
             problem.word += "か";
             problem.romaji += "ka";
@@ -99,14 +99,14 @@ export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force=""
             return applyModifyWord(problem, ['noun'], "どうして", true);
         },
         "douyatte": () => {
-            if(getRandomNumber(2) === 0 || !hasModifiableParticle) {
+            if(coinFlipHeads() || !hasModifiableParticle) {
                 problem = applyN5Grammar(problem, tenses, difficulty, vocabLevel, "ndesu");
                 problem = applyN5Grammar(problem, tenses, difficulty, vocabLevel, "ka");
                 return applyModifyWord(problem, ["noun"], "どうやって", true);
             }
             let index = getParticleIndex(problem);
             let pos = getPositions(problem, index);
-            if(getRandomNumber(2) === 0) {
+            if(coinFlipHeads()) {
                 problem = applyN5Grammar(problem, tenses, difficulty, vocabLevel, "ndesu");
             }
             problem = applyN5Grammar(problem, tenses, difficulty, vocabLevel, "ka");
@@ -116,15 +116,29 @@ export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force=""
             return problem;
         },
         "hoshii": () => {
-            const verbIndex = problem.types.indexOf("verb");
             const teForm = getTeForm(problem.children[verbIndex]);
-            const hoshii = getAdjectiveForm(DATA_OBJECT[vocabLevel.toLowerCase()]["i-adjective"]["hoshii"], getRandom(tenses));
+            const hoshii = getAdjectiveForm(DATA_OBJECT[vocabLevel.toLowerCase()]["i-adjective"]["hoshii"], getRandomFilteredTense(tenses, commonTenses));
             problem.word = problem.word.slice(0, -problem.children[verbIndex].word.length) + teForm.word + hoshii.word;
             problem.romaji = problem.romaji.slice(0, -problem.children[verbIndex].romaji.length) + teForm.romaji + " " + hoshii.romaji; 
             problem.children.push(hoshii);
             problem.children[verbIndex] = teForm;
-            problem.types.push("adjective");
+            problem.indices["adjective"] ??= [];
+            problem.indices["adjective"].push(problem.children.length-1);
             return problem;
+        },
+        "hougaii": () => {
+            problem = conjugateEnd(problem, verbIndex, coinFlipHeads() ? "past": "negative");
+            problem.word += "方がいい";
+            problem.romaji += " hougaii";
+            problem.children.push(GRAMMAR_OBJECT["方がいい"]);
+            return problem;
+        },
+        "ichiban": () => {
+            let gaIndex = getGaIndex(problem);
+            if(gaIndex !== -1) { //
+
+            }
+            // add adverb
         }
     }
 
@@ -151,14 +165,32 @@ export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force=""
     // return grammar[category]();
 }
 
+function conjugateEnd(problem, index, tense) {
+    if(tense !== "plain") {
+        let end = getLast(problem.children);
+        problem.word = problem.word.slice(0, -end.word.length);
+        problem.romaji = problem.romaji.slice(0, -end.romaji.length);
+        if(tense === "past") {
+            problem.children[index] = getPastForm(end);    
+        }
+        else {
+            problem.children[index] = getNegativeForm(end);
+        }
+        problem.word += problem.children[index].word;
+        problem.romaji += problem.children[index].romaji;
+    }
+    return problem;
+}
+
+function getRandomFilteredTense(tenses, set) {
+    return getRandom(tenses.filter(t => set.has(t))).toLowerCase();
+}
 
 function applyModifyWord(problem, possible, key, before=false) {
     let grammar = GRAMMAR_OBJECT[key];
     let target = getRandom(possible);
-    let index = problem.types.indexOf(target);
-    let pos = getPositions(problem, index);
-    pos[0] -= before ? problem.children[index].word.length : 0;
-    pos[1] -= before ? problem.children[index].romaji.length : 0;
+    let index = getRandom(problem.indices[target]);
+    let pos = getPositions(problem, index, before);
     problem.word = stringSplice(problem.word, pos[0], grammar.word);
     problem.romaji = stringSplice(problem.romaji, pos[1], before ? (grammar.romaji + " ") : (" " + grammar.romaji));
     problem.children.splice(before ? index : index+1, 0, grammar);
@@ -171,18 +203,18 @@ function applyReplaceDaDesu(problem, key) {
     problem.word = problem.word.slice(0, -last.word.length) + grammar.word;
     problem.romaji = problem.romaji.slice(0, -last.romaji.length) + grammar.romaji;
     problem.children.pop();
-    problem.types.pop();
+    problem.indices["grammar"].pop();
     problem.children.push(grammar);
     return problem;
 }
 
-function getPossibleTargets(problem, hasPlainVerb) {
+function getPossibleTargets(problem) {
     let result = ["noun"];
-    if(problem.set.has("i-adjective"))
+    if(problem.indices["i-adjective"])
         result.push("i-adjective");
-    if(problem.set.has("na-adjective"))
+    if(problem.indices["na-adjective"])
         result.push("na-adjective");
-    if(hasPlainVerb) {
+    if(problem.indices["verb"]) {
         result.push("verb");
     }
     return result;
@@ -198,33 +230,37 @@ function getParticleIndex(problem) {
     return -1;
 }
 
-function checkHasPlainVerb(problem) {
-    for(let c of problem.children) {
-        if(c.type === "verb" && !c.form) {
-            return true;
+function getPlainVerbIndex(problem) {
+    for(let i of problem.indices["verb"])  {
+        if(!problem.children[i].form) {
+            return i;
         }
     }
-    return false;
+    return -1;
 }
 
-function checkHasDaDesu(problem) {
-    for(let c of problem.children) {
-        if(c.type === "verb*") {
-            return true;
+function getDaDesuIndex(problem) {
+    return problem.indices["verb*"] ? problem.indices["verb*"][0] : -1;
+}
+
+function getAdverbIndex(problem) {
+    return problem.indices["adverb"] ? problem.indices["adverb"][0] : -1;
+}
+
+function getGaIndex(problem) {
+    for(let i of problem.indices["grammar"])  {
+        if(problem.romaji === "ga") {
+            return i;
         }
     }
-    return false;
+    return -1;
 }
 
-function getPositions(problem, targetIndex) {
-    let result = [problem.children[targetIndex].word.length, problem.children[targetIndex].romaji.length];
+export function getPositions(problem, targetIndex, before=false) {
+    let result = before ? [0, 0] : [problem.children[targetIndex].word.length, problem.children[targetIndex].romaji.length];
     for(let i = 0; i < targetIndex; ++i) {
         result[0] += problem.children[i].word.length;
         result[1] += problem.children[i].romaji.length+1;
     }
     return result;
-}
-
-function stringSplice(string, pos, newString) {
-    return string.slice(0, pos) + newString + string.slice(pos);
 }

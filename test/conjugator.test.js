@@ -16,9 +16,11 @@ describe("Conjugator Tests", () => {
     const taberu = n5Verbs["taberu"];
     const tsukau = n5Verbs["tsukau"];
     const aruku = n5Verbs["aruku"];
+    const aru = n5Verbs["aru"];
     const yasui = n5IAdjectives["yasui"];
     const benri = n5NaAdjectives["benri"];
     const ii = n5IAdjectives["ii"];
+    
 
     test("Should get the polite and polite-negative form of verbs", () => {
         expect(getPoliteForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強します", romaji: "benkyoushimasu"}));
@@ -37,6 +39,7 @@ describe("Conjugator Tests", () => {
         expect(getNegativeForm(kuru)).toEqual(expect.objectContaining({word: "来ない", romaji: "konai"}));
         expect(getNegativeForm(taberu)).toEqual(expect.objectContaining({word: "食べない", romaji: "tabenai"}));
         expect(getNegativeForm(tsukau)).toEqual(expect.objectContaining({word: "使わない", romaji: "tsukawanai"}));
+        expect(getNegativeForm(aru)).toEqual(expect.objectContaining({word: "ない", romaji: "nai"}));
     });
 
     test("Should get the past, past-polite, past-negative, and past-polite-negative form of verbs", () => {

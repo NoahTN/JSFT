@@ -1,5 +1,5 @@
-import {  getRandom, getRandomNumber } from "./helper";
-import { applyN5Grammar } from "./grammar";
+import {  getRandom, getRandomNumber, stringSplice, coinFlipHeads } from "./helper";
+import { applyN5Grammar, getPositions } from "./grammar";
 import { getPoliteForm, getNegativeForm, getPastForm, getTeForm, getAdjectiveForm, getProvisionalForm, getConditionalForm, getImperativeForm, getVolitionalForm, getPotentialForm, getPassiveForm, getCausativeForm } from "./conjugator";
 import GRAMMAR_OBJECT from "../data/n5/grammar.json"
 import { DATA_OBJECT } from "./data";
@@ -32,15 +32,20 @@ export function generateProblem(options) {
 export function generateSentence(options, force={}) {
     const typeIndex = options["Types"].indexOf("Basic Sentence");
     let difficulty = getRandom(options["Types"].slice(typeIndex));
-
+    let problem;
     if(difficulty[0] === "B") { // Basic
         if((getRandomNumber(options["Tenses"].length) === 0 && force["sentence-form"] !== "OV") || force["sentence-form"]=== "SOV") {
-            return getSOVSentence(options);
+            problem = getSOVSentence(options, force["ga"]);
         }
-        return getOVSentence(options);
+        problem = getOVSentence(options);
+        return applyAdverb(problem, options);
+
     }
     else if(difficulty[1] === "5") { // Regular, includes n5 grammar
-        return applyN5Grammar(getOVSentence(options, true), difficulty, getRandom(options["Vocab Level"]));
+        // grammar can take btoh sense
+        problem = coinFlipHeads() ? getSOVSentence(options) : getOVSentence(options);
+        problem = applyAdverb(problem, options);
+        return applyN5Grammar(problem, difficulty, getRandom(options["Vocab Level"]));
     }
     else { // Complex
 
@@ -52,7 +57,7 @@ export function getRandomWord(level, type) {
     level = level.toLowerCase();
     type = type.toLowerCase();
     if(type === "adjective") {
-        type =  getRandomNumber(2) === 0 ? "i-adjective" : "na-adjective";
+        type =  coinFlipHeads() ? "i-adjective" : "na-adjective";
     }
     const data = DATA_OBJECT[level][type];
     const key = getRandom(Object.keys(data));
@@ -152,17 +157,17 @@ function getRandomAdjectiveForm(level, tenses, force="") {
     return force ? getAdjectiveForm(adj, force) : getAdjectiveForm(adj, tense.toLowerCase());
 }
 
-function getSOVSentence(options) {
+function getSOVSentence(options, forceGa=false) {
     let noun  = getRandomWord(getRandom(options["Vocab Level"]), "Noun");
-    let subject = formatOutput([noun, getSubjectParticle(options)]);
+    let subject = formatOutput([noun, forceGa ? GRAMMAR_OBJECT["が"] : getSubjectParticle(options)]);
     let object = {};
-    if(getRandomNumber(2) === 0 && subject.word[subject.word.length-1] !== "で")
+    if(coinFlipHeads() && subject.word[subject.word.length-1] !== "で")
         object = getRandomAdjectiveForm(getRandom(options["Vocab Level"]), options["Tenses"]);
     else
         object = getRandomWord(getRandom(options["Vocab Level"]), "Noun");
     
     if(!object.form) {
-        let verb = getRandomNumber(2) === 0 ? GRAMMAR_OBJECT["だ"] : GRAMMAR_OBJECT["です"];
+        let verb = coinFlipHeads() ? GRAMMAR_OBJECT["だ"] : GRAMMAR_OBJECT["です"];
         return formatOutput([subject, object, verb]);
     }
     return formatOutput([subject, object]);
@@ -204,35 +209,60 @@ function getObjectParticle() {
     return getRandom(particles);
 }
 
+function applyAdverb(problem, options) {
+    if(!options?.Words?.includes("Adverb") || coinFlipHeads()) {
+        return problem;
+    }
+
+    let adverb = getRandomWord(getRandom(options["Vocab Level"]), "Adverb");
+    let possible = [];
+    for(let i = 0; i < problem.children.length; ++i) {
+        if(problem.children[i].type !== "grammar") {
+            possible.push(i);
+        }
+    }
+    let index = getRandom(possible);
+    let pos = getPositions(problem, index, true);
+    
+    problem.children.splice(index, 0, adverb);
+    problem.types.splice(index, 0, "adverb");
+    problem.word = stringSplice(problem.word, pos[0], adverb.word);
+    problem.romaji = stringSplice(problem.romaji, pos[1], adverb.romaji + " ");
+    return problem;
+}
+
 function formatOutput(words) {
     // // Maybe custom breakpoints too for subject, object, etc.
     
     
     let children = [];
     //let breakpoints = {words: [], romaji: []};
+    let indices = {};
     let types = [];
     let set = new Set();
+    let i = 0;
     for(let w of words) {
         if(w.children) {
             for(let c of w.children) {
                 children.push(c);
+                indices[c.type] ??= [];
+                indices[c.type].push(i);
+                ++i;
                 // addBreakpoint(c);
-                types.push(c.type);
-                set.add(c.type);
             }
         }
         else {
             children.push(w);
            // addBreakpoint(w);
-            types.push(w.type);
-            set.add(w.type);
+           indices[w.type] ??= [];
+           indices[w.type].push(i);
+           ++i;
         }
     }
     return {
         word: words.map(w => w.word).join(""),
         romaji: words.map(w => w.romaji).join(" "),
         children: children,
-        types: types,
-        set: set
+        indices: indices
     };
 }
