@@ -247,3 +247,11 @@ export function getCausativeForm(verb, form="") {
     }
     return doConjugation("Dictionary", ["SeruSaseru"], verb, "causative");
 }
+
+export function getMashouForm(verb) {
+    const output = {type: "verb", form: "let's ~", verb: verb, category: verb.category};
+    verb = getPoliteForm(verb);
+    output.word = verb.word.slice(0, -1) + "しょう";
+    output.romaji = verb.romaji.slice(0, -1) + "hou";
+    return output;
+}

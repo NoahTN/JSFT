@@ -6,7 +6,7 @@ export const OPTION_OBJECT = {
     "Vocab Level": ["N5", "N4"],
     "Tenses": ["Plain", "Polite", "Past", "Negative", "Te", "Provisional", "Conditional", 
                "Imperative", "Volitional", "Potential", "Passive", "Causative"],
-    "Types": ["Single Word", "Adjective-Noun", "Basic Sentence", "N5 Grammar"],
+    "Types": ["Single Word", "Adjective-Noun", "Basic Sentence", "N5 Grammar", "Complex Sentence"],
     "Extra": ["Hints", "Display Characters"]
 }
 function OptionBox(props) {

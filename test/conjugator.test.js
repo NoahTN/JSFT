@@ -1,6 +1,6 @@
 import {describe, expect, test} from "vitest";
 import { getPoliteForm, getNegativeForm, getPastForm, getTeForm, getProvisionalForm, getConditionalForm, 
-         getImperativeForm, getVolitionalForm, getPotentialForm, getPassiveForm, getCausativeForm, getAdjectiveForm } from "../src/components/conjugator";
+         getImperativeForm, getVolitionalForm, getPotentialForm, getPassiveForm, getCausativeForm, getAdjectiveForm, getMashouForm } from "../src/components/conjugator";
 const n5Verbs = require("../src/data/n5/verb.json");
 const n5IAdjectives = require("../src/data/n5/i-adjective.json");
 const n5NaAdjectives = require("../src/data/n5/na-adjective.json");
@@ -90,7 +90,7 @@ describe("Conjugator Tests", () => {
         expect(getPastForm(desu, "polite-negative")).toEqual(expect.objectContaining({word: "じゃありませんでした", romaji: "jaarimasendeshita"}));
     });
 
-  test("Should get the provisional and provisional-negative form of verbs", () => {
+     test("Should get the provisional and provisional-negative form of verbs", () => {
         expect(getProvisionalForm(aruku)).toEqual(expect.objectContaining({word: "歩けば", romaji: "arukeba"}));
         expect(getProvisionalForm(kuru)).toEqual(expect.objectContaining({word: "来れば", romaji: "koreba"}));
         expect(getProvisionalForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強すれば", romaji: "benkyousureba"}));
@@ -100,9 +100,9 @@ describe("Conjugator Tests", () => {
         expect(getProvisionalForm(kuru, "negative")).toEqual(expect.objectContaining({word: "来なければ", romaji: "konakereba"}));
         expect(getProvisionalForm(benkyousuru, "negative")).toEqual(expect.objectContaining({word: "勉強しなければ", romaji: "benkyoushinakereba"}));
         expect(getProvisionalForm(taberu, "negative")).toEqual(expect.objectContaining({word: "食べなければ", romaji: "tabenakereba"}));
-  });
+    });
 
-  test("Should get the conditonal and conditional-negative form of verbs", () => {
+    test("Should get the conditonal and conditional-negative form of verbs", () => {
         expect(getConditionalForm(aruku)).toEqual(expect.objectContaining({word: "歩いたら", romaji: "aruitara"}));
         expect(getConditionalForm(kuru)).toEqual(expect.objectContaining({word: "来たら", romaji: "kitara"}));
         expect(getConditionalForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強したら", romaji: "benkyoushitara"}));
@@ -112,16 +112,16 @@ describe("Conjugator Tests", () => {
         expect(getConditionalForm(kuru, "negative")).toEqual(expect.objectContaining({word: "来なかったら", romaji: "konakattara"}));
         expect(getConditionalForm(benkyousuru, "negative")).toEqual(expect.objectContaining({word: "勉強しなかったら", romaji: "benkyoushinakattara"}));
         expect(getConditionalForm(taberu, "negative")).toEqual(expect.objectContaining({word: "食べなかったら", romaji: "tabenakattara"}));
-  });
+    });
 
-  test("Should get the imperative form of verbs", () => {
+    test("Should get the imperative form of verbs", () => {
         expect(getImperativeForm(aruku)).toEqual(expect.objectContaining({word: "歩け", romaji: "aruke"}));
         expect(getImperativeForm(kuru)).toEqual(expect.objectContaining({word: "来い", romaji: "koi"}));
         expect(getImperativeForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強しろ", romaji: "benkyoushiro"}));
         expect(getImperativeForm(taberu)).toEqual(expect.objectContaining({word: "食べろ", romaji: "tabero"}));
-  });
+     });
 
-  test("Should get the volitional and volitional-polite form of verbs", () => {
+    test("Should get the volitional and volitional-polite form of verbs", () => {
         expect(getVolitionalForm(aruku)).toEqual(expect.objectContaining({word: "歩こう", romaji: "arukou"}));
         expect(getVolitionalForm(kuru)).toEqual(expect.objectContaining({word: "来よう", romaji: "koyou"}));
         expect(getVolitionalForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強しよう", romaji: "benkyoushiyou"}));
@@ -131,9 +131,9 @@ describe("Conjugator Tests", () => {
         expect(getVolitionalForm(kuru, "polite")).toEqual(expect.objectContaining({word: "来ましょう", romaji: "kimashou"}));
         expect(getVolitionalForm(benkyousuru, "polite")).toEqual(expect.objectContaining({word: "勉強しましょう", romaji: "benkyoushimashou"}));
         expect(getVolitionalForm(taberu, "polite")).toEqual(expect.objectContaining({word: "食べましょう", romaji: "tabemashou"}));
-  });
+     });
 
-  test("Should get the potential, potential-negative, and potential-past-negative form of verbs", () => {
+    test("Should get the potential, potential-negative, and potential-past-negative form of verbs", () => {
         expect(getPotentialForm(aruku)).toEqual(expect.objectContaining({word: "歩ける", romaji: "arukeru"}));
         expect(getPotentialForm(kuru)).toEqual(expect.objectContaining({word: "来られる", romaji: "korareru"}));
         expect(getPotentialForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強できる", romaji: "benkyoudekiru"}));
@@ -148,9 +148,9 @@ describe("Conjugator Tests", () => {
         expect(getPotentialForm(kuru, "past-negative")).toEqual(expect.objectContaining({word: "来られなかった", romaji: "korarenakatta"}));
         expect(getPotentialForm(benkyousuru, "past-negative")).toEqual(expect.objectContaining({word: "勉強できなかった", romaji: "benkyoudekinakatta"}));
         expect(getPotentialForm(taberu, "past-negative")).toEqual(expect.objectContaining({word: "食べられなかった", romaji: "taberarenakatta"}));
-  });
+    });
 
-  test("Should get the passive and passive-past form of verbs", () => {
+    test("Should get the passive and passive-past form of verbs", () => {
         expect(getPassiveForm(aruku)).toEqual(expect.objectContaining({word: "歩かれる", romaji: "arukareru"}));
         expect(getPassiveForm(kuru)).toEqual(expect.objectContaining({word: "来られる", romaji: "korareru"}));
         expect(getPassiveForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強される", romaji: "benkyousareru"}));
@@ -160,9 +160,9 @@ describe("Conjugator Tests", () => {
         expect(getPassiveForm(kuru, "past")).toEqual(expect.objectContaining({word: "来られた", romaji: "korareta"}));
         expect(getPassiveForm(benkyousuru, "past")).toEqual(expect.objectContaining({word: "勉強された", romaji: "benkyousareta"}));
         expect(getPassiveForm(taberu, "past")).toEqual(expect.objectContaining({word: "食べられた", romaji: "taberareta"}));
-  });
+     });
 
-  test("Should get the causative, causative-passive, causative-passive-past form of verbs", () => {
+    test("Should get the causative, causative-passive, causative-passive-past form of verbs", () => {
         expect(getCausativeForm(aruku)).toEqual(expect.objectContaining({word: "歩かせる", romaji: "arukaseru"}));
         expect(getCausativeForm(kuru)).toEqual(expect.objectContaining({word: "来させる", romaji: "kosaseru"}));
         expect(getCausativeForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強させる", romaji: "benkyousaseru"}));
@@ -177,37 +177,43 @@ describe("Conjugator Tests", () => {
         expect(getCausativeForm(kuru, "passive-past")).toEqual(expect.objectContaining({word: "来させられた", romaji: "kosaserareta"}));
         expect(getCausativeForm(benkyousuru, "passive-past")).toEqual(expect.objectContaining({word: "勉強させられた", romaji: "benkyousaserareta"}));
         expect(getCausativeForm(taberu, "passive-past")).toEqual(expect.objectContaining({word: "食べさせられた", romaji: "tabesaserareta"}));
-  });
+    });
 
-  test("Should get the polite, past, negative, past-polite, past-negative, polite-negative, and past-polite-negative form of adjectives", () => {
-      expect(getAdjectiveForm(yasui, "polite")).toEqual(expect.objectContaining({word: "安いです", romaji: "yasuidesu"}));
-      expect(getAdjectiveForm(benri, "polite")).toEqual(expect.objectContaining({word: "便利です", romaji: "benridesu"}));
-      expect(getAdjectiveForm(ii, "polite")).toEqual(expect.objectContaining({word: "いいです", romaji: "iidesu"}));
+    test("Should get the polite, past, negative, past-polite, past-negative, polite-negative, and past-polite-negative form of adjectives", () => {
+        expect(getAdjectiveForm(yasui, "polite")).toEqual(expect.objectContaining({word: "安いです", romaji: "yasuidesu"}));
+        expect(getAdjectiveForm(benri, "polite")).toEqual(expect.objectContaining({word: "便利です", romaji: "benridesu"}));
+        expect(getAdjectiveForm(ii, "polite")).toEqual(expect.objectContaining({word: "いいです", romaji: "iidesu"}));
 
-      expect(getAdjectiveForm(yasui, "past")).toEqual(expect.objectContaining({word: "安かった", romaji: "yasukatta"}));
-      expect(getAdjectiveForm(benri, "past")).toEqual(expect.objectContaining({word: "便利だった", romaji: "benridatta"}));
-      expect(getAdjectiveForm(ii, "past")).toEqual(expect.objectContaining({word: "よかった", romaji: "yokatta"}));
+        expect(getAdjectiveForm(yasui, "past")).toEqual(expect.objectContaining({word: "安かった", romaji: "yasukatta"}));
+        expect(getAdjectiveForm(benri, "past")).toEqual(expect.objectContaining({word: "便利だった", romaji: "benridatta"}));
+        expect(getAdjectiveForm(ii, "past")).toEqual(expect.objectContaining({word: "よかった", romaji: "yokatta"}));
 
-      expect(getAdjectiveForm(yasui, "negative")).toEqual(expect.objectContaining({word: "安くない", romaji: "yasukunai"}));
-      expect(getAdjectiveForm(benri, "negative")).toEqual(expect.objectContaining({word: "便利じゃない", romaji: "benrijanai"}));
-      expect(getAdjectiveForm(ii, "negative")).toEqual(expect.objectContaining({word: "よくない", romaji: "yokunai"}));
+        expect(getAdjectiveForm(yasui, "negative")).toEqual(expect.objectContaining({word: "安くない", romaji: "yasukunai"}));
+        expect(getAdjectiveForm(benri, "negative")).toEqual(expect.objectContaining({word: "便利じゃない", romaji: "benrijanai"}));
+        expect(getAdjectiveForm(ii, "negative")).toEqual(expect.objectContaining({word: "よくない", romaji: "yokunai"}));
 
-      expect(getAdjectiveForm(yasui, "past-polite")).toEqual(expect.objectContaining({word: "安かったです", romaji: "yasukattadesu"}));
-      expect(getAdjectiveForm(benri, "past-polite")).toEqual(expect.objectContaining({word: "便利でした", romaji: "benrideshita"}));
-      expect(getAdjectiveForm(ii, "past-polite")).toEqual(expect.objectContaining({word: "よかったです", romaji: "yokattadesu"}));
+        expect(getAdjectiveForm(yasui, "past-polite")).toEqual(expect.objectContaining({word: "安かったです", romaji: "yasukattadesu"}));
+        expect(getAdjectiveForm(benri, "past-polite")).toEqual(expect.objectContaining({word: "便利でした", romaji: "benrideshita"}));
+        expect(getAdjectiveForm(ii, "past-polite")).toEqual(expect.objectContaining({word: "よかったです", romaji: "yokattadesu"}));
 
-      expect(getAdjectiveForm(yasui, "past-negative")).toEqual(expect.objectContaining({word: "安くなかった", romaji: "yasukunakatta"}));
-      expect(getAdjectiveForm(benri, "past-negative")).toEqual(expect.objectContaining({word: "便利じゃなかった", romaji: "benrijanakatta"}));
-      expect(getAdjectiveForm(ii, "past-negative")).toEqual(expect.objectContaining({word: "よくなかった", romaji: "yokunakatta"}));
+        expect(getAdjectiveForm(yasui, "past-negative")).toEqual(expect.objectContaining({word: "安くなかった", romaji: "yasukunakatta"}));
+        expect(getAdjectiveForm(benri, "past-negative")).toEqual(expect.objectContaining({word: "便利じゃなかった", romaji: "benrijanakatta"}));
+        expect(getAdjectiveForm(ii, "past-negative")).toEqual(expect.objectContaining({word: "よくなかった", romaji: "yokunakatta"}));
 
-      expect(getAdjectiveForm(yasui, "polite-negative")).toEqual(expect.objectContaining({word: "安くありません", romaji: "yasukuarimasen"}));
-      expect(getAdjectiveForm(benri, "polite-negative")).toEqual(expect.objectContaining({word: "便利じゃありません", romaji: "benrijaarimasen"}));
-      expect(getAdjectiveForm(ii, "polite-negative")).toEqual(expect.objectContaining({word: "よくないです", romaji: "yokunaidesu"}));
+        expect(getAdjectiveForm(yasui, "polite-negative")).toEqual(expect.objectContaining({word: "安くありません", romaji: "yasukuarimasen"}));
+        expect(getAdjectiveForm(benri, "polite-negative")).toEqual(expect.objectContaining({word: "便利じゃありません", romaji: "benrijaarimasen"}));
+        expect(getAdjectiveForm(ii, "polite-negative")).toEqual(expect.objectContaining({word: "よくないです", romaji: "yokunaidesu"}));
 
-      expect(getAdjectiveForm(yasui, "past-polite-negative")).toEqual(expect.objectContaining({word: "安くありませんでした", romaji: "yasukuarimasendeshita"}));
-      expect(getAdjectiveForm(benri, "past-polite-negative")).toEqual(expect.objectContaining({word: "便利じゃありませんでした", romaji: "benrijaarimasendeshita"}));
-      expect(getAdjectiveForm(ii, "past-polite-negative")).toEqual(expect.objectContaining({word: "よくなかったです", romaji: "yokunakattadesu"}));
+        expect(getAdjectiveForm(yasui, "past-polite-negative")).toEqual(expect.objectContaining({word: "安くありませんでした", romaji: "yasukuarimasendeshita"}));
+        expect(getAdjectiveForm(benri, "past-polite-negative")).toEqual(expect.objectContaining({word: "便利じゃありませんでした", romaji: "benrijaarimasendeshita"}));
+        expect(getAdjectiveForm(ii, "past-polite-negative")).toEqual(expect.objectContaining({word: "よくなかったです", romaji: "yokunakattadesu"}));
+    });
 
-});
+    test("Should get the mashou form of verbs", () => {
+        expect(getMashouForm(aruku)).toEqual(expect.objectContaining({word: "歩きましょう", romaji: "arukimashou"}));
+        expect(getMashouForm(kuru)).toEqual(expect.objectContaining({word: "来ましょう", romaji: "kimashou"}));
+        expect(getMashouForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強しましょう", romaji: "benkyoushimashou"}));
+        expect(getMashouForm(taberu)).toEqual(expect.objectContaining({word: "食べましょう", romaji: "tabemashou"}));
+    });
   
 })

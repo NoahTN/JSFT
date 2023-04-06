@@ -1,8 +1,8 @@
-import {  getRandom, getRandomNumber, stringSplice, coinFlipHeads } from "./helper";
+import {  getRandom, getRandomNumber, stringSplice, coinFlipHeads, formatOutput } from "./helper";
 import { applyN5Grammar, getPositions } from "./grammar";
 import { getPoliteForm, getNegativeForm, getPastForm, getTeForm, getAdjectiveForm, getProvisionalForm, getConditionalForm, getImperativeForm, getVolitionalForm, getPotentialForm, getPassiveForm, getCausativeForm } from "./conjugator";
 import GRAMMAR_OBJECT from "../data/n5/grammar.json"
-import { DATA_OBJECT } from "./data";
+import { DATA_OBJECT, getRandomWord } from "./data";
 
 export function generateProblem(options) {
     const randomType = getRandom(options["Types"]);
@@ -24,7 +24,8 @@ export function generateProblem(options) {
                 return formatOutput([adjective, GRAMMAR_OBJECT["な"], noun]);
             }
             return formatOutput([adjective, noun]);
-        default:
+        case "Basic Sentence":
+        case "N5 Grammar":
             return generateSentence(options);
     }
 }
@@ -35,7 +36,7 @@ export function generateSentence(options, force={}) {
     let problem;
     if(difficulty[0] === "B") { // Basic
         if((getRandomNumber(options["Tenses"].length) === 0 && force["sentence-form"] !== "OV") || force["sentence-form"]=== "SOV") {
-            problem = getSOVSentence(options, force["ga"]);
+            problem = getSOVSentence(options, force["ga"], force["adj"]);
         }
         problem = getOVSentence(options);
         return applyAdverb(problem, options);
@@ -48,20 +49,11 @@ export function generateSentence(options, force={}) {
         return applyN5Grammar(problem, difficulty, getRandom(options["Vocab Level"]));
     }
     else { // Complex
-
+        let first = coinFlipHeads() ? getSOVSentence(options) : getOVSentence(options);
+        let second = coinFlipHeads() ? getSOVSentence(options) : getOVSentence(options);
+        // do random clause chaining thing
     }
     // need recurisve word getter
-}
-
-export function getRandomWord(level, type) {
-    level = level.toLowerCase();
-    type = type.toLowerCase();
-    if(type === "adjective") {
-        type =  coinFlipHeads() ? "i-adjective" : "na-adjective";
-    }
-    const data = DATA_OBJECT[level][type];
-    const key = getRandom(Object.keys(data));
-    return data[key];
 }
 
 function calculateTenses(tenses, isVerb=true) {
@@ -157,11 +149,11 @@ function getRandomAdjectiveForm(level, tenses, force="") {
     return force ? getAdjectiveForm(adj, force) : getAdjectiveForm(adj, tense.toLowerCase());
 }
 
-function getSOVSentence(options, forceGa=false) {
+function getSOVSentence(options, forceGa=false, forceAdj=false) {
     let noun  = getRandomWord(getRandom(options["Vocab Level"]), "Noun");
     let subject = formatOutput([noun, forceGa ? GRAMMAR_OBJECT["が"] : getSubjectParticle(options)]);
     let object = {};
-    if(coinFlipHeads() && subject.word[subject.word.length-1] !== "で")
+    if(forceAdj || (coinFlipHeads() && subject.word[subject.word.length-1] !== "で"))
         object = getRandomAdjectiveForm(getRandom(options["Vocab Level"]), options["Tenses"]);
     else
         object = getRandomWord(getRandom(options["Vocab Level"]), "Noun");
@@ -229,40 +221,4 @@ function applyAdverb(problem, options) {
     problem.word = stringSplice(problem.word, pos[0], adverb.word);
     problem.romaji = stringSplice(problem.romaji, pos[1], adverb.romaji + " ");
     return problem;
-}
-
-function formatOutput(words) {
-    // // Maybe custom breakpoints too for subject, object, etc.
-    
-    
-    let children = [];
-    //let breakpoints = {words: [], romaji: []};
-    let indices = {};
-    let types = [];
-    let set = new Set();
-    let i = 0;
-    for(let w of words) {
-        if(w.children) {
-            for(let c of w.children) {
-                children.push(c);
-                indices[c.type] ??= [];
-                indices[c.type].push(i);
-                ++i;
-                // addBreakpoint(c);
-            }
-        }
-        else {
-            children.push(w);
-           // addBreakpoint(w);
-           indices[w.type] ??= [];
-           indices[w.type].push(i);
-           ++i;
-        }
-    }
-    return {
-        word: words.map(w => w.word).join(""),
-        romaji: words.map(w => w.romaji).join(" "),
-        children: children,
-        indices: indices
-    };
 }

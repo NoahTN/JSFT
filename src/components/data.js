@@ -14,5 +14,15 @@ export const DATA_OBJECT = {
         "adverb": n5Adverbs,
         "katakana":n5Katakana
     }
-    
+}
+
+export function getRandomWord(level, type) {
+    level = level.toLowerCase();
+    type = type.toLowerCase();
+    if(type === "adjective") {
+        type = (Math.floor(Math.random() * 2) === 0) ? "i-adjective" : "na-adjective";
+    }
+    const data = DATA_OBJECT[level][type];
+    const key = Object.keys(data)[Math.floor(Math.random() * Object.keys(data).length)];
+    return data[key];
 }
