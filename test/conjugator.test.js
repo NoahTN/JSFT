@@ -215,5 +215,19 @@ describe("Conjugator Tests", () => {
         expect(getMashouForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強しましょう", romaji: "benkyoushimashou"}));
         expect(getMashouForm(taberu)).toEqual(expect.objectContaining({word: "食べましょう", romaji: "tabemashou"}));
     });
+
+    test("Should get the tai form of verbs", () => {
+        expect(getMashouForm(aruku)).toEqual(expect.objectContaining({word: "歩きたい", romaji: "arukitai"}));
+        expect(getMashouForm(kuru)).toEqual(expect.objectContaining({word: "来たい", romaji: "kitai"}));
+        expect(getMashouForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強したい", romaji: "benkyoushitai"}));
+        expect(getMashouForm(taberu)).toEqual(expect.objectContaining({word: "食べたい", romaji: "tabetai"}));
+    });
+
+     test("Should get the teiru form of verbs", () => {
+        expect(getMashouForm(aruku)).toEqual(expect.objectContaining({word: "歩るいている", romaji: "arukitai"}));
+        expect(getMashouForm(kuru)).toEqual(expect.objectContaining({word: "来ている", romaji: "kitai"}));
+        expect(getMashouForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強している", romaji: "benkyoushitai"}));
+        expect(getMashouForm(taberu)).toEqual(expect.objectContaining({word: "食べている", romaji: "tabetai"}));
+    });
   
 })

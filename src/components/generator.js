@@ -36,9 +36,11 @@ export function generateSentence(options, force={}) {
     let problem;
     if(difficulty[0] === "B") { // Basic
         if((getRandomNumber(options["Tenses"].length) === 0 && force["sentence-form"] !== "OV") || force["sentence-form"]=== "SOV") {
-            problem = getSOVSentence(options, force["ga"], force["adj"]);
+            problem = getSOVSentence(options, force);
         }
-        problem = getOVSentence(options);
+        else {
+            problem = getOVSentence(options);
+        }
         return applyAdverb(problem, options);
 
     }
@@ -149,16 +151,16 @@ function getRandomAdjectiveForm(level, tenses, force="") {
     return force ? getAdjectiveForm(adj, force) : getAdjectiveForm(adj, tense.toLowerCase());
 }
 
-function getSOVSentence(options, forceGa=false, forceAdj=false) {
+function getSOVSentence(options, force={}) {
     let noun  = getRandomWord(getRandom(options["Vocab Level"]), "Noun");
-    let subject = formatOutput([noun, forceGa ? GRAMMAR_OBJECT["が"] : getSubjectParticle(options)]);
+    let subject = formatOutput([noun, force["ga"] ? GRAMMAR_OBJECT["が"] : getSubjectParticle(options)]);
     let object = {};
-    if(forceAdj || (coinFlipHeads() && subject.word[subject.word.length-1] !== "で"))
+    if(!force["noun"] && force["adj"] || (coinFlipHeads() && subject.word[subject.word.length-1] !== "で"))
         object = getRandomAdjectiveForm(getRandom(options["Vocab Level"]), options["Tenses"]);
     else
         object = getRandomWord(getRandom(options["Vocab Level"]), "Noun");
     
-    if(!object.form) {
+    if(force["no da/desu"] || !object.form) {
         let verb = coinFlipHeads() ? GRAMMAR_OBJECT["だ"] : GRAMMAR_OBJECT["です"];
         return formatOutput([subject, object, verb]);
     }
@@ -197,7 +199,7 @@ function getSubjectParticle() {
 }
 // Need to tag SOME nouns with stuff like location for use with ni, de, he, etc.
 function getObjectParticle() { 
-    const particles = ["が", "は", "で", "に", "へ", "と", "から"].map(p => GRAMMAR_OBJECT[p]);
+    const particles = ["が", "は", "で", "に", "へ", "と", "から", "も"].map(p => GRAMMAR_OBJECT[p]);
     return getRandom(particles);
 }
 

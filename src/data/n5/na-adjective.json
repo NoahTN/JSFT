@@ -20,6 +20,13 @@
     "romaji": "daisuki",
     "meaning": "love; like; likeverymuch"
   },
+  "dame": {
+    "type": "na-adjective",
+    "word": "ダメ",
+    "kana": "ダメ",
+    "romaji": "dame",
+    "meaning": "no good"
+  },
   "genki": {
     "type": "na-adjective",
     "word": "元気",

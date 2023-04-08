@@ -255,3 +255,26 @@ export function getMashouForm(verb) {
     output.romaji = verb.romaji.slice(0, -1) + "hou";
     return output;
 }
+
+export function getTaiForm(verb) {
+    const output = {type: "verb", form: "tai", verb: verb, category: verb.category};
+    verb = getPoliteForm(verb);
+    output.word = verb.word.slice(0, -2) + "たい";
+    output.romaji = verb.romaji.slice(0, -4) + "tai";
+    return output;
+}
+
+export function getTeiruForm(verb, form="") {
+    const output = {type: "verb", form: "teiru", verb: verb, category: verb.category};
+    verb = getTeForm(verb);
+    output.word = verb.word + "いる";
+    output.romaji = verb.romaji + "iru";
+
+    if(form === "polite") {
+        output.form = "polite-teiru";
+        output.word = output.word.slice(0, -1) + "ます";
+        output.romaji = output.romaji.slice(0, -2) + "masu";
+    }
+
+    return output;
+}

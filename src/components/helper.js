@@ -20,14 +20,9 @@ export function coinFlipHeads() {
 }
 
 export function formatOutput(words) {
-    // // Maybe custom breakpoints too for subject, object, etc.
-    
-    
     let children = [];
-    //let breakpoints = {words: [], romaji: []};
-    let indices = {};
-    let types = [];
-    let set = new Set();
+    let indices = {grammar: []};
+    let particles = {};
     let i = 0;
     for(let w of words) {
         if(w.children) {
@@ -35,22 +30,29 @@ export function formatOutput(words) {
                 children.push(c);
                 indices[c.type] ??= [];
                 indices[c.type].push(i);
+                if(c.type === "particle") {
+                    particles[c.romaji] ??= [];
+                    particles[c.romaji].push(i);
+                }
                 ++i;
-                // addBreakpoint(c);
             }
         }
         else {
             children.push(w);
-           // addBreakpoint(w);
-           indices[w.type] ??= [];
-           indices[w.type].push(i);
-           ++i;
+            indices[w.type] ??= [];
+            indices[w.type].push(i);
+            if(w.type === "particle") {
+                particles[w.romaji] ??= [];
+                particles[w.romaji].push(i);
+            }
+            ++i;
         }
     }
     return {
         word: words.map(w => w.word).join(""),
         romaji: words.map(w => w.romaji).join(" "),
         children: children,
-        indices: indices
+        indices: indices,
+        particles: particles
     };
 }

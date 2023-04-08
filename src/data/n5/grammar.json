@@ -33,7 +33,7 @@
     "meaning": "I think; it seems; probably; right?"
   },
   "で": {
-    "type": "grammar",
+    "type": "particle",
     "word": "で",
     "romaji": "de",
     "meaning": "in; at; on; by; with; via"
@@ -69,7 +69,7 @@
     "meaning": "how; in what way; by what means​"
   },
   "が": {
-    "type": "grammar",
+    "type": "particle",
     "word": "が",
     "romaji": "ga",
     "meaning": "subject marker"
@@ -95,7 +95,7 @@
   "方がいい": {
     "type": "grammar",
     "word": "方がいい",
-    "romaji": "hougaii",
+    "romaji": "hou ga ii",
     "meaning": "had better; it'd be better to; should"
   },
   "一番": {
@@ -103,6 +103,12 @@
     "word": "一番",
     "romaji": "ichiban",
     "meaning": "the most; the best"
+  },
+  "いけない": {
+    "type": "grammar",
+    "word": "いけない",
+    "romaji": "ikenai",
+    "meaning": "it's bad if..."
   },
   "一緒に": {
     "type": "grammar",
@@ -123,7 +129,7 @@
     "meaning": "to not be"
   },
   "か": {
-    "type": "grammar",
+    "type": "particle",
     "word": "か",
     "romaji": "ka",
     "meaning": "question particle"
@@ -135,7 +141,7 @@
     "meaning": "or"
   },
   "から": {
-    "type": "grammar",
+    "type": "particle",
     "word": "から",
     "romaji": "kara",
     "meaning": "because; since; from"
@@ -179,7 +185,7 @@
   "前に": {
     "type": "grammar",
     "word": "前に",
-    "romaji": "maeni",
+    "romaji": "mae ni",
     "meaning": "before; in front of"
   },
   "ませんか": {
@@ -201,7 +207,7 @@
     "meaning": "shall I; used to offer help"
   },
   "も": {
-    "type": "grammar",
+    "type": "particle",
     "word": "も",
     "romaji": "mo",
     "meaning": "too; also; aswell"
@@ -213,15 +219,15 @@
     "meaning": "already; anymore; again; other"
   },
   "な": {
-    "type": "grammar",
+    "type": "particle",
     "word": "な",
     "romaji": "na",
     "meaning": "na-adjective particle"
   },
   "なあ": {
     "type": "grammar",
-    "word": "なあ",
-    "romaji": "naa",
+    "word": "な",
+    "romaji": "na",
     "meaning": "confirmation; admiration, etc"
   },
   "ないで": {
@@ -233,13 +239,13 @@
   "ないといけない": {
     "type": "grammar",
     "word": "ないといけない",
-    "romaji": "naitoikenai",
+    "romaji": "nai to ikenai",
     "meaning": "must do; have an obligation to do"
   },
   "なくてもいい": {
     "type": "grammar",
     "word": "なくてもいい",
-    "romaji": "nakutemoii",
+    "romaji": "nakutemo ii",
     "meaning": "don't have to"
   },
   "なくちゃ": {
@@ -251,13 +257,13 @@
   "なくてはいけない": {
     "type": "grammar",
     "word": "なくてはいけない",
-    "romaji": "nakutewaikenai",
+    "romaji": "nakute wa ikenai",
     "meaning": "must do; need to do"
   },
   "なくてはならない": {
     "type": "grammar",
     "word": "なくてはならない",
-    "romaji": "nakutewanaranai",
+    "romaji": "nakute wa naranai",
     "meaning": "must do; need to do"
   },
   "なる": {
@@ -273,31 +279,31 @@
     "meaning": "isn't it?; right?; eh?"
   },
   "に": {
-    "type": "grammar",
+    "type": "particle",
     "word": "に",
     "romaji": "ni",
     "meaning": "destination particle; in; at; on; to"
   },
-  "にいく": {
+  "に行く": {
     "type": "grammar",
-    "word": "にいく",
-    "romaji": "niiku",
+    "word": "に行く",
+    "romaji": "ni iku",
     "meaning": "go to do"
   },
   "にする": {
     "type": "grammar",
     "word": "にする",
-    "romaji": "nisuru",
+    "romaji": "ni suru",
     "meaning": "to decid eon"
   },
   "へ": {
-    "type": "grammar",
+    "type": "particle",
     "word": "へ",
     "romaji": "he",
     "meaning": "to (indicates direction)"
   },
   "の": {
-    "type": "grammar",
+    "type": "particle",
     "word": "の",
     "romaji": "no",
     "meaning": "possessive particle"
@@ -317,19 +323,19 @@
   "のが下手": {
     "type": "grammar",
     "word": "のが下手",
-    "romaji": "nogaheta",
+    "romaji": "no ga heta",
     "meaning": "to be bad at doing something"
   },
   "のが上手": {
     "type": "grammar",
     "word": "のが上手",
-    "romaji": "nogajouzu",
+    "romaji": "no ga jouzu",
     "meaning": "to be good at"
   },
   "のが好き": {
     "type": "grammar",
     "word": "のが好き",
-    "romaji": "nogasuki",
+    "romaji": "no ga suki",
     "meaning": "to like doing something"
   },
   "の中で[A]が一番": {
@@ -345,19 +351,19 @@
     "meaning": "because of; given that; since"
   },
   "お": {
-    "type": "grammar",
+    "type": "particle",
     "word": "お",
     "romaji": "o",
     "meaning": "polite marker; honorific prefix particle"
   },
   "ご": {
-    "type": "grammar",
+    "type": "particle",
     "word": "ご",
     "romaji": "go",
     "meaning": "polite marker; honorific prefix particle"
   },
   "を": {
-    "type": "grammar",
+    "type": "particle",
     "word": "を",
     "romaji": "o",
     "meaning": "object marker particle"
@@ -365,7 +371,7 @@
   "をください": {
     "type": "grammar",
     "word": "をください",
-    "romaji": "okudasai",
+    "romaji": "o kudasai",
     "meaning": "please give me"
   },
   "しかし": {
@@ -395,7 +401,7 @@
   "たことがある": {
     "type": "grammar",
     "word": "たことがある",
-    "romaji": "takotogaaru",
+    "romaji": "ta koto ga aru",
     "meaning": "to have done something before"
   },
   "たい": {
@@ -447,7 +453,7 @@
     "meaning": "is OK to..; is alright to..; may I..?"
   },
   "と": {
-    "type": "grammar",
+    "type": "particle",
     "word": "と",
     "romaji": "to",
     "meaning": "and; with; as; connecting particle"
@@ -471,7 +477,7 @@
     "meaning": "plan to; intend to"
   },
   "は": {
-    "type": "grammar",
+    "type": "particle",
     "word": "は",
     "romaji": "wa",
     "meaning": "topic marker"
@@ -489,13 +495,13 @@
     "meaning": "how about; how is"
   },
   "や": {
-    "type": "grammar",
+    "type": "particle",
     "word": "や",
     "romaji": "ya",
     "meaning": "and; or; connecting particle"
   },
   "よ": {
-    "type": "grammar",
+    "type": "particle",
     "word": "よ",
     "romaji": "yo",
     "meaning": "you know; emphasis (ending particle)"
