@@ -347,7 +347,7 @@
   "ので": {
     "type": "grammar",
     "word": "ので",
-    "romaji": "node",
+    "romaji": "no de",
     "meaning": "because of; given that; since"
   },
   "お": {
@@ -398,10 +398,10 @@
     "romaji": "sugiru",
     "meaning": "too much"
   },
-  "たことがある": {
+  "ことがある": {
     "type": "grammar",
-    "word": "たことがある",
-    "romaji": "ta koto ga aru",
+    "word": "ことがある",
+    "romaji": "koto ga aru",
     "meaning": "to have done something before"
   },
   "たい": {
@@ -419,37 +419,37 @@
   "てある": {
     "type": "grammar",
     "word": "てある",
-    "romaji": "tearu",
+    "romaji": "te aru",
     "meaning": "is/has been done (resulting state)"
   },
   "ている": {
     "type": "grammar",
     "word": "ている",
-    "romaji": "teiru",
+    "romaji": "te iru",
     "meaning": "ongoing action or current state"
   },
   "てから": {
     "type": "grammar",
     "word": "てから",
-    "romaji": "tekara",
+    "romaji": "te kara",
     "meaning": "after doing"
   },
   "てください": {
     "type": "grammar",
     "word": "てください",
-    "romaji": "tekudasai",
+    "romaji": "te kudasai",
     "meaning": "please do"
   },
   "てはいけない": {
     "type": "grammar",
     "word": "てはいけない",
-    "romaji": "tewaikenai",
+    "romaji": "te wa ikenai",
     "meaning": "must not; may not; cannot"
   },
   "てもいいです": {
     "type": "grammar",
     "word": "てもいいです",
-    "romaji": "temoiidesu",
+    "romaji": "te mo ii desu",
     "meaning": "is OK to..; is alright to..; may I..?"
   },
   "と": {
@@ -491,7 +491,7 @@
   "はどうですか": {
     "type": "grammar",
     "word": "はどうですか",
-    "romaji": "wadoudesuka",
+    "romaji": "wa dou desu ka",
     "meaning": "how about; how is"
   },
   "や": {

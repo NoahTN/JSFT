@@ -1,5 +1,5 @@
 import {  getRandom, getRandomNumber, stringSplice, coinFlipHeads, formatOutput } from "./helper";
-import { applyN5Grammar, getPositions } from "./grammar";
+import { applyN5Grammar, applyClauseChainingGrammar, getPositions } from "./grammar";
 import { getPoliteForm, getNegativeForm, getPastForm, getTeForm, getAdjectiveForm, getProvisionalForm, getConditionalForm, getImperativeForm, getVolitionalForm, getPotentialForm, getPassiveForm, getCausativeForm } from "./conjugator";
 import GRAMMAR_OBJECT from "../data/n5/grammar.json"
 import { DATA_OBJECT, getRandomWord } from "./data";
@@ -26,8 +26,10 @@ export function generateProblem(options) {
             return formatOutput([adjective, noun]);
         case "Basic Sentence":
         case "N5 Grammar":
+        case "Complex Sentence":
             return generateSentence(options);
     }
+
 }
 
 export function generateSentence(options, force={}) {
@@ -48,14 +50,13 @@ export function generateSentence(options, force={}) {
         // grammar can take btoh sense
         problem = coinFlipHeads() ? getSOVSentence(options) : getOVSentence(options);
         problem = applyAdverb(problem, options);
-        return applyN5Grammar(problem, difficulty, getRandom(options["Vocab Level"]));
+        return applyN5Grammar(problem, getRandom(options["Tenses"]), difficulty, getRandom(options["Vocab Level"]));
     }
     else { // Complex
         let first = coinFlipHeads() ? getSOVSentence(options) : getOVSentence(options);
         let second = coinFlipHeads() ? getSOVSentence(options) : getOVSentence(options);
-        // do random clause chaining thing
+        return applyClauseChainingGrammar(first, second);
     }
-    // need recurisve word getter
 }
 
 function calculateTenses(tenses, isVerb=true) {
@@ -146,7 +147,7 @@ function getRandomVerbForm(level, tenses, force="") {
 function getRandomAdjectiveForm(level, tenses, force="") {
     const adj = getRandomWord(level, "adjective");
     const allowed = new Set(["Plain", "Polite", "Past", "Negative", "Polite-Negative", "Past-Polite", "Past-Negative", "Past-Polite-Negative"]);
-    const tense = getRandom(calculateTenses(tenses.filter(t => allowed.has(t)), false));
+    const tense = getRandom(calculateTenses(tenses.filter(t => allowed.has(t)), false)) ?? "Plain";
 
     return force ? getAdjectiveForm(adj, force) : getAdjectiveForm(adj, tense.toLowerCase());
 }
@@ -216,11 +217,6 @@ function applyAdverb(problem, options) {
         }
     }
     let index = getRandom(possible);
-    let pos = getPositions(problem, index, true);
-    
     problem.children.splice(index, 0, adverb);
-    problem.types.splice(index, 0, "adverb");
-    problem.word = stringSplice(problem.word, pos[0], adverb.word);
-    problem.romaji = stringSplice(problem.romaji, pos[1], adverb.romaji + " ");
-    return problem;
+    return formatOutput([problem]);
 }

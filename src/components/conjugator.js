@@ -275,6 +275,11 @@ export function getTeiruForm(verb, form="") {
         output.word = output.word.slice(0, -1) + "ます";
         output.romaji = output.romaji.slice(0, -2) + "masu";
     }
+    else if(form === "negative") {
+        output.form = "teiru-negative";
+        output.word = output.word.slice(0, -1) + "ない";
+        output.romaji = output.romaji.slice(0, -2) + "nai";
+    }
 
     return output;
 }

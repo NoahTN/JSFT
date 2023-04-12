@@ -45,6 +45,10 @@ function Interactor(props) {
 
     }
 
+    function handleInputChange(event) {
+        inputRef.current.style.width = (inputRef.current.value.length * 0.85) + "rem";
+    }
+
     function handleAnswerSubmit(event) {
         event.preventDefault();
 
@@ -56,8 +60,8 @@ function Interactor(props) {
             handleGenerateProblem();
         }
         else {
-            const cleanInput = inputRef.current.value.toLowerCase().replace(/\s+/g, "");
-            const cleanExpected = expectedAnswer.toLowerCase().replace(/\s+/g, "")
+            const cleanInput = inputRef.current.value.toLowerCase().replace(/\s/g, "");
+            const cleanExpected = expectedAnswer.toLowerCase().replace(/\s/g, "")
             setIsCorrect(cleanInput === cleanExpected);
         }
     }
@@ -118,8 +122,8 @@ function Interactor(props) {
     function getHints() {
         if(problem && options["Extra"][0]) {
             if(problem.children) {
-                return problem.children.map(c => {
-                    return <Hint key={ c.word + c.romaji } word={ c } onClick={ handleHintClick }/>
+                return problem.children.map((c, i) => {
+                    return <Hint key={ i + "_" + problem.word } word={ c } onClick={ handleHintClick }/>
                 });
             }
             return <Hint word={ problem } onClick={ handleHintClick }/>
@@ -161,7 +165,7 @@ function Interactor(props) {
         </button>
         <div id="input-box">
             <form onSubmit={ handleAnswerSubmit } aria-label="submit-answer">
-                <input type="text" ref={ inputRef } aria-label="input-answer"/>
+                <input type="text" ref={ inputRef } aria-label="input-answer" onChange={ handleInputChange }/>
             </form>
         </div>
         <div id="answer-status-box">

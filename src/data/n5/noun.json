@@ -32,14 +32,14 @@
     "word": "姉",
     "kana": "あね",
     "romaji": "ane",
-    "meaning": "eldersister"
+    "meaning": "elder sister"
   },
   "ani": {
     "type": "noun",
     "word": "兄",
     "kana": "あに",
     "romaji": "ani",
-    "meaning": "elderbrother"
+    "meaning": "elder brother"
   },
   "ao": {
     "type": "noun",
@@ -73,7 +73,7 @@
     "word": "明後日",
     "kana": "あさって",
     "romaji": "asatte",
-    "meaning": "dayaftertomorrow"
+    "meaning": "day after tomorrow"
   },
   "ashi": {
     "type": "noun",
@@ -108,7 +108,7 @@
     "word": "晩ご飯",
     "kana": "ばんごはん",
     "romaji": "bangohan",
-    "meaning": "dinner; eveningmeal"
+    "meaning": "dinner; evening meal"
   },
   "bangou": {
     "type": "noun",
@@ -140,13 +140,13 @@
     "word": "勉強",
     "kana": "べんきょう",
     "romaji": "benkyou",
-    "meaning": "tostudy"
+    "meaning": "to study"
   },
   "boorupen": {
     "type": "noun",
     "word": "ボールペン",
     "romaji": "boorupen",
-    "meaning": "ball-pointpen"
+    "meaning": "ball-point pen"
   },
   "botan": {
     "type": "noun",
@@ -201,7 +201,7 @@
     "word": "茶碗",
     "kana": "ちゃわん",
     "romaji": "chawan",
-    "meaning": "ricebowl; teacup; teacup"
+    "meaning": "rice bowl; tea cup"
   },
   "chichi": {
     "type": "noun",
@@ -215,7 +215,7 @@
     "word": "地下鉄",
     "kana": "ちかてつ",
     "romaji": "chikatetsu",
-    "meaning": "subway; undergroundtrain"
+    "meaning": "subway; underground train"
   },
   "chizu": {
     "type": "noun",
@@ -243,7 +243,7 @@
     "word": "出口",
     "kana": "でぐち",
     "romaji": "deguchi",
-    "meaning": "exit; gateway; wayout"
+    "meaning": "exit; gateway; way out"
   },
   "denki": {
     "type": "noun",
@@ -257,20 +257,20 @@
     "word": "電車",
     "kana": "でんしゃ",
     "romaji": "densha",
-    "meaning": "train; electrictrain"
+    "meaning": "train; electric train"
   },
   "denwa": {
     "type": "noun",
     "word": "電話",
     "kana": "でんわ",
     "romaji": "denwa",
-    "meaning": "telephone(call%2Fdevice)l"
+    "meaning": "telephone; call device"
   },
   "depaato": {
     "type": "noun",
     "word": "デパート",
     "romaji": "depaato",
-    "meaning": "departmentstore"
+    "meaning": "department store"
   },
   "doa": {
     "type": "noun",
@@ -309,7 +309,7 @@
     "type": "noun",
     "word": "ええ",
     "romaji": "ee",
-    "meaning": "yes; thatiscorrect; right"
+    "meaning": "yes; that is correct; right"
   },
   "eiga": {
     "type": "noun",
@@ -323,14 +323,14 @@
     "word": "映画館",
     "kana": "えいがかん",
     "romaji": "eigakan",
-    "meaning": "movietheater; cinema"
+    "meaning": "movie theater; cinema"
   },
   "eigo": {
     "type": "noun",
     "word": "英語",
     "kana": "えいご",
     "romaji": "eigo",
-    "meaning": "Englishlanguage"
+    "meaning": "English language"
   },
   "eki": {
     "type": "noun",
@@ -376,7 +376,7 @@
     "word": "二人",
     "kana": "ふたり",
     "romaji": "futari",
-    "meaning": "twopeople; pair; couple"
+    "meaning": "two people; pair; couple"
   },
   "futatsu": {
     "type": "noun",
@@ -390,7 +390,7 @@
     "word": "二日",
     "kana": "ふつか",
     "romaji": "futsuka",
-    "meaning": "2nddayofmonth%2F2days"
+    "meaning": "2nd day of month; 2 days"
   },
   "fuutou": {
     "type": "noun",
@@ -411,7 +411,7 @@
     "word": "外国",
     "kana": "がいこく",
     "romaji": "gaikoku",
-    "meaning": "foreigncountry"
+    "meaning": "foreign country"
   },
   "gaikokujin": {
     "type": "noun",
@@ -487,7 +487,7 @@
     "word": "ご飯",
     "kana": "ごはん",
     "romaji": "gohan",
-    "meaning": "cookedrice, meal"
+    "meaning": "cooked rice, meal"
   },
   "gozen": {
     "type": "noun",
@@ -514,7 +514,7 @@
     "word": "牛乳",
     "kana": "ぎゅうにゅう",
     "romaji": "gyuunyuu",
-    "meaning": "(cow's)milk"
+    "meaning": "(cow's) milk"
   },
   "ha": {
     "type": "noun",
@@ -528,7 +528,7 @@
     "word": "八",
     "kana": "はち",
     "romaji": "hachi",
-    "meaning": "eight%3A8"
+    "meaning": "eight"
   },
   "hagaki": {
     "type": "noun",
@@ -548,7 +548,7 @@
     "type": "noun",
     "word": "はい",
     "romaji": "hai",
-    "meaning": "yes; thatiscorrect"
+    "meaning": "yes; that is correct"
   },
   "haizara": {
     "type": "noun",
@@ -610,14 +610,14 @@
     "word": "晴れ",
     "kana": "はれ",
     "romaji": "hare",
-    "meaning": "clearweather"
+    "meaning": "clear weather"
   },
   "haru": {
     "type": "noun",
     "word": "春",
     "kana": "はる",
     "romaji": "haru",
-    "meaning": "spring; springtime"
+    "meaning": "spring; spring time"
   },
   "hashi": {
     "type": "noun",
@@ -638,14 +638,14 @@
     "word": "二十歳",
     "kana": "はたち",
     "romaji": "hatachi",
-    "meaning": "20yearsold"
+    "meaning": "20 year sold"
   },
   "hatsuka": {
     "type": "noun",
     "word": "二十日",
     "kana": "はつか",
     "romaji": "hatsuka",
-    "meaning": "20thdayofmonth"
+    "meaning": "20th day of month"
   },
   "hen": {
     "type": "noun",
@@ -673,7 +673,7 @@
     "word": "左",
     "kana": "ひだり",
     "romaji": "hidari",
-    "meaning": "left; lefthandside"
+    "meaning": "left; left hand side"
   },
   "higashi": {
     "type": "noun",
@@ -722,14 +722,14 @@
     "word": "一人",
     "kana": "ひとり",
     "romaji": "hitori",
-    "meaning": "oneperson; alone; single"
+    "meaning": "one person; alone; single"
   },
   "hitotsu": {
     "type": "noun",
     "word": "一つ",
     "kana": "ひとつ",
     "romaji": "hitotsu",
-    "meaning": "onething; only"
+    "meaning": "one thing; only"
   },
   "hoka": {
     "type": "noun",
@@ -783,14 +783,14 @@
     "word": "一番",
     "kana": "いちばん",
     "romaji": "ichiban",
-    "meaning": "numberone; 1st; best"
+    "meaning": "number one; 1st; best"
   },
   "ichinichi": {
     "type": "noun",
     "word": "一日",
     "kana": "いちにち",
     "romaji": "ichinichi",
-    "meaning": "oneday, allday"
+    "meaning": "one day, all day"
   },
   "ie": {
     "type": "noun",
@@ -810,7 +810,7 @@
     "type": "noun",
     "word": "いくら",
     "romaji": "ikura",
-    "meaning": "howmuch%3F; howmany%3F"
+    "meaning": "how much?; howm any?"
   },
   "ima": {
     "type": "noun",
@@ -831,7 +831,7 @@
     "word": "妹",
     "kana": "いもうと",
     "romaji": "imouto",
-    "meaning": "youngersister"
+    "meaning": "younger sister"
   },
   "inu": {
     "type": "noun",
@@ -866,7 +866,7 @@
     "word": "医者",
     "kana": "いしゃ",
     "romaji": "isha",
-    "meaning": "(medical)doctor; physician"
+    "meaning": "(medical) doctor; physician"
   },
   "issho": {
     "type": "noun",
@@ -887,7 +887,7 @@
     "word": "五日",
     "kana": "いつか",
     "romaji": "itsuka",
-    "meaning": "thefifthdayofthemonth"
+    "meaning": "the fift hday of th emonth"
   },
   "itsutsu": {
     "type": "noun",
@@ -970,14 +970,14 @@
     "word": "花瓶",
     "kana": "かびん",
     "romaji": "kabin",
-    "meaning": "avase"
+    "meaning": "a vase"
   },
   "kado": {
     "type": "noun",
     "word": "角",
     "kana": "かど",
     "romaji": "kado",
-    "meaning": "acorner; angle"
+    "meaning": "a corner; angle"
   },
   "kagi": {
     "type": "noun",
@@ -1064,7 +1064,7 @@
     "word": "方",
     "kana": "かた",
     "romaji": "kata",
-    "meaning": "wayofdoingsomething"
+    "meaning": "way of doing something"
   },
   "katei": {
     "type": "noun",
@@ -1113,7 +1113,7 @@
     "word": "警官",
     "kana": "けいかん",
     "romaji": "keikan",
-    "meaning": "policeman; policeofficer"
+    "meaning": "policeman; police officer"
   },
   "kekkon": {
     "type": "noun",
@@ -1134,7 +1134,7 @@
     "word": "今朝",
     "kana": "けさ",
     "romaji": "kesa",
-    "meaning": "thismorning"
+    "meaning": "this morning"
   },
   "ki": {
     "type": "noun",
@@ -1188,7 +1188,7 @@
     "word": "喫茶店",
     "kana": "きっさてん",
     "romaji": "kissaten",
-    "meaning": "coffeeshop; tearoom; cafe"
+    "meaning": "coffee shop; tea room; cafe"
   },
   "kita": {
     "type": "noun",
@@ -1202,19 +1202,19 @@
     "word": "切手",
     "kana": "きって",
     "romaji": "kitte",
-    "meaning": "stamp(postage)"
+    "meaning": "stamp (postage)"
   },
   "kocchi": {
     "type": "noun",
     "word": "こっち",
     "romaji": "kocchi",
-    "meaning": "thispersonorway"
+    "meaning": "this person or way"
   },
   "kochira": {
     "type": "noun",
     "word": "こちら",
     "romaji": "kochira",
-    "meaning": "thisway; thisdirection"
+    "meaning": "this way; this direction"
   },
   "kodomo": {
     "type": "noun",
@@ -1235,7 +1235,7 @@
     "word": "九日",
     "kana": "ここのか",
     "romaji": "kokonoka",
-    "meaning": "ninthdayofthemonth"
+    "meaning": "ninth day of th emonth"
   },
   "kokonotsu": {
     "type": "noun",
@@ -1249,27 +1249,27 @@
     "word": "今晩",
     "kana": "こんばん",
     "romaji": "konban",
-    "meaning": "tonight; thisevening"
+    "meaning": "tonight; this evening"
   },
   "kongetsu": {
     "type": "noun",
     "word": "今月",
     "kana": "こんげつ",
     "romaji": "kongetsu",
-    "meaning": "thismonth"
+    "meaning": "this month"
   },
   "konshuu": {
     "type": "noun",
     "word": "今週",
     "kana": "こんしゅう",
     "romaji": "konshuu",
-    "meaning": "thisweek"
+    "meaning": "this week"
   },
   "koohii": {
     "type": "noun",
     "word": "コーヒー",
     "romaji": "koohii",
-    "meaning": " C offee"
+    "meaning": "coffee"
   },
   "kooto": {
     "type": "noun",
@@ -1287,7 +1287,7 @@
     "type": "noun",
     "word": "コップ",
     "romaji": "koppu",
-    "meaning": "glass(drinkingvessel)"
+    "meaning": "glass (drinking vessel)"
   },
   "kotoba": {
     "type": "noun",
@@ -1301,7 +1301,7 @@
     "word": "今年",
     "kana": "ことし",
     "romaji": "kotoshi",
-    "meaning": "thisyear"
+    "meaning": "this year"
   },
   "kouban": {
     "type": "noun",
@@ -1315,7 +1315,7 @@
     "word": "紅茶",
     "kana": "こうちゃ",
     "romaji": "koucha",
-    "meaning": "blacktea"
+    "meaning": "black tea"
   },
   "kouen": {
     "type": "noun",
@@ -1350,7 +1350,7 @@
     "word": "曇り",
     "kana": "くもり",
     "romaji": "kumori",
-    "meaning": "cloudiness; cloudyweather"
+    "meaning": "cloudiness; cloudy weather"
   },
   "kuni": {
     "type": "noun",
@@ -1405,14 +1405,14 @@
     "word": "去年",
     "kana": "きょねん",
     "romaji": "kyonen",
-    "meaning": "lastyear"
+    "meaning": "last year"
   },
   "kyou": {
     "type": "noun",
     "word": "今日",
     "kana": "きょう",
     "romaji": "kyou",
-    "meaning": "today; thisday"
+    "meaning": "today; this day"
   },
   "kyoudai": {
     "type": "noun",
@@ -1460,21 +1460,21 @@
     "word": "前",
     "kana": "まえ",
     "romaji": "mae",
-    "meaning": "previous; before; infront"
+    "meaning": "previous; before; in front"
   },
   "maiasa": {
     "type": "noun",
     "word": "毎朝",
     "kana": "まいあさ",
     "romaji": "maiasa",
-    "meaning": "everymorning"
+    "meaning": "every morning"
   },
   "maiban": {
     "type": "noun",
     "word": "毎晩",
     "kana": "まいばん",
     "romaji": "maiban",
-    "meaning": "everynight"
+    "meaning": "every night"
   },
   "mainichi": {
     "type": "noun",
@@ -1488,42 +1488,42 @@
     "word": "毎週",
     "kana": "まいしゅう",
     "romaji": "maishuu",
-    "meaning": "everyweek"
+    "meaning": "every week"
   },
   "maitoshi": {
     "type": "noun",
     "word": "毎年",
     "kana": "まいとし",
     "romaji": "maitoshi",
-    "meaning": "everyyear; yearly; annually"
+    "meaning": "every year; yearly; annually"
   },
   "maitsuki": {
     "type": "noun",
     "word": "毎月",
     "kana": "まいつき",
     "romaji": "maitsuki",
-    "meaning": "everymonth; monthly"
+    "meaning": "every month; monthly"
   },
   "man": {
     "type": "noun",
     "word": "万",
     "kana": "まん",
     "romaji": "man",
-    "meaning": "10, 000; tenthousand"
+    "meaning": "10,000; ten thousand"
   },
   "mannenhitsu": {
     "type": "noun",
     "word": "万年筆",
     "kana": "まんねんひつ",
     "romaji": "mannenhitsu",
-    "meaning": "fountainpen"
+    "meaning": "fountain pen"
   },
   "massugu": {
     "type": "noun",
     "word": "真っ直ぐ",
     "kana": "まっすぐ",
     "romaji": "massugu",
-    "meaning": "straightahead, direct"
+    "meaning": "straight ahead, direct"
   },
   "me": {
     "type": "noun",
@@ -1564,14 +1564,14 @@
     "word": "右",
     "kana": "みぎ",
     "romaji": "migi",
-    "meaning": "right; righthandside"
+    "meaning": "right; right hand side"
   },
   "mikka": {
     "type": "noun",
     "word": "三日",
     "kana": "みっか",
     "romaji": "mikka",
-    "meaning": "thethirddayofthemonth"
+    "meaning": "the third day of the month"
   },
   "mimi": {
     "type": "noun",
@@ -1654,7 +1654,7 @@
     "word": "六日",
     "kana": "むいか",
     "romaji": "muika",
-    "meaning": "sixthdayofthemonth"
+    "meaning": "sixth day of the month"
   },
   "mukou": {
     "type": "noun",
@@ -1709,7 +1709,7 @@
     "word": "七日",
     "kana": "なのか",
     "romaji": "nanoka",
-    "meaning": "seventhdayofthemonth"
+    "meaning": "seventh day of th emonth"
   },
   "natsu": {
     "type": "noun",
@@ -1723,7 +1723,7 @@
     "word": "夏休み",
     "kana": "なつやすみ",
     "romaji": "natsuyasumi",
-    "meaning": "summervacation%2Fholiday"
+    "meaning": "summer vacation/holiday"
   },
   "neko": {
     "type": "noun",
@@ -1817,7 +1817,7 @@
     "word": "伯母さん",
     "kana": "おばさん",
     "romaji": "obasan",
-    "meaning": "aunt; oldlady"
+    "meaning": "aunt; old lady"
   },
   "obentou": {
     "type": "noun",
@@ -1845,7 +1845,7 @@
     "word": "伯父さん",
     "kana": "おじさん",
     "romaji": "ojisan",
-    "meaning": "uncle; oldman; mister"
+    "meaning": "uncle; old man; mister"
   },
   "okaasan": {
     "type": "noun",
@@ -1873,14 +1873,14 @@
     "word": "奥さん",
     "kana": "おくさん",
     "romaji": "okusan",
-    "meaning": "wife; yourwife; hiswife"
+    "meaning": "wife; your wife; hi swife"
   },
   "omawarisan": {
     "type": "noun",
     "word": "お巡りさん",
     "kana": "おまわりさん",
     "romaji": "omawarisan",
-    "meaning": "policeofficer"
+    "meaning": "police officer"
   },
   "onaji": {
     "type": "noun",
@@ -1901,7 +1901,7 @@
     "word": "お姉さん",
     "kana": "おねえさん",
     "romaji": "oneesan",
-    "meaning": "eldersister; miss; ma'am"
+    "meaning": "elder sister; miss; ma'am"
   },
   "ongaku": {
     "type": "noun",
@@ -1915,28 +1915,28 @@
     "word": "お兄さん",
     "kana": "おにいさん",
     "romaji": "oniisan",
-    "meaning": "elderbrother; youngman"
+    "meaning": "elder brother; young man"
   },
   "onna": {
     "type": "noun",
     "word": "女",
     "kana": "おんな",
     "romaji": "onna",
-    "meaning": "woman; femalesex"
+    "meaning": "woman; female sex"
   },
   "onnanoko": {
     "type": "noun",
     "word": "女の子",
     "kana": "おんなのこ",
     "romaji": "onnanoko",
-    "meaning": "girl; youngwomen"
+    "meaning": "girl; young women"
   },
   "oozei": {
     "type": "noun",
     "word": "大勢",
     "kana": "おおぜい",
     "romaji": "oozei",
-    "meaning": "crowdofpeople"
+    "meaning": "crow dof people"
   },
   "osake": {
     "type": "noun",
@@ -1971,7 +1971,7 @@
     "word": "男の子",
     "kana": "おとこのこ",
     "romaji": "otokonoko",
-    "meaning": "boy; malechild; babyboy"
+    "meaning": "boy; male child; baby boy"
   },
   "otona": {
     "type": "noun",
@@ -1985,14 +1985,14 @@
     "word": "一昨日",
     "kana": "おととい",
     "romaji": "ototoi",
-    "meaning": "daybeforeyesterday"
+    "meaning": "day before yesterday"
   },
   "ototoshi": {
     "type": "noun",
     "word": "一昨年",
     "kana": "おととし",
     "romaji": "ototoshi",
-    "meaning": "yearbeforelast"
+    "meaning": "year before last"
   },
   "otousan": {
     "type": "noun",
@@ -2006,7 +2006,7 @@
     "word": "弟",
     "kana": "おとうと",
     "romaji": "otouto",
-    "meaning": "youngerbrother"
+    "meaning": "younger brother"
   },
   "paatii": {
     "type": "noun",
@@ -2054,28 +2054,28 @@
     "type": "noun",
     "word": "プール",
     "romaji": "puuru",
-    "meaning": "swimmingpool"
+    "meaning": "swimming pool"
   },
   "raigetsu": {
     "type": "noun",
     "word": "来月",
     "kana": "らいげつ",
     "romaji": "raigetsu",
-    "meaning": "nextmonth"
+    "meaning": "next month"
   },
   "rainen": {
     "type": "noun",
     "word": "来年",
     "kana": "らいねん",
     "romaji": "rainen",
-    "meaning": "nextyear"
+    "meaning": "next year"
   },
   "raishuu": {
     "type": "noun",
     "word": "来週",
     "kana": "らいしゅう",
     "romaji": "raishuu",
-    "meaning": "nextweek"
+    "meaning": "next week"
   },
   "rajiio": {
     "type": "noun",
@@ -2149,14 +2149,14 @@
     "word": "両親",
     "kana": "りょうしん",
     "romaji": "ryoushin",
-    "meaning": "parents; bothparents"
+    "meaning": "parents; both parents"
   },
   "ryuugakusei": {
     "type": "noun",
     "word": "留学生",
     "kana": "りゅうがくせい",
     "romaji": "ryuugakusei",
-    "meaning": "exchangestudent"
+    "meaning": "exchange student"
   },
   "saifu": {
     "type": "noun",
@@ -2205,7 +2205,7 @@
     "word": "再来年",
     "kana": "さらいねん",
     "romaji": "sarainen",
-    "meaning": "yearafternext"
+    "meaning": "year after next"
   },
   "satou": {
     "type": "noun",
@@ -2226,7 +2226,7 @@
     "word": "背広",
     "kana": "せびろ",
     "romaji": "sebiro",
-    "meaning": "businesssuit"
+    "meaning": "busines ssuit"
   },
   "seetaa": {
     "type": "noun",
@@ -2253,14 +2253,14 @@
     "word": "千",
     "kana": "せん",
     "romaji": "sen",
-    "meaning": "1, 000; thousand"
+    "meaning": "1,000; thousand"
   },
   "sengetsu": {
     "type": "noun",
     "word": "先月",
     "kana": "せんげつ",
     "romaji": "sengetsu",
-    "meaning": "lastmonth"
+    "meaning": "last month"
   },
   "sensei": {
     "type": "noun",
@@ -2274,7 +2274,7 @@
     "word": "先週",
     "kana": "せんしゅう",
     "romaji": "senshuu",
-    "meaning": "lastweek"
+    "meaning": "last week"
   },
   "sentaku": {
     "type": "noun",
@@ -2363,7 +2363,7 @@
     "word": "食堂",
     "kana": "しょくどう",
     "romaji": "shokudou",
-    "meaning": "cafeteria; diningroom"
+    "meaning": "cafeteria; dining room"
   },
   "shouyu": {
     "type": "noun",
@@ -2404,7 +2404,7 @@
     "word": "掃除",
     "kana": "そうじ",
     "romaji": "souji",
-    "meaning": "toclean, tosweep"
+    "meaning": "to clean, to sweep"
   },
   "suiyoubi": {
     "type": "noun",
@@ -2431,7 +2431,7 @@
     "word": "少し",
     "kana": "すこし",
     "romaji": "sukoshi",
-    "meaning": "alittle(bit); smallquantity"
+    "meaning": "a little (bit); small quantity"
   },
   "supootsu": {
     "type": "noun",
@@ -2548,21 +2548,21 @@
     "type": "noun",
     "word": "テープレコーダー",
     "romaji": "teepu rekoodaa",
-    "meaning": "taperecorder"
+    "meaning": "tap erecorder"
   },
   "tegami": {
     "type": "noun",
     "word": "手紙",
     "kana": "てがみ",
     "romaji": "tegami",
-    "meaning": "Letter(message)"
+    "meaning": "Letter (message)"
   },
   "tenki": {
     "type": "noun",
     "word": "天気",
     "kana": "てんき",
     "romaji": "tenki",
-    "meaning": "weather; theelements"
+    "meaning": "weather; the elements"
   },
   "terebi": {
     "type": "noun",
@@ -2581,7 +2581,7 @@
     "word": "戸",
     "kana": "と",
     "romaji": "to",
-    "meaning": "Japanesestyledoor"
+    "meaning": "Japanese style door"
   },
   "toire": {
     "type": "noun",
@@ -2629,14 +2629,14 @@
     "word": "隣",
     "kana": "となり",
     "romaji": "tonari",
-    "meaning": "nextdoorto"
+    "meaning": "next door to"
   },
   "tooka": {
     "type": "noun",
     "word": "十日",
     "kana": "とおか",
     "romaji": "tooka",
-    "meaning": "tenthdayofthemonth"
+    "meaning": "tenth day of the month"
   },
   "tori": {
     "type": "noun",
@@ -2650,7 +2650,7 @@
     "word": "鶏肉",
     "kana": "とりにく",
     "romaji": "toriniku",
-    "meaning": "chickenmeat"
+    "meaning": "chicken meat"
   },
   "toshi": {
     "type": "noun",
@@ -2678,7 +2678,7 @@
     "word": "一日",
     "kana": "ついたち",
     "romaji": "tsuitachi",
-    "meaning": "firstdayofthemonth"
+    "meaning": "first day of th emonth"
   },
   "tsukue": {
     "type": "noun",
@@ -2761,14 +2761,14 @@
     "word": "八つ",
     "kana": "やっつ",
     "romaji": "yattsu",
-    "meaning": "eight%3A8"
+    "meaning": "eight; 8"
   },
   "yokka": {
     "type": "noun",
     "word": "四日",
     "kana": "よっか",
     "romaji": "yokka",
-    "meaning": "fourthdayofthemonth"
+    "meaning": "fourth day of th emonth"
   },
   "yoko": {
     "type": "noun",
@@ -2796,14 +2796,14 @@
     "word": "洋服",
     "kana": "ようふく",
     "romaji": "youfuku",
-    "meaning": "westernclothes"
+    "meaning": "western clothes"
   },
   "youka": {
     "type": "noun",
     "word": "八日",
     "kana": "ようか",
     "romaji": "youka",
-    "meaning": "eighthdayofthemonth"
+    "meaning": "eighth day of the month"
   },
   "yuki": {
     "type": "noun",
@@ -2817,14 +2817,14 @@
     "word": "昨夜",
     "kana": "ゆうべ",
     "romaji": "yuube",
-    "meaning": "lastnight"
+    "meaning": "last night"
   },
   "yuubinkyoku": {
     "type": "noun",
     "word": "郵便局",
     "kana": "ゆうびんきょく",
     "romaji": "yuubinkyoku",
-    "meaning": "postoffice"
+    "meaning": "post office"
   },
   "yuugata": {
     "type": "noun",
@@ -2838,7 +2838,7 @@
     "word": "夕飯",
     "kana": "ゆうはん",
     "romaji": "yuuhan",
-    "meaning": "eveningmeal"
+    "meaning": "evening meal"
   },
   "yuumei": {
     "type": "noun",

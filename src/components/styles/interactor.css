@@ -45,6 +45,8 @@
 
 #input-box form input{
     font-size: 1.5rem;
+    min-width: 320px;
+    max-width: 70%;
 }
 
 #answer-status-box {
