@@ -5,7 +5,20 @@ import n5NaAdjectives from "../data/n5/na-adjective.json";
 import n5Adverbs from "../data/n5/adverb.json";
 import n5Katakana from "../data/n5/katakana.json";
 
+import n4Nouns from "../data/n4/noun.json";
+import n4Verbs from "../data/n4/verb.json";
+import n4IAdjectives from "../data/n4/i-adjective.json";
+import n4NaAdjectives from "../data/n4/na-adjective.json";
+import n4Adverbs from "../data/n4/adverb.json";
+
 export const DATA_OBJECT = {
+    n4: {
+        noun: n4Nouns,
+        verb: n4Verbs,
+        "i-adjective": n4IAdjectives,
+        "na-adjective": n4NaAdjectives,
+        "adverb": n4Adverbs,
+    },
     n5: {
         noun: n5Nouns,
         verb: n5Verbs,

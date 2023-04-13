@@ -1,0 +1,170 @@
+{
+    "anshin": {
+        "type": "na-adjective",
+        "word": "安心",
+        "kana": "あんしん",
+        "romaji": "anshin",
+        "meaning": "peace of mind"
+    },
+    "anzen": {
+        "type": "na-adjective",
+        "word": "安全",
+        "kana": "あんぜん",
+        "romaji": "anzen",
+        "meaning": "safety; security"
+    },
+    "daiji": {
+        "type": "na-adjective",
+        "word": "大事",
+        "kana": "だいじ",
+        "romaji": "daiji",
+        "meaning": "important; serious; crucial"
+    },
+    "fuben": {
+        "type": "na-adjective",
+        "word": "不便",
+        "kana": "ふべん",
+        "romaji": "fuben",
+        "meaning": "inconvenience"
+    },
+    "fukuzatsu": {
+        "type": "na-adjective",
+        "word": "複雑",
+        "kana": "ふくざつ",
+        "romaji": "fukuzatsu",
+        "meaning": "complexity; complication"
+    },
+    "hantai": {
+        "type": "na-adjective",
+        "word": "反対",
+        "kana": "はんたい",
+        "romaji": "hantai",
+        "meaning": "opposition"
+    },
+    "hen": {
+        "type": "na-adjective",
+        "word": "変",
+        "kana": "へん",
+        "romaji": "hen",
+        "meaning": "strange; peculiar; weird"
+    },
+    "hisashiburi": {
+        "type": "na-adjective",
+        "word": "久しぶり",
+        "kana": "ひさしぶり",
+        "romaji": "hisashiburi",
+        "meaning": "after a long time"
+    },
+    "ippai": {
+        "type": "na-adjective",
+        "word": "いっぱい",
+        "kana": "ippai",
+        "romaji": "ippai",
+        "meaning": "full"
+    },
+    "isshoukenmei": {
+        "type": "na-adjective",
+        "word": "一生懸命",
+        "kana": "いっしょうけんめい",
+        "romaji": "isshoukenmei",
+        "meaning": "very hard; with utmost effort"
+    },
+    "jiyuu": {
+        "type": "na-adjective",
+        "word": "自由",
+        "kana": "じゆう",
+        "romaji": "jiyuu",
+        "meaning": "freedom"
+    },
+    "juubun": {
+        "type": "na-adjective",
+        "word": "十分",
+        "kana": "じゅうぶん",
+        "romaji": "juubun",
+        "meaning": "enough; sufficient; plenty; adequate; satisfactory"
+    },
+    "kantan": {
+        "type": "na-adjective",
+        "word": "簡単",
+        "kana": "かんたん",
+        "romaji": "kantan",
+        "meaning": "simple; easy"
+    },
+    "kiken": {
+        "type": "na-adjective",
+        "word": "危険",
+        "kana": "きけん",
+        "romaji": "kiken",
+        "meaning": "danger"
+    },
+    "kyuu": {
+        "type": "na-adjective",
+        "word": "急",
+        "kana": "きゅう",
+        "romaji": "kyuu",
+        "meaning": "sudden; abrupt; unexpected"
+    },
+    "muri": {
+        "type": "na-adjective",
+        "word": "無理",
+        "kana": "むり",
+        "romaji": "muri",
+        "meaning": "impossible"
+    },
+    "sakan": {
+        "type": "na-adjective",
+        "word": "盛ん",
+        "kana": "さかん",
+        "romaji": "sakan",
+        "meaning": "popularity; prosperous"
+    },
+    "shinsetsu": {
+        "type": "na-adjective",
+        "word": "親切",
+        "kana": "しんせつ",
+        "romaji": "shinsetsu",
+        "meaning": "kindness"
+    },
+    "taitei": {
+        "type": "na-adjective",
+        "word": "たいてい",
+        "kana": "taitei",
+        "romaji": "taitei",
+        "meaning": "usually"
+    },
+    "tanoshimi": {
+        "type": "na-adjective",
+        "word": "楽しみ",
+        "kana": "たのしみ",
+        "romaji": "tanoshimi",
+        "meaning": "looking forward to"
+    },
+    "teinei": {
+        "type": "na-adjective",
+        "word": "丁寧",
+        "kana": "ていねい",
+        "romaji": "teinei",
+        "meaning": "polite"
+    },
+    "tekitou": {
+        "type": "na-adjective",
+        "word": "適当",
+        "kana": "てきとう",
+        "romaji": "tekitou",
+        "meaning": "suitable"
+    },
+    "tokubetsu": {
+        "type": "na-adjective",
+        "word": "特別",
+        "kana": "とくべつ",
+        "romaji": "tokubetsu",
+        "meaning": "special; particular; extraordinary; exceptional"
+    },
+    "zannen": {
+        "type": "na-adjective",
+        "word": "残念",
+        "kana": "ざんねん",
+        "romaji": "zannen",
+        "meaning": "regrettable; unfortunate"
+    }
+}

@@ -23,10 +23,14 @@ export function formatOutput(words) {
     let children = [];
     let indices = {grammar: []};
     let particles = {};
+    let word = "";
+    let romaji = "";
     let i = 0;
     for(let w of words) {
         if(w.children) {
             for(let c of w.children) {
+                word += c.word;
+                romaji += c.romaji + " ";
                 children.push(c);
                 indices[c.type] ??= [];
                 indices[c.type].push(i);
@@ -38,6 +42,8 @@ export function formatOutput(words) {
             }
         }
         else {
+            word += w.word;
+            romaji += w.romaji + " ";
             children.push(w);
             indices[w.type] ??= [];
             indices[w.type].push(i);
@@ -49,8 +55,8 @@ export function formatOutput(words) {
         }
     }
     return {
-        word: words.map(w => w.word).join(""),
-        romaji: words.map(w => w.romaji).join(" "),
+        word: word,
+        romaji: romaji.slice(0, -1),
         children: children,
         indices: indices,
         particles: particles

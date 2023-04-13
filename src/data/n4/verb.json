@@ -1,0 +1,2122 @@
+{
+    "agaru": {
+        "type": "verb",
+        "word": "上がる",
+        "kana": "あがる",
+        "romaji": "agaru",
+        "meaning": "to rise",
+        "wStem": "上が",
+        "rStem": "aga",
+        "category": "godan"
+    },
+    "aisatsusuru": {
+        "type": "verb",
+        "word": "挨拶する",
+        "kana": "あいさつする",
+        "romaji": "aisatsusuru",
+        "meaning": "to greet",
+        "wStem": "挨拶",
+        "rStem": "aisatsu",
+        "category": "irregular-suru"
+    },
+    "annaisuru": {
+        "type": "verb",
+        "word": "案内する",
+        "kana": "あんないする",
+        "romaji": "annaisuru",
+        "meaning": "to guide",
+        "wStem": "案内",
+        "rStem": "annai",
+        "category": "irregular-suru"
+    },
+    "anshinsuru": {
+        "type": "verb",
+        "word": "安心する",
+        "kana": "あんしんする",
+        "romaji": "anshin",
+        "meaning": "to feel peace of mind",
+        "wStem": "安心",
+        "rStem": "anshin",
+        "category": "irregular-suru"
+    },
+    "arubaitosuru": {
+        "type": "verb",
+        "word": "アルバイトする",
+        "kana": "アルバイトする",
+        "romaji": "arubaitosuru",
+        "meaning": "to work a part-time job",
+        "wStem": "アルバイト",
+        "rStem": "arubaito",
+        "category": "irregular-suru"
+    },
+    "atsumaru": {
+        "type": "verb",
+        "word": "集まる",
+        "kana": "あつまる",
+        "romaji": "atsumaru",
+        "meaning": "to gather; to collect; to assemble",
+        "wStem": "集ま",
+        "rStem": "atsuma",
+        "category": "godan"
+    },
+    "atsumeru": {
+        "type": "verb",
+        "word": "集める",
+        "kana": "あつめる",
+        "romaji": "atsumeru",
+        "meaning": "to collect; to assemble; to gather",
+        "wStem": "集め",
+        "rStem": "atsume",
+        "category": "ichidan"
+    },
+    "ayamaru": {
+        "type": "verb",
+        "word": "謝る",
+        "kana": "あやまる",
+        "romaji": "ayamaru",
+        "meaning": "to apologize",
+        "wStem": "謝",
+        "rStem": "ayama",
+        "category": "godan"
+    },
+    "bouekisuru": {
+        "type": "verb",
+        "word": "貿易する",
+        "kana": "ぼうえきする",
+        "romaji": "bouekisuru",
+        "meaning": "to trade",
+        "wStem": "貿易",
+        "rStem": "boueki",
+        "category": "irregular-suru"
+    },
+    "chekkusuru": {
+        "type": "verb",
+        "word": "チェックする",
+        "kana": "チェックする",
+        "romaji": "chekkusuru",
+        "meaning": "to check",
+        "wStem": "チェック",
+        "rStem": "chekku",
+        "category": "irregular-suru"
+    },
+    "chuuisuru": {
+        "type": "verb",
+        "word": "注意する",
+        "kana": "ちゅういする",
+        "romaji": "chuuisuru",
+        "meaning": "to caution",
+        "wStem": "注意",
+        "rStem": "chuui",
+        "category": "godan"
+    },
+    "chuushasuru": {
+        "type": "verb",
+        "word": "注射する",
+        "kana": "ちゅうしゃする",
+        "romaji": "chuushasur",
+        "meaning": "to inject",
+        "wStem": "注射",
+        "rStem": "chuusha",
+        "category": "irregular-suru"
+    },
+    "danbousuru": {
+        "type": "verb",
+        "word": "暖房する",
+        "kana": "だんぼうする",
+        "romaji": "danbousuru",
+        "meaning": "to heat",
+        "wStem": "暖房",
+        "rStem": "danbou",
+        "category": "irregular-suru"
+    },
+    "enryosuru": {
+        "type": "verb",
+        "word": "遠慮する",
+        "kana": "えんりょする",
+        "romaji": "enryosuru",
+        "meaning": "to be reserved",
+        "wStem": "遠慮",
+        "rStem": "enryo",
+        "category": "irregular-suru"
+    },
+    "erabu": {
+        "type": "verb",
+        "word": "選ぶ",
+        "kana": "えらぶ",
+        "romaji": "erabu",
+        "meaning": "to choose",
+        "wStem": "選",
+        "rStem": "era",
+        "category": "godan"
+    },
+    "fakkususuru": {
+        "type": "verb",
+        "word": "ファックスする",
+        "kana": "ファックスする",
+        "romaji": "fakkususuru",
+        "meaning": "fax",
+        "wStem": "ファックス",
+        "rStem": "fakkusu",
+        "category": "irregular-suru"
+    },
+    "fueru": {
+        "type": "verb",
+        "word": "増える",
+        "kana": "ふえる",
+        "romaji": "fueru",
+        "meaning": "to increase",
+        "wStem": "増え",
+        "rStem": "fue",
+        "category": "ichidan"
+    },
+    "fukushuusuru": {
+        "type": "verb",
+        "word": "復習する",
+        "kana": "ふくしゅうする",
+        "romaji": "fukushuu",
+        "meaning": "to review",
+        "wStem": "復習",
+        "rStem": "fukushuu",
+        "category": "irregular-suru"
+    },
+    "fumu": {
+        "type": "verb",
+        "word": "踏む",
+        "kana": "ふむ",
+        "romaji": "fumu",
+        "meaning": "to step on",
+        "wStem": "踏",
+        "rStem": "fu",
+        "category": "godan"
+    },
+    "furidasu": {
+        "type": "verb",
+        "word": "降り出す",
+        "kana": "ふりだす",
+        "romaji": "furidasu",
+        "meaning": "to start to rain",
+        "wStem": "降り出",
+        "rStem": "furida",
+        "category": "godan"
+    },
+    "futoru": {
+        "type": "verb",
+        "word": "太る",
+        "kana": "ふとる",
+        "romaji": "futoru",
+        "meaning": "to become fat",
+        "wStem": "太",
+        "rStem": "futo",
+        "category": "godan"
+    },
+    "geninsuru": {
+        "type": "verb",
+        "word": "原因する",
+        "kana": "げんいんする",
+        "romaji": "genin",
+        "meaning": "to cause; to be caused by",
+        "wStem": "原因",
+        "rStem": "genin",
+        "category": "irregular-suru"
+    },
+    "geshukusuru": {
+        "type": "verb",
+        "word": "下宿する",
+        "kana": "げしゅくする",
+        "romaji": "geshukusuru",
+        "meaning": "to lodge",
+        "wStem": "下宿",
+        "rStem": "geshuku",
+        "category": "irregular-suru"
+    },
+    "gochisousuru": {
+        "type": "verb",
+        "word": "ごちそうする",
+        "kana": "ごちそうする",
+        "romaji": "gochisousuru",
+        "meaning": "to treat (meal)",
+        "wStem": "ごちそう",
+        "rStem": "gochisou",
+        "category": "irregular-suru"
+    },
+    "goran ni naru": {
+        "type": "verb",
+        "word": "ご覧になる",
+        "kana": "ごらんになる",
+        "romaji": "goran ni naru",
+        "meaning": "(respectful) to see",
+        "wStem": "ご覧にな",
+        "rStem": "goran ni na",
+        "category": "godan"
+    },
+    "haikensuru": {
+        "type": "verb",
+        "word": "拝見する",
+        "kana": "はいけんする",
+        "romaji": "haikensuru",
+        "meaning": "to see; look at",
+        "wStem": "拝見",
+        "rStem": "haiken",
+        "category": "irregular-suru"
+    },
+    "hakobu": {
+        "type": "verb",
+        "word": "運ぶ",
+        "kana": "はこぶ",
+        "romaji": "hakobu",
+        "meaning": "to carry",
+        "wStem": "運",
+        "rStem": "hako",
+        "category": "godan"
+    },
+    "hanamisuru": {
+        "type": "verb",
+        "word": "花見する",
+        "kana": "はなみする",
+        "romaji": "hanamisuru",
+        "meaning": "to do flower viewing",
+        "wStem": "花見",
+        "rStem": "hanami",
+        "category": "irregular-suru"
+    },
+    "hantaisuru": {
+        "type": "verb",
+        "word": "反対する",
+        "kana": "はんたいする",
+        "romaji": "hantaisuru",
+        "meaning": "to oppose",
+        "wStem": "反対",
+        "rStem": "hantai",
+        "category": "irregular-suru"
+    },
+    "harau": {
+        "type": "verb",
+        "word": "払う",
+        "kana": "はらう",
+        "romaji": "harau",
+        "meaning": "to pay",
+        "wStem": "払",
+        "rStem": "hara",
+        "category": "godan"
+    },
+    "hatsuonsuru": {
+        "type": "verb",
+        "word": "発音する",
+        "kana": "はつおんする",
+        "romaji": "hatsuonsuru",
+        "meaning": "to pronounce",
+        "wStem": "発音",
+        "rStem": "hatsuon",
+        "category": "irregular-suru"
+    },
+    "henjisuru": {
+        "type": "verb",
+        "word": "返事する",
+        "kana": "へんじする",
+        "romaji": "henjisuru",
+        "meaning": "to reply; answer",
+        "wStem": "返事",
+        "rStem": "henji",
+        "category": "irregular-suru"
+    },
+    "hieru": {
+        "type": "verb",
+        "word": "冷える",
+        "kana": "ひえる",
+        "romaji": "hieru",
+        "meaning": "to grow cold",
+        "wStem": "冷え",
+        "rStem": "hie",
+        "category": "ichidan"
+    },
+    "hikaru": {
+        "type": "verb",
+        "word": "光る",
+        "kana": "ひかる",
+        "romaji": "hikaru",
+        "meaning": "to shine",
+        "wStem": "光",
+        "rStem": "hika",
+        "category": "godan"
+    },
+    "hikidasu": {
+        "type": "verb",
+        "word": "引き出す",
+        "kana": "ひきだす",
+        "romaji": "hikidasu",
+        "meaning": "to withdraw",
+        "wStem": "引き出",
+        "rStem": "hikida",
+        "category": "godan"
+    },
+    "hikkosu": {
+        "type": "verb",
+        "word": "引っ越す",
+        "kana": "ひっこす",
+        "romaji": "hikkosu",
+        "meaning": "to move house",
+        "wStem": "引っ越",
+        "rStem": "hikko",
+        "category": "godan"
+    },
+    "hiraku": {
+        "type": "verb",
+        "word": "開く",
+        "kana": "ひらく",
+        "romaji": "hiraku",
+        "meaning": "to open; to undo; to unseal; to unpack",
+        "wStem": "開",
+        "rStem": "hira",
+        "category": "godan"
+    },
+    "hirou": {
+        "type": "verb",
+        "word": "拾う",
+        "kana": "ひろう",
+        "romaji": "hirou",
+        "meaning": "to pick up",
+        "wStem": "拾",
+        "rStem": "hiro",
+        "category": "godan"
+    },
+    "homeru": {
+        "type": "verb",
+        "word": "褒める",
+        "kana": "ほめる",
+        "romaji": "homeru",
+        "meaning": "to praise",
+        "wStem": "褒め",
+        "rStem": "home",
+        "category": "ichidan"
+    },
+    "honyakusuru": {
+        "type": "verb",
+        "word": "翻訳する",
+        "kana": "ほんやくする",
+        "romaji": "honyakusuru",
+        "meaning": "to translate",
+        "wStem": "翻訳",
+        "rStem": "honyaku",
+        "category": "irregular-suru"
+    },
+    "housousuru": {
+        "type": "verb",
+        "word": "放送する",
+        "kana": "ほうそうする",
+        "romaji": "housousuru",
+        "meaning": "to broadcast",
+        "wStem": "放送",
+        "rStem": "housou",
+        "category": "irregular-suru"
+    },
+    "ijimeru": {
+        "type": "verb",
+        "word": "いじめる",
+        "kana": "ijimeru",
+        "romaji": "ijimeru",
+        "meaning": "to tease",
+        "wStem": "いじめ",
+        "rStem": "ijime",
+        "category": "ichidan"
+    },
+    "ikensuru": {
+        "type": "verb",
+        "word": "意見する",
+        "kana": "いけんする",
+        "romaji": "ikensuru",
+        "meaning": "to give opinion",
+        "wStem": "意見",
+        "rStem": "iken",
+        "category": "irregular-suru"
+    },
+    "ikiru": {
+        "type": "verb",
+        "word": "生きる",
+        "kana": "いきる",
+        "romaji": "ikiru",
+        "meaning": "to live",
+        "wStem": "生き",
+        "rStem": "iki",
+        "category": "ichidan"
+    },
+    "inoru": {
+        "type": "verb",
+        "word": "祈る",
+        "kana": "いのる",
+        "romaji": "inoru",
+        "meaning": "to pray",
+        "wStem": "祈",
+        "rStem": "ino",
+        "category": "godan"
+    },
+    "isogu": {
+        "type": "verb",
+        "word": "急ぐ",
+        "kana": "いそぐ",
+        "romaji": "isogu",
+        "meaning": "to hurry; to rush; to hasten; to make something happen sooner",
+        "wStem": "急",
+        "rStem": "iso",
+        "category": "godan"
+    },
+    "itadaku": {
+        "type": "verb",
+        "word": "頂く",
+        "kana": "いただく",
+        "romaji": "itadaku",
+        "meaning": "(humble) to receive",
+        "wStem": "頂",
+        "rStem": "itada",
+        "category": "godan"
+    },
+    "itasu": {
+        "type": "verb",
+        "word": "致す",
+        "kana": "いたす",
+        "romaji": "itasu",
+        "meaning": "(humble) to do",
+        "wStem": "致",
+        "rStem": "ita",
+        "category": "godan"
+    },
+    "junbisuru": {
+        "type": "verb",
+        "word": "準備する",
+        "kana": "じゅんびする",
+        "romaji": "junbisuru",
+        "meaning": "to prepare",
+        "wStem": "準備",
+        "rStem": "junbi",
+        "category": "irregular-suru"
+    },
+    "kaeru": {
+        "type": "verb",
+        "word": "変える",
+        "kana": "かえる",
+        "romaji": "kaeru",
+        "meaning": "to change; to transform",
+        "wStem": "変え",
+        "rStem": "kae",
+        "category": "ichidan"
+    },
+    "kaigisuru": {
+        "type": "verb",
+        "word": "会議する",
+        "kana": "かいぎする",
+        "romaji": "kaigisuru",
+        "meaning": "to hold a meeting",
+        "wStem": "会議",
+        "rStem": "kaigi",
+        "category": "irregular-suru"
+    },
+    "kaiwasuru": {
+        "type": "verb",
+        "word": "会話する",
+        "kana": "かいわする",
+        "romaji": "kaiwasuru",
+        "meaning": "to converse",
+        "wStem": "会話",
+        "rStem": "kaiwa",
+        "category": "irregular-suru"
+    },
+    "kamau": {
+        "type": "verb",
+        "word": "構う",
+        "kana": "かまう",
+        "romaji": "kamau",
+        "meaning": "to mind",
+        "wStem": "構",
+        "rStem": "kama",
+        "category": "godan"
+    },
+    "kamu": {
+        "type": "verb",
+        "word": "噛む",
+        "kana": "かむ",
+        "romaji": "kamu",
+        "meaning": "to bite,to chew",
+        "wStem": "噛",
+        "rStem": "ka",
+        "category": "godan"
+    },
+    "kangaeru": {
+        "type": "verb",
+        "word": "考える",
+        "kana": "かんがえる",
+        "romaji": "kangaeru",
+        "meaning": "to think",
+        "wStem": "考え",
+        "rStem": "kangae",
+        "category": "ichidan"
+    },
+    "kankeisuru": {
+        "type": "verb",
+        "word": "関係する",
+        "kana": "かんけいする",
+        "romaji": "kankeisuru",
+        "meaning": "to be related to",
+        "wStem": "関係",
+        "rStem": "kankei",
+        "category": "irregular-suru"
+    },
+    "katadzukeru": {
+        "type": "verb",
+        "word": "片付ける",
+        "kana": "かたづける",
+        "romaji": "katadzukeru",
+        "meaning": "to tidy up",
+        "wStem": "片付け",
+        "rStem": "katadzuke",
+        "category": "ichidan"
+    },
+    "katsu": {
+        "type": "verb",
+        "word": "勝つ",
+        "kana": "かつ",
+        "romaji": "katsu",
+        "meaning": "to win",
+        "wStem": "勝",
+        "rStem": "ka",
+        "category": "godan"
+    },
+    "kawaku": {
+        "type": "verb",
+        "word": "乾く",
+        "kana": "かわく",
+        "romaji": "kawaku",
+        "meaning": "to get dry",
+        "wStem": "乾",
+        "rStem": "kawa",
+        "category": "godan"
+    },
+    "kawaru": {
+        "type": "verb",
+        "word": "変わる",
+        "kana": "かわる",
+        "romaji": "kawaru",
+        "meaning": "to change",
+        "wStem": "変わ",
+        "rStem": "kawa",
+        "category": "godan"
+    },
+    "kayou": {
+        "type": "verb",
+        "word": "通う",
+        "kana": "かよう",
+        "romaji": "kayou",
+        "meaning": "to commute",
+        "wStem": "通",
+        "rStem": "kayo",
+        "category": "godan"
+    },
+    "kazaru": {
+        "type": "verb",
+        "word": "飾る",
+        "kana": "かざる",
+        "romaji": "kazaru",
+        "meaning": "to decorate",
+        "wStem": "飾",
+        "rStem": "kaza",
+        "category": "godan"
+    },
+    "kegasuru": {
+        "type": "verb",
+        "word": "怪我する",
+        "kana": "けがする",
+        "romaji": "kegasuru",
+        "meaning": "to injure",
+        "wStem": "怪我",
+        "rStem": "kega",
+        "category": "irregular-suru"
+    },
+    "keikakusuru": {
+        "type": "verb",
+        "word": "計画する",
+        "kana": "けいかくする",
+        "romaji": "keikakusuru",
+        "meaning": "to plan",
+        "wStem": "計画",
+        "rStem": "keikaku",
+        "category": "irregular-suru"
+    },
+    "keikensuru": {
+        "type": "verb",
+        "word": "経験する",
+        "kana": "けいけんする",
+        "romaji": "keikensuru",
+        "meaning": "to experience",
+        "wStem": "経験",
+        "rStem": "keiken",
+        "category": "irregular-suru"
+    },
+    "kenbutsusuru": {
+        "type": "verb",
+        "word": "見物する",
+        "kana": "けんぶつする",
+        "romaji": "kenbutsu",
+        "meaning": "to sightsee; to visit",
+        "wStem": "見物",
+        "rStem": "kenbutsu",
+        "category": "irregular-suru"
+    },
+    "kenkasuru": {
+        "type": "verb",
+        "word": "喧嘩する",
+        "kana": "けんかする",
+        "romaji": "kenkasuru",
+        "meaning": "to quarrel",
+        "wStem": "喧嘩",
+        "rStem": "kenka",
+        "category": "irregular-suru"
+    },
+    "kenkyuusuru": {
+        "type": "verb",
+        "word": "研究する",
+        "kana": "けんきゅうする",
+        "romaji": "kenkyuusuru",
+        "meaning": "to research",
+        "wStem": "研究",
+        "rStem": "kenkyuu",
+        "category": "irregular-suru"
+    },
+    "kikoeru": {
+        "type": "verb",
+        "word": "聞こえる",
+        "kana": "きこえる",
+        "romaji": "kikoeru",
+        "meaning": "to be heard; to be audible; to be said",
+        "wStem": "聞こえ",
+        "rStem": "kikoe",
+        "category": "ichidan"
+    },
+    "kimaru": {
+        "type": "verb",
+        "word": "決まる",
+        "kana": "きまる",
+        "romaji": "kimaru",
+        "meaning": "to be decided",
+        "wStem": "決ま",
+        "rStem": "kima",
+        "category": "godan"
+    },
+    "kimeru": {
+        "type": "verb",
+        "word": "決める",
+        "kana": "きめる",
+        "romaji": "kimeru",
+        "meaning": "to decide",
+        "wStem": "決め",
+        "rStem": "kime",
+        "category": "ichidan"
+    },
+    "komu": {
+        "type": "verb",
+        "word": "込む",
+        "kana": "こむ",
+        "romaji": "komu",
+        "meaning": "to be crowded",
+        "wStem": "込",
+        "rStem": "ko",
+        "category": "godan"
+    },
+    "koshousuru": {
+        "type": "verb",
+        "word": "故障する",
+        "kana": "こしょうする",
+        "romaji": "koshousuru",
+        "meaning": "to break-down",
+        "wStem": "故障",
+        "rStem": "koshou",
+        "category": "irregular-suru"
+    },
+    "kougisuru": {
+        "type": "verb",
+        "word": "講義する",
+        "kana": "こうぎする",
+        "romaji": "kougisuru",
+        "meaning": "to lecture on",
+        "wStem": "講義",
+        "rStem": "kougi",
+        "category": "irregular-suru"
+    },
+    "kowareru": {
+        "type": "verb",
+        "word": "壊れる",
+        "kana": "こわれる",
+        "romaji": "kowareru",
+        "meaning": "to be broken",
+        "wStem": "壊れ",
+        "rStem": "koware",
+        "category": "ichidan"
+    },
+    "kowasu": {
+        "type": "verb",
+        "word": "壊す",
+        "kana": "こわす",
+        "romaji": "kowasu",
+        "meaning": "to break",
+        "wStem": "壊",
+        "rStem": "kowa",
+        "category": "godan"
+    },
+    "kudasaru": {
+        "type": "verb",
+        "word": "下さる",
+        "kana": "くださる",
+        "romaji": "kudasaru",
+        "meaning": "(respectful) to give",
+        "wStem": "下さ",
+        "rStem": "kudasa",
+        "category": "godan"
+    },
+    "kuraberu": {
+        "type": "verb",
+        "word": "比べる",
+        "kana": "くらべる",
+        "romaji": "kuraberu",
+        "meaning": "to compare",
+        "wStem": "比べ",
+        "rStem": "kurabe",
+        "category": "ichidan"
+    },
+    "kureru": {
+        "type": "verb",
+        "word": "暮れる",
+        "kana": "くれる",
+        "romaji": "kureru",
+        "meaning": "to get dark",
+        "wStem": "暮れ",
+        "rStem": "kure",
+        "category": "ichidan"
+    },
+    "kyouikusuru": {
+        "type": "verb",
+        "word": "教育する",
+        "kana": "きょういくする",
+        "romaji": "kyouikusuru",
+        "meaning": "to educate",
+        "wStem": "教育",
+        "rStem": "kyouiku",
+        "category": "irregular-suru"
+    },
+    "kyousousuru": {
+        "type": "verb",
+        "word": "競争する",
+        "kana": "きょうそうする",
+        "romaji": "kyousousuru",
+        "meaning": "to compete",
+        "wStem": "競争",
+        "rStem": "kyousou",
+        "category": "irregular-suru"
+    },
+    "kyuukousuru": {
+        "type": "verb",
+        "word": "急行する",
+        "kana": "きゅうこうする",
+        "romaji": "kyuukousuru",
+        "meaning": "to rush to",
+        "wStem": "急行",
+        "rStem": "kyuukou",
+        "category": "irregular-suru"
+    },
+    "machigaeru": {
+        "type": "verb",
+        "word": "間違える",
+        "kana": "まちがえる",
+        "romaji": "machigaeru",
+        "meaning": "to make a mistake (in)",
+        "wStem": "間違え",
+        "rStem": "machigae",
+        "category": "ichidan"
+    },
+    "mairu": {
+        "type": "verb",
+        "word": "参る",
+        "kana": "まいる",
+        "romaji": "mairu",
+        "meaning": "(humble) to go; to come",
+        "wStem": "参",
+        "rStem": "mai",
+        "category": "ichidan"
+    },
+    "makeru": {
+        "type": "verb",
+        "word": "負ける",
+        "kana": "まける",
+        "romaji": "makeru",
+        "meaning": "to lose",
+        "wStem": "負け",
+        "rStem": "make",
+        "category": "ichidan"
+    },
+    "maniau": {
+        "type": "verb",
+        "word": "間に合う",
+        "kana": "まにあう",
+        "romaji": "maniau",
+        "meaning": "to be in time (for)",
+        "wStem": "間に合",
+        "rStem": "mania",
+        "category": "godan"
+    },
+    "mawaru": {
+        "type": "verb",
+        "word": "回る",
+        "kana": "まわる",
+        "romaji": "mawaru",
+        "meaning": "to go around",
+        "wStem": "回",
+        "rStem": "mawa",
+        "category": "godan"
+    },
+    "meshiagaru": {
+        "type": "verb",
+        "word": "召し上がる",
+        "kana": "めしあがる",
+        "romaji": "meshiagaru",
+        "meaning": "to eat; to drink",
+        "wStem": "召し上が",
+        "rStem": "meshiaga",
+        "category": "godan"
+    },
+    "mieru": {
+        "type": "verb",
+        "word": "見える",
+        "kana": "みえる",
+        "romaji": "mieru",
+        "meaning": "to be seen; to be in sight; to look; to seem",
+        "wStem": "見え",
+        "rStem": "mie",
+        "category": "ichidan"
+    },
+    "mitsukaru": {
+        "type": "verb",
+        "word": "見つかる",
+        "kana": "みつかる",
+        "romaji": "mitsukaru",
+        "meaning": "to be found; to be discovered",
+        "wStem": "見つか",
+        "rStem": "mitsuka",
+        "category": "godan"
+    },
+    "mitsukeru": {
+        "type": "verb",
+        "word": "見つける",
+        "kana": "みつける",
+        "romaji": "mitsukeru",
+        "meaning": "to discover; to find; to come across; to detect; to spot",
+        "wStem": "見つけ",
+        "rStem": "mitsuke",
+        "category": "ichidan"
+    },
+    "modoru": {
+        "type": "verb",
+        "word": "戻る",
+        "kana": "もどる",
+        "romaji": "modoru",
+        "meaning": "to turn back",
+        "wStem": "戻",
+        "rStem": "modo",
+        "category": "godan"
+    },
+    "moushiageru": {
+        "type": "verb",
+        "word": "申し上げる",
+        "kana": "もうしあげる",
+        "romaji": "moushiageru",
+        "meaning": "to say; to offer",
+        "wStem": "申し上げ",
+        "rStem": "moushiage",
+        "category": "ichidan"
+    },
+    "mousu": {
+        "type": "verb",
+        "word": "申す",
+        "kana": "もうす",
+        "romaji": "mousu",
+        "meaning": "to be called; to say",
+        "wStem": "申",
+        "rStem": "mou",
+        "category": "godan"
+    },
+    "mukaeru": {
+        "type": "verb",
+        "word": "迎える",
+        "kana": "むかえる",
+        "romaji": "mukaeru",
+        "meaning": "to go out to meet",
+        "wStem": "迎え",
+        "rStem": "mukae",
+        "category": "ichidan"
+    },
+    "mukau": {
+        "type": "verb",
+        "word": "向かう",
+        "kana": "むかう",
+        "romaji": "mukau",
+        "meaning": "to head towards",
+        "wStem": "向か",
+        "rStem": "muka",
+        "category": "godan"
+    },
+    "murisuru": {
+        "type": "verb",
+        "word": "無理する",
+        "kana": "むりする",
+        "romaji": "murisuru",
+        "meaning": "to overwork; do impossible",
+        "wStem": "無理",
+        "rStem": "muri",
+        "category": "irregular-suru"
+    },
+    "nageru": {
+        "type": "verb",
+        "word": "投げる",
+        "kana": "なげる",
+        "romaji": "nageru",
+        "meaning": "to throw or cast away",
+        "wStem": "投げ",
+        "rStem": "nage",
+        "category": "ichidan"
+    },
+    "naku": {
+        "type": "verb",
+        "word": "泣く",
+        "kana": "なく",
+        "romaji": "naku",
+        "meaning": "to weep",
+        "wStem": "泣",
+        "rStem": "na",
+        "category": "godan"
+    },
+    "naku naru": {
+        "type": "verb",
+        "word": "無くなる",
+        "kana": "なくなる",
+        "romaji": "naku naru",
+        "meaning": "to disappear; to get lost",
+        "wStem": "無くな",
+        "rStem": "naku na",
+        "category": "godan"
+    },
+    "nakunaru": {
+        "type": "verb",
+        "word": "亡くなる",
+        "kana": "なくなる",
+        "romaji": "nakunaru",
+        "meaning": "to die",
+        "wStem": "亡くな",
+        "rStem": "nakuna",
+        "category": "godan"
+    },
+    "naoru": {
+        "type": "verb",
+        "word": "直る",
+        "kana": "なおる",
+        "romaji": "naoru",
+        "meaning": "to be fixed,to be repaired",
+        "wStem": "直",
+        "rStem": "nao",
+        "category": "godan"
+    },
+    "naoru_3": {
+        "type": "verb",
+        "word": "治る",
+        "kana": "なおる",
+        "romaji": "naoru",
+        "meaning": "to be cured; to heal",
+        "wStem": "治",
+        "rStem": "nao",
+        "category": "godan"
+    },
+    "nareru": {
+        "type": "verb",
+        "word": "慣れる",
+        "kana": "なれる",
+        "romaji": "nareru",
+        "meaning": "to get used to",
+        "wStem": "慣れ",
+        "rStem": "nare",
+        "category": "ichidan"
+    },
+    "naru": {
+        "type": "verb",
+        "word": "鳴る",
+        "kana": "なる",
+        "romaji": "naru",
+        "meaning": "to sound",
+        "wStem": "鳴",
+        "rStem": "na",
+        "category": "godan"
+    },
+    "nebousuru": {
+        "type": "verb",
+        "word": "寝坊する",
+        "kana": "ねぼうする",
+        "romaji": "nebosuruu",
+        "meaning": "to sleep in late; to oversleep",
+        "wStem": "寝坊",
+        "rStem": "nebou",
+        "category": "irregular-suru"
+    },
+    "nemuru": {
+        "type": "verb",
+        "word": "眠る",
+        "kana": "ねむる",
+        "romaji": "nemuru",
+        "meaning": "to sleep",
+        "wStem": "眠",
+        "rStem": "nemu",
+        "category": "godan"
+    },
+    "nigeru": {
+        "type": "verb",
+        "word": "逃げる",
+        "kana": "にげる",
+        "romaji": "nigeru",
+        "meaning": "to escape",
+        "wStem": "逃げ",
+        "rStem": "nige",
+        "category": "ichidan"
+    },
+    "niru": {
+        "type": "verb",
+        "word": "似る",
+        "kana": "にる",
+        "romaji": "niru",
+        "meaning": "to be similar",
+        "wStem": "似",
+        "rStem": "ni",
+        "category": "ichidan"
+    },
+    "nokoru": {
+        "type": "verb",
+        "word": "残る",
+        "kana": "のこる",
+        "romaji": "nokoru",
+        "meaning": "to remain",
+        "wStem": "残",
+        "rStem": "noko",
+        "category": "godan"
+    },
+    "norikaeru": {
+        "type": "verb",
+        "word": "乗り換える",
+        "kana": "のりかえる",
+        "romaji": "norikaeru",
+        "meaning": "to change between buses or trains",
+        "wStem": "乗り換え",
+        "rStem": "norikae",
+        "category": "ichidan"
+    },
+    "nureru": {
+        "type": "verb",
+        "word": "濡れる",
+        "kana": "ぬれる",
+        "romaji": "nureru",
+        "meaning": "to get wet",
+        "wStem": "濡れ",
+        "rStem": "nure",
+        "category": "ichidan"
+    },
+    "nuru": {
+        "type": "verb",
+        "word": "塗る",
+        "kana": "ぬる",
+        "romaji": "nuru",
+        "meaning": "to paint; to plaster",
+        "wStem": "塗",
+        "rStem": "nu",
+        "category": "godan"
+    },
+    "nusumu": {
+        "type": "verb",
+        "word": "盗む",
+        "kana": "ぬすむ",
+        "romaji": "nusumu",
+        "meaning": "to steal",
+        "wStem": "盗",
+        "rStem": "nusu",
+        "category": "godan"
+    },
+    "nyuugakusuru": {
+        "type": "verb",
+        "word": "入学する",
+        "kana": "にゅうがくする",
+        "romaji": "nyuugakusuru",
+        "meaning": "to enroll in school",
+        "wStem": "入学",
+        "rStem": "nyuugaku",
+        "category": "irregular-suru"
+    },
+    "nyuuinsuru": {
+        "type": "verb",
+        "word": "入院する",
+        "kana": "にゅういんする",
+        "romaji": "nyuuinsuru",
+        "meaning": "to be hospitalized",
+        "wStem": "入院",
+        "rStem": "nyuuin",
+        "category": "irregular-suru"
+    },
+    "ochiru": {
+        "type": "verb",
+        "word": "落ちる",
+        "kana": "おちる",
+        "romaji": "ochiru",
+        "meaning": "to fall or drop",
+        "wStem": "落ち",
+        "rStem": "ochi",
+        "category": "ichidan"
+    },
+    "odoroku": {
+        "type": "verb",
+        "word": "驚く",
+        "kana": "おどろく",
+        "romaji": "odoroku",
+        "meaning": "to be surprised",
+        "wStem": "驚",
+        "rStem": "odoro",
+        "category": "godan"
+    },
+    "odoru": {
+        "type": "verb",
+        "word": "踊る",
+        "kana": "おどる",
+        "romaji": "odoru",
+        "meaning": "to dance",
+        "wStem": "踊",
+        "rStem": "odo",
+        "category": "godan"
+    },
+    "oide ni naru": {
+        "type": "verb",
+        "word": "お出でになる",
+        "kana": "おいでになる",
+        "romaji": "oide ni naru",
+        "meaning": "(respectful) to be",
+        "wStem": "お出でにな",
+        "rStem": "oide ni na",
+        "category": "godan"
+    },
+    "oiwaisuru": {
+        "type": "verb",
+        "word": "お祝いする",
+        "kana": "おいわいする",
+        "romaji": "oiwaisuru",
+        "meaning": "to celebrate",
+        "wStem": "お祝い",
+        "rStem": "oiwai",
+        "category": "irregular-suru"
+    },
+    "okonau": {
+        "type": "verb",
+        "word": "行う",
+        "kana": "おこなう",
+        "romaji": "okonau",
+        "meaning": "to perform; to do; to carry out",
+        "wStem": "行",
+        "rStem": "okona",
+        "category": "godan"
+    },
+    "okoru": {
+        "type": "verb",
+        "word": "怒る",
+        "kana": "おこる",
+        "romaji": "okoru",
+        "meaning": "to be angry",
+        "wStem": "怒",
+        "rStem": "oko",
+        "category": "godan"
+    },
+    "okosu": {
+        "type": "verb",
+        "word": "起こす",
+        "kana": "おこす",
+        "romaji": "okosu",
+        "meaning": "to wake",
+        "wStem": "起こ",
+        "rStem": "oko",
+        "category": "godan"
+    },
+    "okureru": {
+        "type": "verb",
+        "word": "遅れる",
+        "kana": "おくれる",
+        "romaji": "okureru",
+        "meaning": "to be late",
+        "wStem": "遅れ",
+        "rStem": "okure",
+        "category": "ichidan"
+    },
+    "okuru": {
+        "type": "verb",
+        "word": "送る",
+        "kana": "おくる",
+        "romaji": "okuru",
+        "meaning": "to send",
+        "wStem": "送",
+        "rStem": "oku",
+        "category": "godan"
+    },
+    "omoidasu": {
+        "type": "verb",
+        "word": "思い出す",
+        "kana": "おもいだす",
+        "romaji": "omoidasu",
+        "meaning": "to remember",
+        "wStem": "思い出",
+        "rStem": "omoida",
+        "category": "godan"
+    },
+    "oreru": {
+        "type": "verb",
+        "word": "折れる",
+        "kana": "おれる",
+        "romaji": "oreru",
+        "meaning": "to break; to be broken",
+        "wStem": "折れ",
+        "rStem": "ore",
+        "category": "ichidan"
+    },
+    "oriru": {
+        "type": "verb",
+        "word": "下りる",
+        "kana": "おりる",
+        "romaji": "oriru",
+        "meaning": "to get off",
+        "wStem": "下り",
+        "rStem": "ori",
+        "category": "ichidan"
+    },
+    "oru": {
+        "type": "verb",
+        "word": "折る",
+        "kana": "おる",
+        "romaji": "oru",
+        "meaning": "to break or to fold",
+        "wStem": "折",
+        "rStem": "o",
+        "category": "godan"
+    },
+    "ossharu": {
+        "type": "verb",
+        "word": "仰る",
+        "kana": "おっしゃる",
+        "romaji": "ossharu",
+        "meaning": "(respectful) to say",
+        "wStem": "仰",
+        "rStem": "ossha",
+        "category": "godan"
+    },
+    "otosu": {
+        "type": "verb",
+        "word": "落とす",
+        "kana": "おとす",
+        "romaji": "otosu",
+        "meaning": "to drop",
+        "wStem": "落と",
+        "rStem": "oto",
+        "category": "godan"
+    },
+    "reibousuru": {
+        "type": "verb",
+        "word": "冷房する",
+        "kana": "れいぼうする",
+        "romaji": "reibousuru",
+        "meaning": "to cool (a.c.)",
+        "wStem": "冷房",
+        "rStem": "reibou",
+        "category": "irregular-suru"
+    },
+    "renrakusuru": {
+        "type": "verb",
+        "word": "連絡する",
+        "kana": "れんらくする",
+        "romaji": "renrakusuru",
+        "meaning": "to contact; to get in touch",
+        "wStem": "連絡",
+        "rStem": "renraku",
+        "category": "irregular-suru"
+    },
+    "riyousuru": {
+        "type": "verb",
+        "word": "利用する",
+        "kana": "りようする",
+        "romaji": "riyousuru",
+        "meaning": "to use; to capitalize on",
+        "wStem": "利用",
+        "rStem": "riyou",
+        "category": "irregular-suru"
+    },
+    "rususuru": {
+        "type": "verb",
+        "word": "留守する",
+        "kana": "るすする",
+        "romaji": "rususuru",
+        "meaning": "to be absent",
+        "wStem": "留守",
+        "rStem": "rusu",
+        "category": "irregular-suru"
+    },
+    "sagaru": {
+        "type": "verb",
+        "word": "下がる",
+        "kana": "さがる",
+        "romaji": "sagaru",
+        "meaning": "to get down",
+        "wStem": "下が",
+        "rStem": "saga",
+        "category": "godan"
+    },
+    "sagasu": {
+        "type": "verb",
+        "word": "探す",
+        "kana": "さがす",
+        "romaji": "sagasu",
+        "meaning": "to look for",
+        "wStem": "探",
+        "rStem": "saga",
+        "category": "godan"
+    },
+    "sageru": {
+        "type": "verb",
+        "word": "下げる",
+        "kana": "さげる",
+        "romaji": "sageru",
+        "meaning": "to lower",
+        "wStem": "下げ",
+        "rStem": "sage",
+        "category": "ichidan"
+    },
+    "sashiageru": {
+        "type": "verb",
+        "word": "差し上げる",
+        "kana": "さしあげる",
+        "romaji": "sashiageru",
+        "meaning": "to give",
+        "wStem": "差し上げ",
+        "rStem": "sashiage",
+        "category": "ichidan"
+    },
+    "sawagu": {
+        "type": "verb",
+        "word": "騒ぐ",
+        "kana": "さわぐ",
+        "romaji": "sawagu",
+        "meaning": "to make noise,to be excited",
+        "wStem": "騒",
+        "rStem": "sawa",
+        "category": "godan"
+    },
+    "sawaru": {
+        "type": "verb",
+        "word": "触る",
+        "kana": "さわる",
+        "romaji": "sawaru",
+        "meaning": "to touch",
+        "wStem": "触",
+        "rStem": "sawa",
+        "category": "godan"
+    },
+    "seikatsusuru": {
+        "type": "verb",
+        "word": "生活する",
+        "kana": "せいかつする",
+        "romaji": "seikatsusuru",
+        "meaning": "to live",
+        "wStem": "生活",
+        "rStem": "seikatsu",
+        "category": "irregular-suru"
+    },
+    "seisansuru": {
+        "type": "verb",
+        "word": "生産する",
+        "kana": "せいさんする",
+        "romaji": "seisansuru",
+        "meaning": "to produce",
+        "wStem": "生産",
+        "rStem": "seisan",
+        "category": "irregular-suru"
+    },
+    "sensousuru": {
+        "type": "verb",
+        "word": "戦争する",
+        "kana": "せんそうする",
+        "romaji": "sensousuru",
+        "meaning": "to fight a war",
+        "wStem": "戦争",
+        "rStem": "sensou",
+        "category": "irregular-suru"
+    },
+    "setsumeisuru": {
+        "type": "verb",
+        "word": "説明する",
+        "kana": "せつめいする",
+        "romaji": "setsumeisuru",
+        "meaning": "to explain",
+        "wStem": "説明",
+        "rStem": "setsumei",
+        "category": "irregular-suru"
+    },
+    "shiaisuru": {
+        "type": "verb",
+        "word": "試合する",
+        "kana": "しあいする",
+        "romaji": "shiaisuru",
+        "meaning": "to have a match/game",
+        "wStem": "試合",
+        "rStem": "shiai",
+        "category": "irregular-suru"
+    },
+    "shikaru": {
+        "type": "verb",
+        "word": "叱る",
+        "kana": "しかる",
+        "romaji": "shikaru",
+        "meaning": "to scold",
+        "wStem": "叱",
+        "rStem": "shika",
+        "category": "godan"
+    },
+    "shikensuru": {
+        "type": "verb",
+        "word": "試験する",
+        "kana": "しけんする",
+        "romaji": "shikensuru",
+        "meaning": "to examine somebody",
+        "wStem": "試験",
+        "rStem": "shiken",
+        "category": "irregular-suru"
+    },
+    "shippaisuru": {
+        "type": "verb",
+        "word": "失敗する",
+        "kana": "しっぱいする",
+        "romaji": "shippaisuru",
+        "meaning": "to fail",
+        "wStem": "失敗",
+        "rStem": "shippai",
+        "category": "irregular-suru"
+    },
+    "shiraberu": {
+        "type": "verb",
+        "word": "調べる",
+        "kana": "しらべる",
+        "romaji": "shiraberu",
+        "meaning": "to investigate",
+        "wStem": "調べ",
+        "rStem": "shirabe",
+        "category": "ichidan"
+    },
+    "shiraseru": {
+        "type": "verb",
+        "word": "知らせる",
+        "kana": "しらせる",
+        "romaji": "shiraseru",
+        "meaning": "to notify",
+        "wStem": "知らせ",
+        "rStem": "shirase",
+        "category": "ichidan"
+    },
+    "shoujiru": {
+        "type": "verb",
+        "word": "生じる",
+        "kana": "しょうじる",
+        "romaji": "shoujiru",
+        "meaning": "to produce",
+        "wStem": "生じ",
+        "rStem": "shouji",
+        "category": "ichidan"
+    },
+    "shoukaisuru": {
+        "type": "verb",
+        "word": "紹介する",
+        "kana": "しょうかいする",
+        "romaji": "shoukaisuru",
+        "meaning": "to introduce",
+        "wStem": "紹介",
+        "rStem": "shoukai",
+        "category": "irregular-suru"
+    },
+    "sodateru": {
+        "type": "verb",
+        "word": "育てる",
+        "kana": "そだてる",
+        "romaji": "sodateru",
+        "meaning": "to rear,to bring up",
+        "wStem": "育て",
+        "rStem": "sodate",
+        "category": "ichidan"
+    },
+    "sotsugyousuru": {
+        "type": "verb",
+        "word": "卒業する",
+        "kana": "そつぎょうする",
+        "romaji": "sotsugyousuru",
+        "meaning": "to graduate",
+        "wStem": "卒業",
+        "rStem": "sotsugyou",
+        "category": "irregular-suru"
+    },
+    "soudansuru": {
+        "type": "verb",
+        "word": "相談する",
+        "kana": "そうだんする",
+        "romaji": "soudansuru",
+        "meaning": "to discuss",
+        "wStem": "相談",
+        "rStem": "soudan",
+        "category": "irregular-suru"
+    },
+    "suberu": {
+        "type": "verb",
+        "word": "滑る",
+        "kana": "すべる",
+        "romaji": "suberu",
+        "meaning": "to slide; to slip",
+        "wStem": "滑",
+        "rStem": "sube",
+        "category": "ichidan"
+    },
+    "suieisuru": {
+        "type": "verb",
+        "word": "水泳する",
+        "kana": "すいえいする",
+        "romaji": "suieisuru",
+        "meaning": "to swim",
+        "wStem": "水泳",
+        "rStem": "suiei",
+        "category": "irregular-suru"
+    },
+    "suku": {
+        "type": "verb",
+        "word": "空く",
+        "kana": "すく",
+        "romaji": "suku",
+        "meaning": "to be hungry",
+        "wStem": "空",
+        "rStem": "su",
+        "category": "godan"
+    },
+    "sumu": {
+        "type": "verb",
+        "word": "済む",
+        "kana": "すむ",
+        "romaji": "sumu",
+        "meaning": "to finish",
+        "wStem": "済",
+        "rStem": "su",
+        "category": "godan"
+    },
+    "susumu": {
+        "type": "verb",
+        "word": "進む",
+        "kana": "すすむ",
+        "romaji": "susumu",
+        "meaning": "to make progress",
+        "wStem": "進",
+        "rStem": "susu",
+        "category": "godan"
+    },
+    "suteru": {
+        "type": "verb",
+        "word": "捨てる",
+        "kana": "すてる",
+        "romaji": "suteru",
+        "meaning": "to throw away",
+        "wStem": "捨て",
+        "rStem": "sute",
+        "category": "ichidan"
+    },
+    "taiinsuru": {
+        "type": "verb",
+        "word": "退院する",
+        "kana": "たいいんする",
+        "romaji": "taiinsuru",
+        "meaning": "to discharge from hospital",
+        "wStem": "退院",
+        "rStem": "taiin",
+        "category": "irregular-suru"
+    },
+    "tanjousuru": {
+        "type": "verb",
+        "word": "誕生する",
+        "kana": "たんじょうする",
+        "romaji": "tanjousuru",
+        "meaning": "to be born",
+        "wStem": "誕生",
+        "rStem": "tanjou",
+        "category": "irregular-suru"
+    },
+    "taoreru": {
+        "type": "verb",
+        "word": "倒れる",
+        "kana": "たおれる",
+        "romaji": "taoreru",
+        "meaning": "to fall (over, down)",
+        "wStem": "倒れ",
+        "rStem": "taore",
+        "category": "ichidan"
+    },
+    "tariru": {
+        "type": "verb",
+        "word": "足りる",
+        "kana": "たりる",
+        "romaji": "tariru",
+        "meaning": "to be sufficient; to be enough",
+        "wStem": "足り",
+        "rStem": "tari",
+        "category": "ichidan"
+    },
+    "tasu": {
+        "type": "verb",
+        "word": "足す",
+        "kana": "たす",
+        "romaji": "tasu",
+        "meaning": "to add (numbers / something)",
+        "wStem": "足",
+        "rStem": "ta",
+        "category": "godan"
+    },
+    "tateru": {
+        "type": "verb",
+        "word": "建てる",
+        "kana": "たてる",
+        "romaji": "tateru",
+        "meaning": "to build",
+        "wStem": "建て",
+        "rStem": "tate",
+        "category": "ichidan"
+    },
+    "tazuneru": {
+        "type": "verb",
+        "word": "訪ねる",
+        "kana": "たずねる",
+        "romaji": "tazuneru",
+        "meaning": "to visit",
+        "wStem": "訪ね",
+        "rStem": "tazune",
+        "category": "ichidan"
+    },
+    "tazuneru_73": {
+        "type": "verb",
+        "word": "尋ねる",
+        "kana": "たずねる",
+        "romaji": "tazuneru",
+        "meaning": "to ask",
+        "wStem": "尋ね",
+        "rStem": "tazune",
+        "category": "ichidan"
+    },
+    "tetsudau": {
+        "type": "verb",
+        "word": "手伝う",
+        "kana": "てつだう",
+        "romaji": "tetsudau",
+        "meaning": "to help; to assist; to aid",
+        "wStem": "手伝",
+        "rStem": "tetsuda",
+        "category": "godan"
+    },
+    "todokeru": {
+        "type": "verb",
+        "word": "届ける",
+        "kana": "とどける",
+        "romaji": "todokeru",
+        "meaning": "to send",
+        "wStem": "届け",
+        "rStem": "todoke",
+        "category": "ichidan"
+    },
+    "tomaru": {
+        "type": "verb",
+        "word": "泊まる",
+        "kana": "とまる",
+        "romaji": "tomaru",
+        "meaning": "to stay at",
+        "wStem": "泊ま",
+        "rStem": "toma",
+        "category": "godan"
+    },
+    "tomeru": {
+        "type": "verb",
+        "word": "止める",
+        "kana": "とめる",
+        "romaji": "tomeru",
+        "meaning": "to stop something",
+        "wStem": "止め",
+        "rStem": "tome",
+        "category": "ichidan"
+    },
+    "tooru": {
+        "type": "verb",
+        "word": "通る",
+        "kana": "とおる",
+        "romaji": "tooru",
+        "meaning": "to go through",
+        "wStem": "通",
+        "rStem": "too",
+        "category": "godan"
+    },
+    "torikaeru": {
+        "type": "verb",
+        "word": "取り替える",
+        "kana": "とりかえる",
+        "romaji": "torikaeru",
+        "meaning": "to exchange; to swap; to replace",
+        "wStem": "取り替え",
+        "rStem": "torikae",
+        "category": "ichidan"
+    },
+    "tsudzukeru": {
+        "type": "verb",
+        "word": "続ける",
+        "kana": "つづける",
+        "romaji": "tsudzukeru",
+        "meaning": "to continue; to keep up; to keep on",
+        "wStem": "続け",
+        "rStem": "tsudzuke",
+        "category": "ichidan"
+    },
+    "tsudzuku": {
+        "type": "verb",
+        "word": "続く",
+        "kana": "つづく",
+        "romaji": "tsudzuku",
+        "meaning": "to continue",
+        "wStem": "続",
+        "rStem": "tsudzu",
+        "category": "godan"
+    },
+    "tsukamaeru": {
+        "type": "verb",
+        "word": "捕まえる",
+        "kana": "つかまえる",
+        "romaji": "tsukamaeru",
+        "meaning": "to catch",
+        "wStem": "捕まえ",
+        "rStem": "tsukamae",
+        "category": "ichidan"
+    },
+    "tsukeru": {
+        "type": "verb",
+        "word": "漬ける",
+        "kana": "つける",
+        "romaji": "tsukeru",
+        "meaning": "to soak; to pickle",
+        "wStem": "漬け",
+        "rStem": "tsuke",
+        "category": "ichidan"
+    },
+    "tsuku": {
+        "type": "verb",
+        "word": "付く",
+        "kana": "つく",
+        "romaji": "tsuku",
+        "meaning": "to be attached",
+        "wStem": "付",
+        "rStem": "tsu",
+        "category": "godan"
+    },
+    "tsureru": {
+        "type": "verb",
+        "word": "連れる",
+        "kana": "つれる",
+        "romaji": "tsureru",
+        "meaning": "to take (someone) with one",
+        "wStem": "連れ",
+        "rStem": "tsure",
+        "category": "ichidan"
+    },
+    "tsuru": {
+        "type": "verb",
+        "word": "釣る",
+        "kana": "つる",
+        "romaji": "tsuru",
+        "meaning": "to fish",
+        "wStem": "釣",
+        "rStem": "tsu",
+        "category": "godan"
+    },
+    "tsutaeru": {
+        "type": "verb",
+        "word": "伝える",
+        "kana": "つたえる",
+        "romaji": "tsutaeru",
+        "meaning": "to report; to tell",
+        "wStem": "伝え",
+        "rStem": "tsutae",
+        "category": "ichidan"
+    },
+    "tsutsumu": {
+        "type": "verb",
+        "word": "包む",
+        "kana": "つつむ",
+        "romaji": "tsutsumu",
+        "meaning": "to wrap",
+        "wStem": "包",
+        "rStem": "tsutsu",
+        "category": "godan"
+    },
+    "ueru": {
+        "type": "verb",
+        "word": "植える",
+        "kana": "うえる",
+        "romaji": "ueru",
+        "meaning": "to plant; to grow",
+        "wStem": "植え",
+        "rStem": "ue",
+        "category": "ichidan"
+    },
+    "ugoku": {
+        "type": "verb",
+        "word": "動く",
+        "kana": "うごく",
+        "romaji": "ugoku",
+        "meaning": "to move",
+        "wStem": "動",
+        "rStem": "ugo",
+        "category": "godan"
+    },
+    "ukagau": {
+        "type": "verb",
+        "word": "伺う",
+        "kana": "うかがう",
+        "romaji": "ukagau",
+        "meaning": "to visit",
+        "wStem": "伺",
+        "rStem": "ukaga",
+        "category": "godan"
+    },
+    "ukeru": {
+        "type": "verb",
+        "word": "受ける",
+        "kana": "うける",
+        "romaji": "ukeru",
+        "meaning": "to take a lesson or test",
+        "wStem": "受け",
+        "rStem": "uke",
+        "category": "ichidan"
+    },
+    "utsu": {
+        "type": "verb",
+        "word": "打つ",
+        "kana": "うつ",
+        "romaji": "utsu",
+        "meaning": "to hit",
+        "wStem": "打",
+        "rStem": "u",
+        "category": "godan"
+    },
+    "utsuru": {
+        "type": "verb",
+        "word": "移る",
+        "kana": "うつる",
+        "romaji": "utsuru",
+        "meaning": "to move house or transfer",
+        "wStem": "移",
+        "rStem": "utsu",
+        "category": "godan"
+    },
+    "utsusu": {
+        "type": "verb",
+        "word": "写す",
+        "kana": "うつす",
+        "romaji": "utsusu",
+        "meaning": "to copy or photograph",
+        "wStem": "写",
+        "rStem": "utsu",
+        "category": "godan"
+    },
+    "wakareru": {
+        "type": "verb",
+        "word": "別れる",
+        "kana": "わかれる",
+        "romaji": "wakareru",
+        "meaning": "to separate",
+        "wStem": "別れ",
+        "rStem": "wakare",
+        "category": "ichidan"
+    },
+    "wakasu": {
+        "type": "verb",
+        "word": "沸かす",
+        "kana": "わかす",
+        "romaji": "wakasu",
+        "meaning": "to boil; to heat",
+        "wStem": "沸か",
+        "rStem": "waka",
+        "category": "godan"
+    },
+    "waku": {
+        "type": "verb",
+        "word": "沸く",
+        "kana": "わく",
+        "romaji": "waku",
+        "meaning": "to boil",
+        "wStem": "沸",
+        "rStem": "wa",
+        "category": "godan"
+    },
+    "warau": {
+        "type": "verb",
+        "word": "笑う",
+        "kana": "わらう",
+        "romaji": "warau",
+        "meaning": "to laugh; to smile",
+        "wStem": "笑",
+        "rStem": "wara",
+        "category": "godan"
+    },
+    "wareru": {
+        "type": "verb",
+        "word": "割れる",
+        "kana": "われる",
+        "romaji": "wareru",
+        "meaning": "to break",
+        "wStem": "割れ",
+        "rStem": "ware",
+        "category": "ichidan"
+    },
+    "yakeru": {
+        "type": "verb",
+        "word": "焼ける",
+        "kana": "やける",
+        "romaji": "yakeru",
+        "meaning": "to burn; to be roasted",
+        "wStem": "焼け",
+        "rStem": "yake",
+        "category": "ichidan"
+    },
+    "yaku": {
+        "type": "verb",
+        "word": "焼く",
+        "kana": "やく",
+        "romaji": "yaku",
+        "meaning": "to bake; to grill",
+        "wStem": "焼",
+        "rStem": "ya",
+        "category": "godan"
+    },
+    "yakunitatsu": {
+        "type": "verb",
+        "word": "役に立つ",
+        "kana": "やくにたつ",
+        "romaji": "yakunitatsu",
+        "meaning": "to be helpful",
+        "wStem": "役に立",
+        "rStem": "yakunita",
+        "category": "godan"
+    },
+    "yakusokusuru": {
+        "type": "verb",
+        "word": "約束する",
+        "kana": "やくそくする",
+        "romaji": "yakusokusuru",
+        "meaning": "to promise",
+        "wStem": "約束",
+        "rStem": "yakusoku",
+        "category": "irregular-suru"
+    },
+    "yamu": {
+        "type": "verb",
+        "word": "止む",
+        "kana": "やむ",
+        "romaji": "yamu",
+        "meaning": "to stop",
+        "wStem": "止",
+        "rStem": "ya",
+        "category": "godan"
+    },
+    "yaseru": {
+        "type": "verb",
+        "word": "痩せる",
+        "kana": "やせる",
+        "romaji": "yaseru",
+        "meaning": "to become thin",
+        "wStem": "痩せ",
+        "rStem": "yase",
+        "category": "ichidan"
+    },
+    "yogoreru": {
+        "type": "verb",
+        "word": "汚れる",
+        "kana": "よごれる",
+        "romaji": "yogoreru",
+        "meaning": "to get dirty",
+        "wStem": "汚れ",
+        "rStem": "yogore",
+        "category": "ichidan"
+    },
+    "yorokobu": {
+        "type": "verb",
+        "word": "喜ぶ",
+        "kana": "よろこぶ",
+        "romaji": "yorokobu",
+        "meaning": "to be delighted",
+        "wStem": "喜",
+        "rStem": "yoroko",
+        "category": "godan"
+    },
+    "yoru": {
+        "type": "verb",
+        "word": "寄る",
+        "kana": "よる",
+        "romaji": "yoru",
+        "meaning": "to visit; to drop by",
+        "wStem": "寄",
+        "rStem": "yo",
+        "category": "godan"
+    },
+    "yoshuusuru": {
+        "type": "verb",
+        "word": "予習する",
+        "kana": "よしゅうする",
+        "romaji": "yoshuusuru",
+        "meaning": "to prepare for a lesson",
+        "wStem": "予習",
+        "rStem": "yoshuu",
+        "category": "irregular-suru"
+    },
+    "yoteisuru": {
+        "type": "verb",
+        "word": "予定する",
+        "kana": "よていする",
+        "romaji": "yoteisuru",
+        "meaning": "to plan",
+        "wStem": "予定",
+        "rStem": "yotei",
+        "category": "irregular-suru"
+    },
+    "youisuru": {
+        "type": "verb",
+        "word": "用意する",
+        "kana": "よういする",
+        "romaji": "youisuru",
+        "meaning": "to prepare",
+        "wStem": "用意",
+        "rStem": "youi",
+        "category": "irregular-suru"
+    },
+    "yoyakusuru": {
+        "type": "verb",
+        "word": "予約する",
+        "kana": "よやくする",
+        "romaji": "yoyakusuru",
+        "meaning": "to make a reservation",
+        "wStem": "予約",
+        "rStem": "yoyaku",
+        "category": "irregular-suru"
+    },
+    "yureru": {
+        "type": "verb",
+        "word": "揺れる",
+        "kana": "ゆれる",
+        "romaji": "yureru",
+        "meaning": "to shake",
+        "wStem": "揺れ",
+        "rStem": "yure",
+        "category": "ichidan"
+    }
+}

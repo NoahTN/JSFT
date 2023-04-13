@@ -1,0 +1,317 @@
+{
+    "aa": {
+        "type": "adverb",
+        "word": "ああ",
+        "kana": "ああ",
+        "romaji": "aa",
+        "meaning": "ah; yes"
+    },
+    "aida ni": {
+        "type": "adverb",
+        "word": "間に",
+        "kana": "あいだに",
+        "romaji": "aida ni",
+        "meaning": "while; during~ something happened"
+    },
+    "amari~nai": {
+        "type": "adverb",
+        "word": "あまり～ない",
+        "kana": "あまり～ない",
+        "romaji": "amari~nai",
+        "meaning": "not very, not much ~"
+    },
+    "ato de": {
+        "type": "adverb",
+        "word": "後で",
+        "kana": "あとで",
+        "romaji": "ato de",
+        "meaning": "after~; later"
+    },
+    "bikkuri": {
+        "type": "adverb",
+        "word": "びっくり",
+        "kana": "びっくり",
+        "romaji": "bikkuri",
+        "meaning": "to be surprised"
+    },
+    "daibu": {
+        "type": "adverb",
+        "word": "大分",
+        "kana": "だいぶ",
+        "romaji": "daibu",
+        "meaning": "considerably; greatly; a lot"
+    },
+    "dekiru dake": {
+        "type": "adverb",
+        "word": "できるだけ",
+        "kana": "できるだけ",
+        "romaji": "dekiru dake",
+        "meaning": "as much as possible"
+    },
+    "dondon": {
+        "type": "adverb",
+        "word": "どんどん",
+        "kana": "どんどん",
+        "romaji": "dondon",
+        "meaning": "rapidly; more and more"
+    },
+    "futsuu": {
+        "type": "adverb",
+        "word": "普通 ",
+        "kana": "ふつう",
+        "romaji": "futsuu",
+        "meaning": "usually"
+    },
+    "hakkiri": {
+        "type": "adverb",
+        "word": "はっきり",
+        "kana": "はっきり",
+        "romaji": "hakkiri",
+        "meaning": "clearly"
+    },
+    "hijou ni": {
+        "type": "adverb",
+        "word": "非常に",
+        "kana": "ひじょうに",
+        "romaji": "hijou ni",
+        "meaning": "extremely"
+    },
+    "ippai": {
+        "type": "adverb",
+        "word": "いっぱい",
+        "kana": "いっぱい",
+        "romaji": "ippai",
+        "meaning": "full"
+    },
+    "juubun": {
+        "type": "adverb",
+        "word": "十分",
+        "kana": "じゅうぶん",
+        "romaji": "juubun",
+        "meaning": "enough; sufficient; plenty; adequate; satisfactory"
+    },
+    "ka dou ka": {
+        "type": "adverb",
+        "word": "かどうか",
+        "kana": "かどうか",
+        "romaji": "ka dou ka",
+        "meaning": "whether or not ~"
+    },
+    "kanarazu": {
+        "type": "adverb",
+        "word": "必ず",
+        "kana": "かならず",
+        "romaji": "kanarazu",
+        "meaning": "always; certainly"
+    },
+    "kitto": {
+        "type": "adverb",
+        "word": "きっと",
+        "kana": "きっと",
+        "romaji": "kitto",
+        "meaning": "surely; undoubtedly; almost certainly; most likely"
+    },
+    "kou": {
+        "type": "adverb",
+        "word": "こう",
+        "kana": "こう",
+        "romaji": "kou",
+        "meaning": "this way"
+    },
+    "ku suru": {
+        "type": "adverb",
+        "word": "くする",
+        "kana": "くする",
+        "romaji": "ku suru",
+        "meaning": "to make something ~"
+    },
+    "kyuu ni": {
+        "type": "adverb",
+        "word": "急に",
+        "kana": "きゅうに",
+        "romaji": "kyuu ni",
+        "meaning": "quickly; immediately; hastily; suddenly; abruptly; unexpectedly ~"
+    },
+    "made ni": {
+        "type": "adverb",
+        "word": "までに",
+        "kana": "までに",
+        "romaji": "made ni",
+        "meaning": "by; by the time; indicates time limit"
+    },
+    "mazu": {
+        "type": "adverb",
+        "word": "まず",
+        "kana": "まず",
+        "romaji": "mazu",
+        "meaning": "first of all"
+    },
+    "mitai ni": {
+        "type": "adverb",
+        "word": "みたいに",
+        "kana": "みたいに",
+        "romaji": "mitai ni",
+        "meaning": "like; similar to ~"
+    },
+    "moshi": {
+        "type": "adverb",
+        "word": "もし",
+        "kana": "もし",
+        "romaji": "moshi",
+        "meaning": "if; in case; supposing"
+    },
+    "mousugu": {
+        "type": "adverb",
+        "word": "もうすぐ",
+        "kana": "もうすぐ",
+        "romaji": "mousugu",
+        "meaning": "soon"
+    },
+    "nakanaka~nai": {
+        "type": "adverb",
+        "word": "なかなか～ない",
+        "kana": "なかなか～ない",
+        "romaji": "nakanaka~nai",
+        "meaning": "not easy to; struggling to; not able to ~"
+    },
+    "naruhodo": {
+        "type": "adverb",
+        "word": "なるほど",
+        "kana": "なるほど",
+        "romaji": "naruhodo",
+        "meaning": "now I understand"
+    },
+    "no naka de": {
+        "type": "adverb",
+        "word": "の中で",
+        "kana": "のなかで",
+        "romaji": "no naka de",
+        "meaning": "in; among ~"
+    },
+    "sasuga": {
+        "type": "adverb",
+        "word": "さすが",
+        "kana": "さすが",
+        "romaji": "sasuga",
+        "meaning": "as one would expect; as is to be expected; even ~"
+    },
+    "shikkari": {
+        "type": "adverb",
+        "word": "しっかり",
+        "kana": "しっかり",
+        "romaji": "shikkari",
+        "meaning": "firmly; steadily"
+    },
+    "sonna ni": {
+        "type": "adverb",
+        "word": "そんなに",
+        "kana": "そんなに",
+        "romaji": "sonna ni",
+        "meaning": "so much; so; like that"
+    },
+    "sore hodo": {
+        "type": "adverb",
+        "word": "それほど",
+        "kana": "それほど",
+        "romaji": "sore hodo",
+        "meaning": "to that extent"
+    },
+    "sorosoro": {
+        "type": "adverb",
+        "word": "そろそろ",
+        "kana": "そろそろ",
+        "romaji": "sorosoro",
+        "meaning": "gradually; soon"
+    },
+    "sou da [2]": {
+        "type": "adverb",
+        "word": "そうだ",
+        "kana": "そうだ",
+        "romaji": "sou da [2]",
+        "meaning": "looks like; appears like; seeming ~"
+    },
+    "sukkari": {
+        "type": "adverb",
+        "word": "すっかり",
+        "kana": "すっかり",
+        "romaji": "sukkari",
+        "meaning": "completely"
+    },
+    "taitei": {
+        "type": "adverb",
+        "word": "たいてい",
+        "kana": "たいてい",
+        "romaji": "taitei",
+        "meaning": "usually"
+    },
+    "tamani": {
+        "type": "adverb",
+        "word": "たまに",
+        "kana": "たまに",
+        "romaji": "tamani",
+        "meaning": "occasionally"
+    },
+    "tokuni": {
+        "type": "adverb",
+        "word": "特に",
+        "kana": "とくに",
+        "romaji": "tokuni",
+        "meaning": "particularly; especially; in particular; expressly"
+    },
+    "toutou": {
+        "type": "adverb",
+        "word": "到頭",
+        "kana": "とうとう",
+        "romaji": "toutou",
+        "meaning": "finally, after all"
+    },
+    "tsugou": {
+        "type": "adverb",
+        "word": "都合",
+        "kana": "つごう",
+        "romaji": "tsugou",
+        "meaning": "convenience"
+    },
+    "yappari": {
+        "type": "adverb",
+        "word": "やっぱり",
+        "kana": "やっぱり",
+        "romaji": "yappari",
+        "meaning": "as I thought"
+    },
+    "yatto": {
+        "type": "adverb",
+        "word": "やっと",
+        "kana": "やっと",
+        "romaji": "yatto",
+        "meaning": "at last; finally; barely; narrowly ~"
+    },
+    "yori": {
+        "type": "adverb",
+        "word": "より",
+        "kana": "より",
+        "romaji": "yori",
+        "meaning": "than; rather than; more than ~"
+    },
+    "zehi": {
+        "type": "adverb",
+        "word": "ぜひ",
+        "kana": "ぜひ",
+        "romaji": "zehi",
+        "meaning": "by all means; certainly; definitely ~"
+    },
+    "zenzen": {
+        "type": "adverb",
+        "word": "全然",
+        "kana": "ぜんぜん",
+        "romaji": "zenzen",
+        "meaning": "not entirely (used in a negative sentence)"
+    },
+    "zenzen~nai": {
+        "type": "adverb",
+        "word": "全然～ない",
+        "kana": "ぜんぜん～ない",
+        "romaji": "zenzen~nai",
+        "meaning": "(not) at all"
+    }
+}

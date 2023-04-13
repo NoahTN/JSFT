@@ -1,0 +1,149 @@
+{
+    "asai": {
+        "type": "i-adjective",
+        "word": "浅い",
+        "kana": "あさい",
+        "romaji": "asai",
+        "meaning": "shallow"
+    },
+    "fukai": {
+        "type": "i-adjective",
+        "word": "深い",
+        "kana": "ふかい",
+        "romaji": "fukai",
+        "meaning": "deep"
+    },
+    "hazukashii": {
+        "type": "i-adjective",
+        "word": "恥ずかしい",
+        "kana": "はずかしい",
+        "romaji": "hazukashii",
+        "meaning": "embarrassed"
+    },
+    "hidoi": {
+        "type": "i-adjective",
+        "word": "酷い",
+        "kana": "ひどい",
+        "romaji": "hidoi",
+        "meaning": "terrible; awful"
+    },
+    "kanashii": {
+        "type": "i-adjective",
+        "word": "悲しい",
+        "kana": "かなしい",
+        "romaji": "kanashii",
+        "meaning": "sad"
+    },
+    "katai": {
+        "type": "i-adjective",
+        "word": "硬い",
+        "kana": "かたい",
+        "romaji": "katai",
+        "meaning": "hard"
+    },
+    "kibishii": {
+        "type": "i-adjective",
+        "word": "厳しい",
+        "kana": "きびしい",
+        "romaji": "kibishii",
+        "meaning": "strict"
+    },
+    "komakai": {
+        "type": "i-adjective",
+        "word": "細かい",
+        "kana": "こまかい",
+        "romaji": "komakai",
+        "meaning": "small, fine"
+    },
+    "kowai": {
+        "type": "i-adjective",
+        "word": "怖い",
+        "kana": "こわい",
+        "romaji": "kowai",
+        "meaning": "frightening"
+    },
+    "mezurashii": {
+        "type": "i-adjective",
+        "word": "珍しい",
+        "kana": "めずらしい",
+        "romaji": "mezurashii",
+        "meaning": "unusual; rare"
+    },
+    "nemui": {
+        "type": "i-adjective",
+        "word": "眠い",
+        "kana": "ねむい",
+        "romaji": "nemui",
+        "meaning": "sleepy"
+    },
+    "nigai": {
+        "type": "i-adjective",
+        "word": "苦い",
+        "kana": "にがい",
+        "romaji": "nigai",
+        "meaning": "bitter"
+    },
+    "okashii": {
+        "type": "i-adjective",
+        "word": "可笑しい",
+        "kana": "おかしい",
+        "romaji": "okashii",
+        "meaning": "strange or funny"
+    },
+    "sabishii": {
+        "type": "i-adjective",
+        "word": "寂しい",
+        "kana": "さびしい",
+        "romaji": "sabishii",
+        "meaning": "lonely"
+    },
+    "subarashii": {
+        "type": "i-adjective",
+        "word": "素晴らしい",
+        "kana": "すばらしい",
+        "romaji": "subarashii",
+        "meaning": "wonderful"
+    },
+    "sugoi": {
+        "type": "i-adjective",
+        "word": "凄い",
+        "kana": "すごい",
+        "romaji": "sugoi",
+        "meaning": "terrific"
+    },
+    "tadashii": {
+        "type": "i-adjective",
+        "word": "正しい",
+        "kana": "ただしい",
+        "romaji": "tadashii",
+        "meaning": "right; correct"
+    },
+    "ureshii": {
+        "type": "i-adjective",
+        "word": "嬉しい",
+        "kana": "うれしい",
+        "romaji": "ureshii",
+        "meaning": "happy"
+    },
+    "utsukushii": {
+        "type": "i-adjective",
+        "word": "美しい",
+        "kana": "うつくしい",
+        "romaji": "utsukushii",
+        "meaning": "beautiful"
+    },
+    "yasashii": {
+        "type": "i-adjective",
+        "word": "優しい",
+        "kana": "やさしい",
+        "romaji": "yasashii",
+        "meaning": "kind"
+    },
+    "yawarakai": {
+        "type": "i-adjective",
+        "word": "柔らかい",
+        "kana": "やわらかい",
+        "romaji": "yawarakai",
+        "meaning": "soft"
+    }
+}

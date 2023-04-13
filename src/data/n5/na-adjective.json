@@ -1,177 +1,170 @@
 {
   "benri": {
-    "type": "na-adjective",
-    "word": "便利",
-    "kana": "べんり",
-    "romaji": "benri",
-    "meaning": "convenient; handy; useful"
+      "type": "na-adjective",
+      "word": "便利",
+      "kana": "べんり",
+      "romaji": "benri",
+      "meaning": "convenient; handy; useful"
   },
   "daijoubu": {
-    "type": "na-adjective",
-    "word": "大丈夫",
-    "kana": "だいじょうぶ",
-    "romaji": "daijoubu",
-    "meaning": "OK; alright"
+      "type": "na-adjective",
+      "word": "大丈夫",
+      "kana": "だいじょうぶ",
+      "romaji": "daijoubu",
+      "meaning": "OK; okay; alright; problem free"
   },
   "daisuki": {
-    "type": "na-adjective",
-    "word": "大好き",
-    "kana": "だいすき",
-    "romaji": "daisuki",
-    "meaning": "love; like; likeverymuch"
-  },
-  "dame": {
-    "type": "na-adjective",
-    "word": "ダメ",
-    "kana": "ダメ",
-    "romaji": "dame",
-    "meaning": "no good"
+      "type": "na-adjective",
+      "word": "大好き",
+      "kana": "だいすき",
+      "romaji": "daisuki",
+      "meaning": "love; like; like very much"
   },
   "genki": {
-    "type": "na-adjective",
-    "word": "元気",
-    "kana": "げんき",
-    "romaji": "genki",
-    "meaning": "lively; energetic; healthy"
+      "type": "na-adjective",
+      "word": "元気",
+      "kana": "げんき",
+      "romaji": "genki",
+      "meaning": "lively; full of spirit; energetic; healthy"
   },
   "heta": {
-    "type": "na-adjective",
-    "word": "下手",
-    "kana": "へた",
-    "romaji": "heta",
-    "meaning": "unskillful; poor; awkward"
+      "type": "na-adjective",
+      "word": "下手",
+      "kana": "へた",
+      "romaji": "heta",
+      "meaning": "unskillful; poor; awkward"
   },
   "hima": {
-    "type": "na-adjective",
-    "word": "暇",
-    "kana": "ひま",
-    "romaji": "hima",
-    "meaning": "freetime"
+      "type": "na-adjective",
+      "word": "暇",
+      "kana": "ひま",
+      "romaji": "hima",
+      "meaning": "free time"
   },
   "hontou": {
-    "type": "na-adjective",
-    "word": "本当",
-    "kana": "ほんとう",
-    "romaji": "hontou",
-    "meaning": "truth; reality; fact"
+      "type": "na-adjective",
+      "word": "本当",
+      "kana": "ほんとう",
+      "romaji": "hontou",
+      "meaning": "truth; reality; actuality; fact"
   },
   "iroiro": {
-    "type": "na-adjective",
-    "word": "色々",
-    "kana": "いろいろ",
-    "romaji": "iroiro",
-    "meaning": "various"
+      "type": "na-adjective",
+      "word": "色々",
+      "kana": "いろいろ",
+      "romaji": "iroiro",
+      "meaning": "various"
   },
   "iya": {
-    "type": "na-adjective",
-    "word": "嫌",
-    "kana": "いや",
-    "romaji": "iya",
-    "meaning": "unpleasant"
+      "type": "na-adjective",
+      "word": "嫌",
+      "kana": "いや",
+      "romaji": "iya",
+      "meaning": "unpleasant"
   },
   "joubu": {
-    "type": "na-adjective",
-    "word": "丈夫",
-    "kana": "じょうぶ",
-    "romaji": "joubu",
-    "meaning": "strong, durable"
+      "type": "na-adjective",
+      "word": "丈夫",
+      "kana": "じょうぶ",
+      "romaji": "joubu",
+      "meaning": "strong, durable"
   },
   "jouzu": {
-    "type": "na-adjective",
-    "word": "上手",
-    "kana": "じょうず",
-    "romaji": "jouzu",
-    "meaning": "skillful; skilled; good(at)"
+      "type": "na-adjective",
+      "word": "上手",
+      "kana": "じょうず",
+      "romaji": "jouzu",
+      "meaning": "skillful; skilled; proficient; good (at)"
   },
   "kekkou": {
-    "type": "na-adjective",
-    "word": "結構",
-    "kana": "けっこう",
-    "romaji": "kekkou",
-    "meaning": "splendid, enough"
+      "type": "na-adjective",
+      "word": "結構",
+      "kana": "けっこう",
+      "romaji": "kekkou",
+      "meaning": "splendid, enough"
   },
   "kirai": {
-    "type": "na-adjective",
-    "word": "嫌い",
-    "kana": "きらい",
-    "romaji": "kirai",
-    "meaning": "hate"
+      "type": "na-adjective",
+      "word": "嫌い",
+      "kana": "きらい",
+      "romaji": "kirai",
+      "meaning": "hate"
   },
   "kirei": {
-    "type": "na-adjective",
-    "word": "綺麗",
-    "kana": "きれい",
-    "romaji": "kirei",
-    "meaning": "pretty; lovely; beautiful"
+      "type": "na-adjective",
+      "word": "綺麗",
+      "kana": "きれい",
+      "romaji": "kirei",
+      "meaning": "pretty; lovely; beautiful"
   },
   "massugu": {
-    "type": "na-adjective",
-    "word": "真っ直ぐ",
-    "kana": "まっすぐ",
-    "romaji": "massugu",
-    "meaning": "straightahead, direct"
+      "type": "na-adjective",
+      "word": "真っ直ぐ",
+      "kana": "まっすぐ",
+      "romaji": "massugu",
+      "meaning": "straight ahead,direct"
   },
   "nigiyaka": {
-    "type": "na-adjective",
-    "word": "賑やか",
-    "kana": "にぎやか",
-    "romaji": "nigiyaka",
-    "meaning": "bustling, busy"
+      "type": "na-adjective",
+      "word": "賑やか",
+      "kana": "にぎやか",
+      "romaji": "nigiyaka",
+      "meaning": "bustling,busy"
   },
   "rippa": {
-    "type": "na-adjective",
-    "word": "立派",
-    "kana": "りっぱ",
-    "romaji": "rippa",
-    "meaning": "splendid"
+      "type": "na-adjective",
+      "word": "立派",
+      "kana": "りっぱ",
+      "romaji": "rippa",
+      "meaning": "splendid"
   },
   "shizuka": {
-    "type": "na-adjective",
-    "word": "静か",
-    "kana": "しずか",
-    "romaji": "shizuka",
-    "meaning": "quiet"
+      "type": "na-adjective",
+      "word": "静か",
+      "kana": "しずか",
+      "romaji": "shizuka",
+      "meaning": "quiet"
   },
   "suki": {
-    "type": "na-adjective",
-    "word": "好き",
-    "kana": "すき",
-    "romaji": "suki",
-    "meaning": "like"
+      "type": "na-adjective",
+      "word": "好き",
+      "kana": "すき",
+      "romaji": "suki",
+      "meaning": "like"
   },
   "tabun": {
-    "type": "na-adjective",
-    "word": "多分",
-    "kana": "たぶん",
-    "romaji": "tabun",
-    "meaning": "perhaps; probably"
+      "type": "na-adjective",
+      "word": "多分",
+      "kana": "たぶん",
+      "romaji": "tabun",
+      "meaning": "perhaps; probably"
   },
   "taihen": {
-    "type": "na-adjective",
-    "word": "大変",
-    "kana": "たいへん",
-    "romaji": "taihen",
-    "meaning": "very; greatly; difficult"
+      "type": "na-adjective",
+      "word": "大変",
+      "kana": "たいへん",
+      "romaji": "taihen",
+      "meaning": "very; greatly; terribly; serious; difficult"
   },
   "taisetsu": {
-    "type": "na-adjective",
-    "word": "大切",
-    "kana": "たいせつ",
-    "romaji": "taisetsu",
-    "meaning": "important; beloved"
+      "type": "na-adjective",
+      "word": "大切",
+      "kana": "たいせつ",
+      "romaji": "taisetsu",
+      "meaning": "important; necessary; indispensable; beloved"
   },
   "takusan": {
-    "type": "na-adjective",
-    "word": "沢山",
-    "kana": "たくさん",
-    "romaji": "takusan",
-    "meaning": "many"
+      "type": "na-adjective",
+      "word": "沢山",
+      "kana": "たくさん",
+      "romaji": "takusan",
+      "meaning": "many"
   },
   "yuumei": {
-    "type": "na-adjective",
-    "word": "有名",
-    "kana": "ゆうめい",
-    "romaji": "yuumei",
-    "meaning": "famous"
+      "type": "na-adjective",
+      "word": "有名",
+      "kana": "ゆうめい",
+      "romaji": "yuumei",
+      "meaning": "famous"
   }
 }

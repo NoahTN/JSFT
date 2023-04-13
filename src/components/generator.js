@@ -35,9 +35,18 @@ export function generateProblem(options) {
 export function generateSentence(options, force={}) {
     const typeIndex = options["Types"].indexOf("Basic Sentence");
     let difficulty = getRandom(options["Types"].slice(typeIndex));
+    if(options["Words"]?.length === 1) {
+        if(options["Words"][0] === "Verb") {
+            force["sentence-form"] = "OV";
+        }
+        else if(options["Words"][0] === "Adjective") {
+            force["sentence-form"] = "SOV";
+            force["adj"] = true;
+        }
+    }
     let problem;
     if(difficulty[0] === "B") { // Basic
-        if((getRandomNumber(options["Tenses"].length) === 0 && force["sentence-form"] !== "OV") || force["sentence-form"]=== "SOV") {
+        if((getRandomNumber(options["Tenses"].length+1) === 0 && force["sentence-form"] !== "OV") || force["sentence-form"]=== "SOV") {
             problem = getSOVSentence(options, force);
         }
         else {
@@ -156,7 +165,7 @@ function getSOVSentence(options, force={}) {
     let noun  = getRandomWord(getRandom(options["Vocab Level"]), "Noun");
     let subject = formatOutput([noun, force["ga"] ? GRAMMAR_OBJECT["が"] : getSubjectParticle(options)]);
     let object = {};
-    if(!force["noun"] && force["adj"] || (coinFlipHeads() && subject.word[subject.word.length-1] !== "で"))
+    if((!force["noun"] && force["adj"]) || (coinFlipHeads() && subject.word[subject.word.length-1] !== "で"))
         object = getRandomAdjectiveForm(getRandom(options["Vocab Level"]), options["Tenses"]);
     else
         object = getRandomWord(getRandom(options["Vocab Level"]), "Noun");

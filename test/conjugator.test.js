@@ -1,6 +1,7 @@
 import {describe, expect, test} from "vitest";
 import { getPoliteForm, getNegativeForm, getPastForm, getTeForm, getProvisionalForm, getConditionalForm, 
-         getImperativeForm, getVolitionalForm, getPotentialForm, getPassiveForm, getCausativeForm, getAdjectiveForm, getMashouForm } from "../src/components/conjugator";
+         getImperativeForm, getVolitionalForm, getPotentialForm, getPassiveForm, getCausativeForm, getAdjectiveForm, getMashouForm,
+         getTaiForm, getTeiruForm } from "../src/components/conjugator";
 const n5Verbs = require("../src/data/n5/verb.json");
 const n5IAdjectives = require("../src/data/n5/i-adjective.json");
 const n5NaAdjectives = require("../src/data/n5/na-adjective.json");
@@ -217,17 +218,17 @@ describe("Conjugator Tests", () => {
     });
 
     test("Should get the tai form of verbs", () => {
-        expect(getMashouForm(aruku)).toEqual(expect.objectContaining({word: "歩きたい", romaji: "arukitai"}));
-        expect(getMashouForm(kuru)).toEqual(expect.objectContaining({word: "来たい", romaji: "kitai"}));
-        expect(getMashouForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強したい", romaji: "benkyoushitai"}));
-        expect(getMashouForm(taberu)).toEqual(expect.objectContaining({word: "食べたい", romaji: "tabetai"}));
+        expect(getTaiForm(aruku)).toEqual(expect.objectContaining({word: "歩きたい", romaji: "arukitai"}));
+        expect(getTaiForm(kuru)).toEqual(expect.objectContaining({word: "来たい", romaji: "kitai"}));
+        expect(getTaiForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強したい", romaji: "benkyoushitai"}));
+        expect(getTaiForm(taberu)).toEqual(expect.objectContaining({word: "食べたい", romaji: "tabetai"}));
     });
 
      test("Should get the teiru form of verbs", () => {
-        expect(getMashouForm(aruku)).toEqual(expect.objectContaining({word: "歩るいている", romaji: "arukitai"}));
-        expect(getMashouForm(kuru)).toEqual(expect.objectContaining({word: "来ている", romaji: "kitai"}));
-        expect(getMashouForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強している", romaji: "benkyoushitai"}));
-        expect(getMashouForm(taberu)).toEqual(expect.objectContaining({word: "食べている", romaji: "tabetai"}));
+        expect(getTeiruForm(aruku)).toEqual(expect.objectContaining({word: "歩いている", romaji: "aruiteiru"}));
+        expect(getTeiruForm(kuru)).toEqual(expect.objectContaining({word: "来ている", romaji: "kiteiru"}));
+        expect(getTeiruForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強している", romaji: "benkyoushiteiru"}));
+        expect(getTeiruForm(taberu)).toEqual(expect.objectContaining({word: "食べている", romaji: "tabeteiru"}));
     });
   
 })
