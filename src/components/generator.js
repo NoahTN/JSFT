@@ -59,11 +59,13 @@ export function generateSentence(options, force={}) {
         // grammar can take btoh sense
         problem = coinFlipHeads() ? getSOVSentence(options) : getOVSentence(options);
         problem = applyAdverb(problem, options);
-        return applyN5Grammar(problem, getRandom(options["Tenses"]), difficulty, getRandom(options["Vocab Level"]));
+        return applyN5Grammar(problem, options["Tenses"], difficulty, getRandom(options["Vocab Level"]));
     }
     else { // Complex
-        let first = coinFlipHeads() ? getSOVSentence(options) : getOVSentence(options);
+        let first = coinFlipHeads() ? getSOVSentence(options) : getOVSentence(options, {"plain": true});
+        first = applyAdverb(first, options);
         let second = coinFlipHeads() ? getSOVSentence(options) : getOVSentence(options);
+        second = applyAdverb(second, options);
         return applyClauseChainingGrammar(first, second);
     }
 }
@@ -177,10 +179,10 @@ function getSOVSentence(options, force={}) {
     return formatOutput([subject, object]);
 }
 
-function getOVSentence(options, forcePlain=false) {
+function getOVSentence(options, force={}) {
     let noun  = getRandomWord(getRandom(options["Vocab Level"]), "Noun");
     let object = formatOutput([noun, getObjectParticle(options)]);
-    let verb = getRandomVerbForm(getRandom(options["Vocab Level"]), forcePlain ? ["Plain"] : options["Tenses"]);
+    let verb = getRandomVerbForm(getRandom(options["Vocab Level"]), options["Tenses"], force["plain"] ? "Plain" : "");
     return formatOutput([object, verb]);
 }
 

@@ -3,7 +3,8 @@
     "type": "grammar",
     "word": "ちゃいけない/じゃいけない",
     "romaji": "chaikenai/jaikenai",
-    "meaning": "must not do"
+    "meaning": "must not do",
+    "noDisplay": true
   },
   "だ": {
     "type": "verb*",
@@ -16,7 +17,6 @@
     "type": "verb*",
     "word": "です",
     "romaji": "desu",
-    "form": "polite",
     "category": "da/desu",
     "meaning": "to be (polite)"
   },
@@ -234,37 +234,43 @@
     "type": "grammar",
     "word": "ないで",
     "romaji": "naide",
-    "meaning": "without doing"
+    "meaning": "without doing",
+    "noDisplay": true
   },
   "ないといけない": {
     "type": "grammar",
     "word": "ないといけない",
     "romaji": "nai to ikenai",
-    "meaning": "must do; have an obligation to do"
+    "meaning": "must do; have an obligation to do",
+    "noDisplay": true
   },
   "なくてもいい": {
     "type": "grammar",
     "word": "なくてもいい",
     "romaji": "nakutemo ii",
-    "meaning": "don't have to"
+    "meaning": "don't have to",
+    "noDisplay": true
   },
   "なくちゃ": {
     "type": "grammar",
     "word": "なくちゃ",
     "romaji": "nakucha",
-    "meaning": "must do; need to; gotta do"
+    "meaning": "must do; need to; gotta do",
+    "noDisplay": true
   },
   "なくてはいけない": {
     "type": "grammar",
     "word": "なくてはいけない",
     "romaji": "nakute wa ikenai",
-    "meaning": "must do; need to do"
+    "meaning": "must do; need to do",
+    "noDisplay": true
   },
   "なくてはならない": {
     "type": "grammar",
     "word": "なくてはならない",
     "romaji": "nakute wa naranai",
-    "meaning": "must do; need to do"
+    "meaning": "must do; need to do",
+    "noDisplay": true
   },
   "なる": {
     "type": "grammar",
@@ -408,7 +414,8 @@
     "type": "grammar",
     "word": "たい",
     "romaji": "tai",
-    "meaning": "want to do something"
+    "meaning": "want to do something",
+    "noDisplay": true
   },
   "たり～たり": {
     "type": "grammar",
@@ -419,38 +426,42 @@
   "てある": {
     "type": "grammar",
     "word": "てある",
-    "romaji": "te aru",
+    "romaji": "tearu",
     "meaning": "is/has been done (resulting state)"
   },
   "ている": {
     "type": "grammar",
     "word": "ている",
-    "romaji": "te iru",
+    "romaji": "teiru",
     "meaning": "ongoing action or current state"
   },
   "てから": {
     "type": "grammar",
     "word": "てから",
     "romaji": "te kara",
-    "meaning": "after doing"
+    "meaning": "after doing",
+    "noDisplay": true
   },
   "てください": {
     "type": "grammar",
     "word": "てください",
     "romaji": "te kudasai",
-    "meaning": "please do"
+    "meaning": "please do",
+    "noDisplay": true
   },
   "てはいけない": {
     "type": "grammar",
     "word": "てはいけない",
     "romaji": "te wa ikenai",
-    "meaning": "must not; may not; cannot"
+    "meaning": "must not; may not; cannot",
+    "noDisplay": true
   },
   "てもいいです": {
     "type": "grammar",
     "word": "てもいいです",
     "romaji": "te mo ii desu",
-    "meaning": "is OK to..; is alright to..; may I..?"
+    "meaning": "is OK to..; is alright to..; may I..?",
+    "noDisplay": true
   },
   "と": {
     "type": "particle",

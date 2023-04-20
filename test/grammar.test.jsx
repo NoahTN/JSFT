@@ -223,8 +223,11 @@ describe("Grammar Tests", () => {
         runBasicTest("てある");
     });
 
-    test("Should apply the te iru grammar", () => {
-        runBasicTest("ている");
+    test("Should apply the teiru grammar", () => {
+        let modified = applyN5Grammar(structuredClone(problem), options.Tenses, "Basic Sentence", "N5", "teiru");
+        logProblem(modified);
+        expect(modified.word).toMatch(/(いる|います|いない)$/);
+        expect(modified.romaji).toMatch(/(eiru|eimasu|einai)$/);
     });
 
     test("Should apply the te kudasai grammar", () => {

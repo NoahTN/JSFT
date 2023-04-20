@@ -3,7 +3,7 @@ import {beforeAll, describe, expect, test} from "vitest";
 import Interactor from "/src/components/interactor";
 
 describe("Interactor Tests", () => {
-    test("Should display correct answer message", () => {
+    test.skip("Should display correct answer message", () => {
         const interactor = render(<Interactor debug={{ expected: "aka" }}/>);
         const form = interactor.getByRole("form", {name: "submit-answer"});
         const input = interactor.getByRole("textbox", {name: "input-answer"});

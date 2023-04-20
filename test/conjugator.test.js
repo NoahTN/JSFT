@@ -18,9 +18,11 @@ describe("Conjugator Tests", () => {
     const tsukau = n5Verbs["tsukau"];
     const aruku = n5Verbs["aruku"];
     const aru = n5Verbs["aru"];
+    const tsukareru = n5Verbs["tsukareru"];
     const yasui = n5IAdjectives["yasui"];
     const benri = n5NaAdjectives["benri"];
     const ii = n5IAdjectives["ii"];
+
     
 
     test("Should get the polite and polite-negative form of verbs", () => {
@@ -70,11 +72,13 @@ describe("Conjugator Tests", () => {
         expect(getTeForm(kuru)).toEqual(expect.objectContaining({word: "来て", romaji: "kite"}));
         expect(getTeForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強して", romaji: "benkyoushite"}));
         expect(getTeForm(taberu)).toEqual(expect.objectContaining({word: "食べて", romaji: "tabete"}));
+        expect(getTeForm(tsukareru)).toEqual(expect.objectContaining({word: "疲れて", romaji: "tsukarete"}));
 
         expect(getTeForm(aruku, "negative")).toEqual(expect.objectContaining({word: "歩かないで", romaji: "arukanaide"}));
         expect(getTeForm(kuru, "negative")).toEqual(expect.objectContaining({word: "来ないで", romaji: "konaide"}));
         expect(getTeForm(benkyousuru, "negative")).toEqual(expect.objectContaining({word: "勉強しないで", romaji: "benkyoushinaide"}));
         expect(getTeForm(taberu, "negative")).toEqual(expect.objectContaining({word: "食べないで", romaji: "tabenaide"}));
+        expect(getTeForm(tsukareru, "negative")).toEqual(expect.objectContaining({word: "疲れないで", romaji: "tsukarenaide"}));
     });
 
     test("Should get the past, negative, past-negative, and past-negative-polite form of da and desu", () => {

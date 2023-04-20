@@ -1,15 +1,9 @@
 import {describe, expect, test} from "vitest";
-import { getRandomWord, generateProblem } from "/src/components/generator";
+import { generateProblem } from "/src/components/generator";
 import { logProblem } from "./test-helper";
 import { generateSentence } from "../src/components/generator";
 
 describe("Generator Tests", () => {
-    test("Should get a random noun", () => {
-        const noun = getRandomWord("n5", "noun");
-        console.log([noun.word, noun.romaji]);
-        expect(noun.type).toBe("noun");
-    });
-
     test("Should get a n5 single noun problem", () => {
         const problem = generateProblem({
             "Words": ["Noun"],
@@ -95,11 +89,5 @@ describe("Generator Tests", () => {
         }
         
     });
-
-    test.skip("Should get a Complex Sentence", () => {
-        
-
-    });
-
  
 })

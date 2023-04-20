@@ -14,6 +14,7 @@ function Interactor(props) {
     const [hintInfo, setHintInfo] = useState([]);
     const [answerCount, setAnswerCount] = useState([0, 0]);
     const [firstSubmit, setFirstSubmit] = useState(false);
+    const [selectedHint, setSelectedHint] = useState(-1);
     const [options, setOptions] = useState(() => {
         let storedOptions = localStorage.getItem("jsft-options");
         if(storedOptions) {
@@ -35,6 +36,8 @@ function Interactor(props) {
         setHintInfo([]);
         setIsCorrect(null);
         setFirstSubmit(true);
+        setSelectedHint(-1);
+        inputRef.current.style.width = "320px";
     }, [problem]);
 
     function handleGenerateProblem() {
@@ -50,7 +53,8 @@ function Interactor(props) {
     }
 
     function handleInputChange(event) {
-        inputRef.current.style.width = (inputRef.current.value.length * 0.85) + "rem";
+        let spaceCount = inputRef.current.value.split(" ").length;
+        inputRef.current.style.width = (inputRef.current.value.length - spaceCount + 2) + "ch";
     }
 
     function handleAnswerSubmit(event) {
@@ -94,7 +98,8 @@ function Interactor(props) {
         localStorage.setItem("jsft-options", JSON.stringify(copy));
     }
 
-    function handleHintClick(e, word) {
+    function handleHintClick(e, word, index) {
+        setSelectedHint(index);
         const output = [
             ["Type", word.type],
             ["Romaji", word.romaji],
@@ -104,7 +109,9 @@ function Interactor(props) {
             output.push(["Category", word.category]);
         }
         if(word.form) {
-            output.unshift(["Original", word?.verb?.word || word.adjective.word]);
+            if(word.verb || word.adjective) {
+                output.unshift(["Original", word?.verb?.word || word.adjective.word]);
+            }
             output.push(["Form", word.form]);
         }
         setHintInfo(output);
@@ -116,7 +123,11 @@ function Interactor(props) {
         }
         else {
             if(data.children) {
-                setPrompt(data.children.map(c => c.meaning ?? (c?.verb?.meaning || c.adjective.meaning) + ` (${c.form})`).join(" | "));
+                let children = data.children.filter(c => !c.noDisplay);
+                children = children.map(c => {
+                    return (c.meaning ?? (c?.verb?.meaning || c.adjective.meaning)) + (c.form ? ` (${c.form})` : "");
+                });
+                setPrompt(children.join(" | "));
             }
             else if(data.verb) {
                 setPrompt(data.verb.meaning + ` (${data.form})`);
@@ -136,7 +147,7 @@ function Interactor(props) {
         if(problem && options["Extra"][0]) {
             if(problem.children) {
                 return problem.children.map((c, i) => {
-                    return <Hint key={ i + "_" + problem.word } word={ c } onClick={ handleHintClick }/>
+                    return <Hint key={ i + "_" + problem.word } word={ c } onClick={ handleHintClick } index={ i } selected={i === selectedHint}/>
                 });
             }
             return <Hint word={ problem } onClick={ handleHintClick }/>
@@ -203,8 +214,8 @@ function Interactor(props) {
 
 function Hint(props) {
     const word = props.word;
-    return <div className="hint" onClick={ (e) => props.onClick(e, word) }>
-        { word.word }
+    return <div className={"hint" + (props.selected ? " hint-selected" : "")} onClick={ (e) => props.onClick(e, word, props.index) }>
+        { word.word + (word.form && !word.verb && !word.adjective ? "*": "") }
     </div>
 }
 

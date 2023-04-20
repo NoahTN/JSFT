@@ -14,8 +14,8 @@ describe("Options Tests", () => {
     });
 
     test("Should filter by nouns and adjectives", () => {
-        const nounCheckbox = screen.getByRole("checkbox", {name: "Nouns"});
-        const adjectiveCheckbox = screen.getByRole("checkbox", {name: "Adjectives"});
+        const nounCheckbox = screen.getByRole("checkbox", {name: "Noun"});
+        const adjectiveCheckbox = screen.getByRole("checkbox", {name: "Adjective"});
         fireEvent.click(adjectiveCheckbox);
         expect(nounCheckbox.checked).toEqual(true);
         expect(adjectiveCheckbox.checked).toEqual(true);

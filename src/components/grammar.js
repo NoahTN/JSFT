@@ -19,7 +19,7 @@ export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force=""
             output.push(...["chaikenai", "hoshii", "hou ga ii", "kata", "mada", "mashou", 
                             "mou", "nakutemo ii", "nakucha", "nakute wa ikenai", "nakute wa naranai", 
                             "ni iku", "no ga heta", "no ga jouzu", "no ga suki", "sugiru",
-                            "takoto ga aru", "tai", "te aru", "te iru", "te kudasai",
+                            "koto ga aru", "tai", "tearu", "teiru", "te kudasai",
                             "te wa ikenai", "te mo ii desu", "tsumori", "wa dou desu ka", 
             ]);
         }
@@ -54,7 +54,7 @@ export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force=""
             }
             problem.romaji = problem.romaji.slice(0, -problem.children[verbIndex].romaji.length) + teForm.romaji.slice(0, -offset) + rSuffix;
             problem.children.push(GRAMMAR_OBJECT["ちゃいけない"]);
-            problem.children[verbIndex] = teForm;
+            problem.children[verbIndex].form = GRAMMAR_OBJECT["ちゃいけない"].meaning;
             problem.indices["grammar"].push(problem.children.length-1);
             return problem;
         },
@@ -216,7 +216,9 @@ export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force=""
             return formatOutput([problem, GRAMMAR_OBJECT["なあ"]]);
         },
         "nakutemo ii": () => {
-            conjugateEnd(problem, verbIndex, "negative");
+            applyReplaceAtIndex(problem, verbIndex, getNegativeForm(problem.children[verbIndex]), false);
+            problem.children[verbIndex].form = GRAMMAR_OBJECT["なくてもいい"].meaning;
+            /// conjugateEnd(problem, verbIndex, "negative");
             problem.word = problem.word.slice(0, -1) + "くてもいい";
             problem.romaji = problem.romaji.slice(0, -1) + "kutemo ii";
             problem.children.push(GRAMMAR_OBJECT["なくてもいい"]);
@@ -248,14 +250,18 @@ export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force=""
             return problem;
         },
         "nakute wa ikenai": () => {
-            conjugateEnd(problem, verbIndex, "negative");
+            applyReplaceAtIndex(problem, verbIndex, getNegativeForm(problem.children[verbIndex]), false);
+            problem.children[verbIndex].form = GRAMMAR_OBJECT["なくてはいけない"].meaning;
+            //conjugateEnd(problem, verbIndex, "negative");
             problem.word = problem.word.slice(0, -1) + "くてはいけない";
             problem.romaji = problem.romaji.slice(0, -1) + "kute wa ikenai";
             problem.children.push(GRAMMAR_OBJECT["なくてはいけない"]);
             return problem;
         },
         "nakute wa naranai": () => {
-            conjugateEnd(problem, verbIndex, "negative");
+            applyReplaceAtIndex(problem, verbIndex, getNegativeForm(problem.children[verbIndex]), false);
+            problem.children[verbIndex].form = GRAMMAR_OBJECT["なくてはならない"].meaning;
+           // conjugateEnd(problem, verbIndex, "negative");
             problem.word = problem.word.slice(0, -1) + "くてはならない";
             problem.romaji = problem.romaji.slice(0, -1) + "kute wa naranai";
             problem.children.push(GRAMMAR_OBJECT["なくてはならない"]);
@@ -350,14 +356,16 @@ export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force=""
             let verb = getMasuStem(problem.children[verbIndex]);
             applyReplaceAtIndex(problem, verbIndex, verb, false);
             applyModifyAtIndex(problem, verbIndex, GRAMMAR_OBJECT["たい"], false, verb);
+            problem.children[verbIndex].form = GRAMMAR_OBJECT["たい"].meaning;
             return problem;
         },
-        "te aru": () => {
+        "tearu": () => {
             applyTeFamilyGrammar(problem, verbIndex, "てある");
             return problem;
         },
-        "te iru": () => {
-            applyTeFamilyGrammar(problem, verbIndex, "ている");
+        "teiru": () => {
+            let verb = getTeiruForm(problem.children[verbIndex], getRandom(["", "polite", "negative"]));
+            applyReplaceAtIndex(problem, verbIndex, verb);
             return problem;
         },
         "te kudasai": () => {
@@ -409,6 +417,7 @@ export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force=""
     if(!randomGrammar) {
         return null;
     }
+
     return grammar[randomGrammar]();
 }
 
@@ -425,30 +434,30 @@ export function applyClauseChainingGrammar(first, second, force="") {
      
     const grammar = {
         "demo": () => {
-            return formatOutput([first, GRAMMAR_OBJECT["でも"], second]);
+            return formatOutput([first, GRAMMAR_OBJECT["でも"], second], true);
         },
         "kara": () => {
-            return formatOutput([first, GRAMMAR_OBJECT["から"], second]);
+            return formatOutput([first, GRAMMAR_OBJECT["から"], second], true);
         },
         "kedo": () => {
-            return formatOutput([first, GRAMMAR_OBJECT["けど"], second]);
+            return formatOutput([first, GRAMMAR_OBJECT["けど"], second], true);
         },
         "keredomo": () => {
-            return formatOutput([first, GRAMMAR_OBJECT["けれども"], second]);
+            return formatOutput([first, GRAMMAR_OBJECT["けれども"], second], true);
         },
         "no de": () => {
             let last = getLast(first.children);
             if(last.type === "noun" || last.type === "na-adjective") {
                 addToEnd(first, GRAMMAR_OBJECT["な"]);
             }
-            return formatOutput([first, GRAMMAR_OBJECT["ので"], second]);
+            return formatOutput([first, GRAMMAR_OBJECT["ので"], second], true);
         },
         "shikashi": () => {
-            return formatOutput([first, GRAMMAR_OBJECT["しかし"], second]);
+            return formatOutput([first, GRAMMAR_OBJECT["しかし"], second], true);
         },
         "te kara": () => {
             applyTeFamilyGrammar(first, verbIndex, "てから");
-            return formatOutput([first, second]);
+            return formatOutput([first, second], true);
         }
     };
 
@@ -468,15 +477,12 @@ function applyTeFamilyGrammar(problem, verbIndex, grammar) {
     let verb = getTeForm(problem.children[verbIndex]);
     let endsInDe = verb.word.slice(-1) === "で";
     let word = GRAMMAR_OBJECT[grammar];
-    verb.word = verb.word.slice(0, -1);
-    verb.romaji = verb.romaji.slice(0, -2);
-    if(endsInDe) {
-        word.word = "で" + word.word.slice(1);
-        word.romaji = "de" + word.romaji.slice(2);
-    }
+    word.word = word.word.slice(1);
+    word.romaji = word.romaji.slice(3);
+    
+    problem.children[verbIndex].form = word.meaning;
     applyReplaceAtIndex(problem, verbIndex, verb, false);
     applyModifyAtIndex(problem, verbIndex, word, false, verb);
-
 }
 
 function getStartClause(vocabLevel) {
@@ -604,7 +610,7 @@ function getAnyParticleIndex(problem) {
 
 function getPlainVerbIndex(problem) {
     for(let i of problem.indices["verb"] ?? [])  {
-        if(!problem.children[i].form) {
+        if(!problem.children[i].verb) {
             return i;
         }
     }

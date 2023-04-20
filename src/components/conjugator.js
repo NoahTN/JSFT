@@ -265,18 +265,18 @@ export function getTaiForm(verb) {
 }
 
 export function getTeiruForm(verb, form="") {
-    const output = {type: "verb", form: "teiru", verb: verb, category: verb.category};
+    const output = {type: "verb", form: "ongoing", verb: verb, category: verb.category};
     verb = getTeForm(verb);
     output.word = verb.word + "いる";
     output.romaji = verb.romaji + "iru";
 
     if(form === "polite") {
-        output.form = "polite-teiru";
+        output.form = "polite-ongoing";
         output.word = output.word.slice(0, -1) + "ます";
         output.romaji = output.romaji.slice(0, -2) + "masu";
     }
     else if(form === "negative") {
-        output.form = "teiru-negative";
+        output.form = "ongoing-negative";
         output.word = output.word.slice(0, -1) + "ない";
         output.romaji = output.romaji.slice(0, -2) + "nai";
     }

@@ -19,7 +19,7 @@ export function coinFlipHeads() {
     return getRandomNumber(2) === 0;
 }
 
-export function formatOutput(words) {
+export function formatOutput(words, dontModifyOutput=false) {
     let children = [];
     let indices = {grammar: []};
     let particles = {};
@@ -55,8 +55,8 @@ export function formatOutput(words) {
         }
     }
     return {
-        word: word,
-        romaji: romaji.slice(0, -1),
+        word: dontModifyOutput ? words.map(w => w.word).join("") : word,
+        romaji: dontModifyOutput ? words.map(w => w.romaji).join(" ") : romaji.slice(0, -1),
         children: children,
         indices: indices,
         particles: particles
