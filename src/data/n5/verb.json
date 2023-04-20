@@ -893,19 +893,19 @@
   "tobu": {
     "type": "verb",
     "word": "飛ぶ",
-    "romaji": "to bu",
+    "romaji": "tobu",
     "meaning": "to fly; to hop",
     "wStem": "飛",
     "rStem": "to ",
     "category": "godan"
   },
-  "to maru": {
+  "tomaru": {
     "type": "verb",
     "word": "止まる",
-    "romaji": "to maru",
+    "romaji": "tomaru",
     "meaning": "to stop",
     "wStem": "止ま",
-    "rStem": "to ma",
+    "rStem": "toma",
     "category": "godan"
   },
   "toru": {
