@@ -107,7 +107,7 @@ describe("Conjugator Tests", () => {
         expect(getProvisionalForm(taberu, "negative")).toEqual(expect.objectContaining({word: "食べなければ", romaji: "tabenakereba"}));
     });
 
-    test("Should get the conditonal and conditional-negative form of verbs", () => {
+    test("Should get the conditional and conditional-negative form of verbs", () => {
         expect(getConditionalForm(aruku)).toEqual(expect.objectContaining({word: "歩いたら", romaji: "aruitara"}));
         expect(getConditionalForm(kuru)).toEqual(expect.objectContaining({word: "来たら", romaji: "kitara"}));
         expect(getConditionalForm(benkyousuru)).toEqual(expect.objectContaining({word: "勉強したら", romaji: "benkyoushitara"}));

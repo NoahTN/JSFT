@@ -887,7 +887,7 @@
     "word": "五日",
     "kana": "いつか",
     "romaji": "itsuka",
-    "meaning": "the fift hday of th emonth"
+    "meaning": "the fifth day of the month"
   },
   "itsutsu": {
     "type": "noun",
@@ -1235,7 +1235,7 @@
     "word": "九日",
     "kana": "ここのか",
     "romaji": "kokonoka",
-    "meaning": "ninth day of th emonth"
+    "meaning": "ninth day of the month"
   },
   "kokonotsu": {
     "type": "noun",
@@ -2678,7 +2678,7 @@
     "word": "一日",
     "kana": "ついたち",
     "romaji": "tsuitachi",
-    "meaning": "first day of th emonth"
+    "meaning": "first day of the month"
   },
   "tsukue": {
     "type": "noun",

@@ -125,7 +125,15 @@ function Interactor(props) {
             if(data.children) {
                 let children = data.children.filter(c => !c.noDisplay);
                 children = children.map(c => {
-                    return (c.meaning ?? (c?.verb?.meaning || c.adjective.meaning)) + (c.form ? ` (${c.form})` : "");
+                    let output = c.meaning ?? (c?.verb?.meaning || c.adjective.meaning);
+                    if(c.form) {
+                        output += " (";
+                        if(!c.verb &&! c.adjective) {
+                            output += "G: ";
+                        }
+                        output += c.form + ")";
+                    }
+                    return output;
                 });
                 setPrompt(children.join(" | "));
             }
