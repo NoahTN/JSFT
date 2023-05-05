@@ -167,7 +167,7 @@ function Interactor(props) {
     }
 
     function getHints() {
-        if(problem && options["Extra"][0]) {
+        if(problem && options["Extra"][0] === "Hints") {
             if(problem.children) {
                 return problem.children.map((c, i) => {
                     return <Hint key={ i + "_" + problem.word } word={ c } onClick={ handleHintClick } index={ i } selected={i === selectedHint}/>
