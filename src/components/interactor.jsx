@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react"
 import { generateProblem } from "./generator"
 import OptionBox, { OPTION_OBJECT } from "./options";
 import { getRandom } from "./helper";
-import { ReactComponent as GithubIcon } from '../assets/github.svg'
+import { ReactComponent as GithubIcon } from '../assets/github.svg';
+import { toKana, toRomaji } from "wanakana";
 import "./styles/interactor.css";
 
 function Interactor(props) {
@@ -55,6 +56,7 @@ function Interactor(props) {
     function handleInputChange(event) {
         let spaceCount = inputRef.current.value.split(" ").length;
         inputRef.current.style.width = (inputRef.current.value.length - spaceCount + 2) + "ch";
+        inputRef.current.value = toKana(inputRef.current.value, { IMEMode: true });
     }
 
     function handleAnswerSubmit(event) {
@@ -68,12 +70,26 @@ function Interactor(props) {
             handleGenerateProblem();
         }
         else {
-            const cleanInput = inputRef.current.value.toLowerCase().replace(/\s/g, "");
-            const cleanExpected = expectedAnswer.toLowerCase().replace(/\s/g, "")
-            const correct = cleanInput === cleanExpected
+            const cleanInput = toRomaji(inputRef.current.value).replace(/\s/g, "");
+            const cleanExpected = expectedAnswer.toLowerCase().replace(/\s/g, "");
+            let correct = cleanInput === cleanExpected;
+            if(!correct && problem.indices["particle"].some(idx => problem.children[idx].word === "は")) {
+             
+                let i = 0;
+                let curLen = 0;
+                while(problem.children[i].word !== "は") {
+                    curLen += problem.children[i].romaji.length-1;
+                    ++i;
+                }
+               
+                if(cleanInput.length > curLen && cleanInput.slice(curLen+1, curLen+3) === "ha") {
+                    correct = true;
+                }
+               
+            }
             if(firstSubmit) {
                 let temp = [...answerCount];
-                console.log(correct);
+              
                 ++temp[correct ? 0 : 1];
                 setAnswerCount(temp);
             }
