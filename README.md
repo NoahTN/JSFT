@@ -1,4 +1,4 @@
-# [Japanese Sentence Forming Trainer (JSFT) for Self-Learners](https://noahtn.github.io/JSFT/)
+# [Japanese Sentence Forming Trainer (JSFT)](https://noahtn.github.io/JSFT/)
 
 A lightweight but powerful web app for practicing outputting Japanese vocabulary, conjugation, and grammar through a randomized problem generation system.
 
