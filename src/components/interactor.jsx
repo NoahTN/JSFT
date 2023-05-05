@@ -102,14 +102,15 @@ function Interactor(props) {
         copy[category] = values;
         // Enable nouns and adjectives if Adjective-Noun type is checked
         
-        if(category === "Types" && values[1]) {
+        if(category === "Types" && values[1] === "Adjective-Noun") {
             copy["Words"][0] = "Noun"
             copy["Words"][1] = "Adjective";
         } 
-        else if(category === "Extra") {
-            createPrompt(problem, values[1]);
+        else if(category === "Extra" && values[1] === "Display Characters" && problem) {
+            createPrompt(problem, true);
         }
         setOptions(copy);
+        console.log(copy);
         localStorage.setItem("jsft-options", JSON.stringify(copy));
     }
 
