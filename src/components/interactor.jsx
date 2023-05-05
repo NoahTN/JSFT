@@ -73,8 +73,7 @@ function Interactor(props) {
             const cleanInput = toRomaji(inputRef.current.value).replace(/\s/g, "");
             const cleanExpected = expectedAnswer.toLowerCase().replace(/\s/g, "");
             let correct = cleanInput === cleanExpected;
-            if(!correct && problem.indices["particle"].some(idx => problem.children[idx].word === "は")) {
-             
+            if(!correct && problem?.indices?.particle && problem.indices["particle"].some(idx => problem.children[idx].word === "は")) {
                 let i = 0;
                 let curLen = 0;
                 while(problem.children[i].word !== "は") {
