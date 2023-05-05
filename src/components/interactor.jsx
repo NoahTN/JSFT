@@ -102,12 +102,12 @@ function Interactor(props) {
         copy[category] = values;
         // Enable nouns and adjectives if Adjective-Noun type is checked
         
-        if(category === "Types" && values[1] === "Adjective-Noun") {
+        if(category === "Types" && values.includes("Adjective-Noun")) {
             copy["Words"][0] = "Noun"
             copy["Words"][1] = "Adjective";
-        } 
-        else if(category === "Extra" && values[1] === "Display Characters" && problem) {
-            createPrompt(problem, true);
+        }
+        else if(problem && category === "Extra" && values.length) {
+            createPrompt(problem, values.slice(-1)[0] === "Display Characters");
         }
         setOptions(copy);
         console.log(copy);
