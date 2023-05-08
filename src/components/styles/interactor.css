@@ -1,3 +1,7 @@
+#interactor {
+    margin: 0 1em;
+}
+
 #counter {
     font-size: 2em;
     font-weight: bold;
@@ -68,11 +72,6 @@
     min-width: 30%;
 }
 
-#correct-answer {
-    font-size: 1.5rem;
-    margin: 0.3rem 0 0 0;
-}
-
 #generator {
     margin: 0 0 1em 0;
 }
@@ -81,11 +80,14 @@
     margin: 0 0 1em 0;
 }
 
-#input-box form input{
+#input-box form textarea{
     font-size: 1.5rem;
-    min-width: 320px;
+    width: auto;
+    height: auto;
     max-width: 70%;
     text-align: center;
+    overflow: hidden;
+    resize: none;
 }
 
 #answer-status-box {
@@ -100,6 +102,7 @@
     line-height: 2rem;
     margin: 0 0 0.8em 0;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .correct {
@@ -115,6 +118,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 footer span {

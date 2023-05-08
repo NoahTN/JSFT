@@ -8,6 +8,7 @@ import "./styles/interactor.css";
 
 function Interactor(props) {
     const inputRef = useRef();
+    const voiceSynth = useRef(new SpeechSynthesisUtterance());
     const [problem, setProblem] = useState(null);
     const [prompt, setPrompt] = useState("‎");
     const [expectedAnswer, setExpectedAnswer] = useState(props?.debug?.expected ?? "");
@@ -33,12 +34,16 @@ function Interactor(props) {
     });
 
     useEffect(() => {
+        voiceSynth.current.volume = 0.75;
+        voiceSynth.current.lang = "ja-JP";
+    }, []);
+
+    useEffect(() => {
         console.log(problem);
         setHintInfo([]);
         setIsCorrect(null);
         setFirstSubmit(true);
         setSelectedHint(-1);
-        inputRef.current.style.width = "320px";
     }, [problem]);
 
     function handleGenerateProblem() {
@@ -53,20 +58,37 @@ function Interactor(props) {
         createPrompt(generated,  temp["Extra"].includes("Display Characters"));
     }
 
+    function handleInputKeyDown(event) {
+        if(event.key == "Enter") {
+            event.preventDefault();
+            handleAnswerSubmit();
+        }
+    }
+
     function handleInputChange(event) {
-        let spaceCount = inputRef.current.value.split(" ").length;
-        inputRef.current.style.width = (inputRef.current.value.length - spaceCount + 2) + "ch";
+        console.log(inputRef.current.value.length);
+        inputRef.current.height = "0px";
+        inputRef.current.cols = Math.max(25, Math.min(inputRef.current.value.length * 2, 40));
+        inputRef.current.rows = Math.min(Math.floor(inputRef.current.value.length / 20) + 2, 3);
+        // inputRef.current.style.height = "0px";
+        // inputRef.current.style.height = inputRef.current.scrollHeight + "px";
+        //inputRef.current.style.width = Math.min(inputRef.current.scrollWidth, window.innerWidth * 0.7);
+        //inputRef.current.style.height = inputRef.current.scrollHeight + "px";
         inputRef.current.value = toKana(inputRef.current.value, { IMEMode: true });
+        if(event.nativeEvent.inputType === "insertLineBreak")  {
+            event.preventDefault();
+            handleAnswerSubmit();
+        }
+
     }
 
     function handleAnswerSubmit(event) {
-        event.preventDefault();
-
         if(!problem) {
             return;
         }
 
         if(isCorrect) {
+            setIsCorrect(null);
             handleGenerateProblem();
         }
         else {
@@ -115,6 +137,7 @@ function Interactor(props) {
     }
 
     function handleHintClick(e, word, index) {
+        playTTS(word.word === "は" ? "わ" : word.word);
         setSelectedHint(index);
         const output = [
             ["Type", word.type],
@@ -178,20 +201,27 @@ function Interactor(props) {
         }
     }
 
+    function playTTS(text) {
+        if(window.speechSynthesis) {
+            voiceSynth.current.text = text;
+            window.speechSynthesis.speak(voiceSynth.current);
+        }
+    }
+
     function getAnswerStatus() {
         let className = "answer-status";
         let text = "";
         if(typeof isCorrect === "boolean") {
             if(isCorrect) {
                 className += " correct";
-                text = "Correct Answer";
+                text = problem.word;
             }
             else {
                 className += " wrong";
                 text = expectedAnswer;
             }
         }
-        return <div className={ className } onClick={ handleAnswerSubmit }>
+        return <div className={ className } onClick={ () => playTTS(problem.word) }>
             { text }
         </div>
     }
@@ -209,15 +239,14 @@ function Interactor(props) {
             { getHints() }
             </>}
         </div>
-        {/* <div id="correct-answer">{ (typeof isCorrect === "boolean" && !isCorrect) && expectedAnswer }</div> */}
         <div id="prompt">{ prompt }</div>
         <br/>
-        <button id="generator" onClick={ handleGenerateProblem }>
+        <button type="button" id="generator" onClick={ handleGenerateProblem }>
             Generate
         </button>
         <div id="input-box">
             <form onSubmit={ handleAnswerSubmit } aria-label="submit-answer" >
-                <input type="text" ref={ inputRef } aria-label="input-answer" autoComplete="new-password" onChange={ handleInputChange }/>
+                <textarea cols="25" rows="2" maxLength="44" ref={ inputRef } aria-label="input-answer" autoComplete="new-password" onChange={ handleInputChange } onKeyDown={ handleInputKeyDown }/>
             </form>
         </div>
         <div id="answer-status-box">

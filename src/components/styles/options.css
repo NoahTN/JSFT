@@ -12,7 +12,6 @@
     position: relative;
     display: inline-block;
     padding: 0.2em 0.5em 0.2em 0.5em;
-    margin: 0 0.4em 0 0.4em;
     min-width: 3em;
     background: #131415;
     border-radius: 10px;
@@ -28,11 +27,17 @@
 }
 
 .option-group {
+    display: flex;
     text-align: left;
     margin: 0.5em 0.2em 0.5em 0.2em;
 }
 
-.option-group > span {
-    display: inline-block;
-    width: 7rem;
+.option-group-label {
+    min-width: 7rem;
+}
+
+.option-group-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em 0.4em;
 }

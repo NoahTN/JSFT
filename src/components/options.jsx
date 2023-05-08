@@ -41,16 +41,18 @@ function OptionGroup(props) {
      }
 
      return <div className="option-group">
-        <span>{ props.name }</span>
-        {OPTION_OBJECT[props.name].map((item, index) => 
-            <Option
-                key={ item }
-                label={ item }
-                group={ props.name }
-                handleChange={() => handleChange(index)}
-                isChecked={ checked[index] }
-            />
-        )}
+        <span className="option-group-label">{ props.name }</span>
+        <span className="option-group-items">
+            {OPTION_OBJECT[props.name].map((item, index) => 
+                <Option
+                    key={ item }
+                    label={ item }
+                    group={ props.name }
+                    handleChange={() => handleChange(index)}
+                    isChecked={ checked[index] }
+                />
+            )}
+        </span>
     </div>
 }
 
