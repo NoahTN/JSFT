@@ -66,20 +66,39 @@ function Interactor(props) {
     }
 
     function handleInputChange(event) {
-        console.log(inputRef.current.value.length);
-        inputRef.current.height = "0px";
-        inputRef.current.cols = Math.max(25, Math.min(inputRef.current.value.length * 2, 40));
-        inputRef.current.rows = Math.min(Math.floor(inputRef.current.value.length / 20) + 2, 3);
-        // inputRef.current.style.height = "0px";
-        // inputRef.current.style.height = inputRef.current.scrollHeight + "px";
-        //inputRef.current.style.width = Math.min(inputRef.current.scrollWidth, window.innerWidth * 0.7);
-        //inputRef.current.style.height = inputRef.current.scrollHeight + "px";
-        inputRef.current.value = toKana(inputRef.current.value, { IMEMode: true });
+        const input = inputRef.current;
+        input.style.height = "0px";
+        input.style.height = input.scrollHeight + "px";
+        const prev = input.value;
+        const prevStart = input.selectionStart;
+        const midModify = prevStart !== input.value.length;
+        console.log(event.target.value);
+        if(midModify && event.nativeEvent.data !== "n") {
+            const set = new Set(["a", "e", "i", "o", "u"]);
+            let temp = "";
+            for(let i = 0; i < input.value.length; ++i) {
+                if(i < input.value.length-1 && input.value[i] === "ん" && set.has(input.value[i+1])) {
+                    temp += "n";    
+                }
+                else {
+                    temp += input.value[i];
+                }
+            }
+            input.value = temp;
+        }
+        console.log(input.value);
+        input.value = toKana(input.value, { IMEMode: true });
+        console.log(input.value);
+        if(midModify && prev !== input.value) {
+            let diff = prev.length - input.value.length;
+            input.selectionStart = prevStart + diff - (diff ? 2 : 0);
+            input.selectionEnd = prevStart + diff - (diff ? 2 : 0);
+        }
+
         if(event.nativeEvent.inputType === "insertLineBreak")  {
             event.preventDefault();
             handleAnswerSubmit();
         }
-
     }
 
     function handleAnswerSubmit(event) {
@@ -246,7 +265,7 @@ function Interactor(props) {
         </button>
         <div id="input-box">
             <form onSubmit={ handleAnswerSubmit } aria-label="submit-answer" >
-                <textarea cols="25" rows="2" maxLength="44" ref={ inputRef } aria-label="input-answer" autoComplete="new-password" onChange={ handleInputChange } onKeyDown={ handleInputKeyDown }/>
+                <textarea maxLength="44" ref={ inputRef } aria-label="input-answer" autoComplete="new-password" onChange={ handleInputChange } onKeyDown={ handleInputKeyDown }/>
             </form>
         </div>
         <div id="answer-status-box">

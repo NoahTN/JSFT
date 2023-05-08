@@ -82,9 +82,7 @@
 
 #input-box form textarea{
     font-size: 1.5rem;
-    width: auto;
-    height: auto;
-    max-width: 70%;
+    width: 400px;
     text-align: center;
     overflow: hidden;
     resize: none;
