@@ -101,8 +101,8 @@ export function getAdjectiveForm(adj, form="") {
 }
 
 export function getPoliteForm(verb, form="polite") {
-    if(form !== "polite") {
-        return doConjugation("Negative", ["Masu"], verb, form, "ki");
+    if(form === "negative") {
+        return doConjugation("Negative", ["Masu"], verb, "polite-negative", "ki");
     }
     return doConjugation("Dictionary", ["Masu"], verb, form, "ki");
 }

@@ -72,7 +72,6 @@ function Interactor(props) {
         const prev = input.value;
         const prevStart = input.selectionStart;
         const midModify = prevStart !== input.value.length;
-        console.log(event.target.value);
         if(midModify && event.nativeEvent.data !== "n") {
             const set = new Set(["a", "e", "i", "o", "u"]);
             let temp = "";
@@ -265,7 +264,7 @@ function Interactor(props) {
         </button>
         <div id="input-box">
             <form onSubmit={ handleAnswerSubmit } aria-label="submit-answer" >
-                <textarea maxLength="44" ref={ inputRef } aria-label="input-answer" autoComplete="new-password" onChange={ handleInputChange } onKeyDown={ handleInputKeyDown }/>
+                <textarea ref={ inputRef } aria-label="input-answer" autoComplete="new-password" onChange={ handleInputChange } onKeyDown={ handleInputKeyDown }/>
             </form>
         </div>
         <div id="answer-status-box">
