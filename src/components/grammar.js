@@ -116,9 +116,7 @@ export function applyN5Grammar(problem, tenses, difficulty, vocabLevel, force=""
                 problem = applyN5Grammar(problem, tenses, difficulty, vocabLevel, "ndesu");
             }
             problem = applyN5Grammar(problem, tenses, difficulty, vocabLevel, "ka");
-            problem.word = stringSplice(problem.word, pos[0], "どうやって");
-            problem.romaji = stringSplice(problem.romaji, pos[1], " douyatte");
-            problem.children.splice(index, 0, GRAMMAR_OBJECT["どうやって"]);
+            applyModifyAtIndex(problem, index, GRAMMAR_OBJECT["どうやって"])
             return problem;
         },
         "hoshii": () => {
