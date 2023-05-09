@@ -25,10 +25,10 @@ function doConjugation(form, aux, verb, formName, kuruRomaji="ko") {
     }
     else if(verb.type === "verb*") {
         if(form === "Negative") {
-            output.word = verb.romaji === "da" ? "じゃない" : "じゃありません";
+            output.word = (verb.romaji === "da" && aux[0] !== "Masu") ? "じゃない" : "じゃありません";
         }
         else if(form === "Ta") {
-            output.word = verb.romaji === "da" ? "だった" : "でした";
+            output.word = (verb.romaji === "da" && aux[0] !== "Masu") ? "だった" : "でした";
         }
         output.romaji = toRomaji(output.word);
     }

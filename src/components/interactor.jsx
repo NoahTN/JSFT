@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { generateProblem } from "./generator"
 import OptionBox, { OPTION_OBJECT } from "./options";
-import { getRandom } from "./helper";
+import { getRandom, shuffle } from "./helper";
 import { ReactComponent as GithubIcon } from '../assets/github.svg';
 import { toKana, toRomaji } from "wanakana";
 import "./styles/interactor.css";
@@ -10,6 +10,7 @@ function Interactor(props) {
     const inputRef = useRef();
     const voiceSynth = useRef(new SpeechSynthesisUtterance());
     const [problem, setProblem] = useState(null);
+    const [shuffled, setShuffled] = useState([]);
     const [prompt, setPrompt] = useState("‎");
     const [expectedAnswer, setExpectedAnswer] = useState(props?.debug?.expected ?? "");
     const [isCorrect, setIsCorrect] = useState(null);
@@ -41,6 +42,7 @@ function Interactor(props) {
     useEffect(() => {
         console.log(problem);
         setHintInfo([]);
+        setShuffled(problem?.children ? shuffle(problem.children) : problem);
         setIsCorrect(null);
         setFirstSubmit(true);
         setSelectedHint(-1);
@@ -110,21 +112,17 @@ function Interactor(props) {
             handleGenerateProblem();
         }
         else {
-            const cleanInput = toRomaji(inputRef.current.value).replace(/\s/g, "");
-            const cleanExpected = expectedAnswer.toLowerCase().replace(/\s/g, "");
+            let cleanInput = toRomaji(inputRef.current.value).replace(/\s/g, "");
+            let cleanExpected = expectedAnswer.toLowerCase().replace(/\s/g, "");
             let correct = cleanInput === cleanExpected;
-            if(!correct && problem?.indices?.particle && problem.indices["particle"].some(idx => problem.children[idx].word === "は")) {
+            if(!correct && problem?.particles?.wa) {
                 let i = 0;
                 let curLen = 0;
                 while(problem.children[i].word !== "は") {
                     curLen += problem.children[i].romaji.length-1;
                     ++i;
                 }
-               
-                if(cleanInput.length > curLen && cleanInput.slice(curLen+1, curLen+3) === "ha") {
-                    correct = true;
-                }
-               
+                correct = cleanInput.slice(0, curLen+1) + "w" + cleanInput.slice(curLen+2) === cleanExpected;
             }
             if(firstSubmit) {
                 let temp = [...answerCount];
@@ -210,8 +208,8 @@ function Interactor(props) {
 
     function getHints() {
         if(problem && options["Extra"][0] === "Hints") {
-            if(problem.children) {
-                return problem.children.map((c, i) => {
+            if(shuffled?.length) {
+                return shuffled.map((c, i) => {
                     return <Hint key={ i + "_" + problem.word } word={ c } onClick={ handleHintClick } index={ i } selected={i === selectedHint}/>
                 });
             }

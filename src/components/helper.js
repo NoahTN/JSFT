@@ -19,6 +19,20 @@ export function coinFlipHeads() {
     return getRandomNumber(2) === 0;
 }
 
+export function shuffle(arr) {
+    let copy = [...arr];
+    let curr = copy.length;
+    let random = null;
+
+    while (curr !== 0) {
+        random = Math.floor(Math.random() * curr);
+        --curr;
+        [copy[curr], copy[random]] = [copy[random], copy[curr]];
+    }
+  
+    return copy;
+}
+
 export function formatOutput(words, dontModifyOutput=false) {
     let children = [];
     let indices = {grammar: []};

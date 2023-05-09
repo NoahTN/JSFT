@@ -46,7 +46,7 @@ export function generateSentence(options, force={}) {
     }
     let problem;
     if(difficulty[0] === "B") { // Basic
-        if((getRandomNumber(options["Tenses"].length+1) === 0 && force["sentence-form"] !== "OV") || force["sentence-form"]=== "SOV") {
+        if((coinFlipHeads() && force["sentence-form"] !== "OV") || force["sentence-form"]=== "SOV" || !options["Words"].includes("Adjective") ) {
             problem = getSOVSentence(options, force);
         }
         else {
@@ -173,7 +173,7 @@ function getSOVSentence(options, force={}) {
         object = getRandomWord(getRandom(options["Vocab Level"]), "Noun");
     
     if(force["no da/desu"] || !object.form) {
-        let verb = coinFlipHeads() ? GRAMMAR_OBJECT["だ"] : GRAMMAR_OBJECT["です"];
+        let verb = getRandomDaDesuForm((object.type === "i-adjective" || object.type === "na-adjective"), options["Tenses"]);
         return formatOutput([subject, object, verb]);
     }
     return formatOutput([subject, object]);
@@ -193,7 +193,7 @@ function getRandomDaDesuForm(isIAdjective, tenses, force="") {
     const tense = getRandom(calculateTenses(tenses.filter(t => allowed.has(t))));
     const conjugator = {
         "Plain": (verb) => verb,
-        "Polite": () => getPoliteForm(verb),
+        "Polite": () => GRAMMAR_OBJECT["です"],
         "Past": (verb) => getPastForm(verb),
         "Negative": (verb) => getNegativeForm(verb),
         "Past-Polite": (verb) => getPastForm(verb, "polite"),
