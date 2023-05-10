@@ -2,22 +2,6 @@
     margin: 0 1em;
 }
 
-#counter {
-    font-size: 2em;
-    font-weight: bold;
-    margin-top: 1em;
-}
-
-#counter-correct {
-    color: #519B63;
-}
-
-#counter-wrong {
-    color: red;
-}
-
-
-
 .hint {
     display: inline-block;
     background: #131415;
@@ -66,37 +50,98 @@
     min-height: 48px;
     margin: 0.3em 0 0.6em 0; 
     background: #484848;
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;;
     padding: 0.2em 0.5em 0.2em 0.5em;
     border-radius: 10px;
     min-width: 30%;
 }
 
-#generator {
+.prompt-item {
+    border-radius: 5px;
+    padding: 0 0.1em;
+    margin: 0.1em;
+}
+
+.prompt-item.noun {
+
+}
+
+.prompt-item.na-adjective {
+    color: red;
+}
+.prompt-item.i-adjective {
+    color: red;
+}
+
+.prompt-item.verb {
+    color:green;
+}
+
+.prompt-item.particle {
+    color:aqua;
+}
+
+.prompt-item.grammar {
+    color:yellow;
+}
+
+#generate-box {
+    display: flex;
+    justify-content: center;
     margin: 0 0 1em 0;
 }
+
+.flex-spacer {
+    flex-basis: 0;
+    flex-grow: 0.4;
+}
+
+#generator {
+   
+}
+
+#counter {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#counter-correct {
+    color: #519B63;
+}
+
+#counter-wrong {
+    color: red;
+}
+
 
 #input-box {
     margin: 0 0 1em 0;
 }
 
+#input-box form {
+    display: flex;
+    justify-content: center;
+}
+
 #input-box form textarea{
+    height: 2rem;
     font-size: 1.5rem;
+    line-height: 2rem;
     text-align: center;
     overflow: hidden;
     resize: none;
 }
 
 #answer-status-box {
-    height: 3rem;
+    min-height: 3rem;
 }
 
 .answer-status {
     padding: 0.2em 0.5em 0.2em 0.5em;
     border-radius: 10px;
     display: inline-block;
-    height: 2rem;
-    line-height: 2rem;
     margin: 0 0 0.8em 0;
     font-size: 1.5rem;
     cursor: pointer;
@@ -108,6 +153,10 @@
 
 .wrong {
     background: red;
+}
+
+.invisible {
+    opacity: 0;
 }
 
 footer {

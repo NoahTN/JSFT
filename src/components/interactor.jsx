@@ -68,9 +68,14 @@ function Interactor(props) {
     }
 
     function handleInputChange(event) {
+       
         const input = inputRef.current;
-        input.style.height = "0px";
-        input.style.height = input.scrollHeight + "px";
+        input.style.height = (2 * parseFloat(getComputedStyle(document.documentElement).fontSize)) + "px";
+        if(input.scrollHeight > parseInt(input.style.height.slice(0, -2)) + 10) {
+            input.style.height = "0";
+            input.style.height = input.scrollHeight + "px";
+        }
+     
         const prev = input.value;
         const prevStart = input.selectionStart;
         const midModify = prevStart !== input.value.length;
@@ -174,32 +179,15 @@ function Interactor(props) {
     
     function createPrompt(data, displayChars) {
         if(displayChars) {
-            setPrompt(data.word);
+            setPrompt(<PromptItem text={ data.word }/>);
         }
         else {
             if(data.children) {
                 let children = data.children.filter(c => !c.noDisplay);
-                children = children.map(c => {
-                    let output = c.meaning ?? (c?.verb?.meaning || c.adjective.meaning);
-                    if(c.form) {
-                        output += " (";
-                        if(!c.verb &&! c.adjective) {
-                            output += "G: ";
-                        }
-                        output += c.form + ")";
-                    }
-                    return output;
-                });
-                setPrompt(children.join(" | "));
-            }
-            else if(data.verb) {
-                setPrompt(data.verb.meaning + ` (${data.form})`);
-            }
-            else if(data.adjective) {
-                setPrompt(data.adjective.meaning + ` (${data.form})`);
+                setPrompt(children.map((c, i) => <PromptItem key={ data.word + "_" + i + "_" + c.word } word={ c } />));
             }
             else {
-                setPrompt(data.meaning);
+                setPrompt(<PromptItem word={ data }/>)
             }
             
         }
@@ -237,15 +225,15 @@ function Interactor(props) {
                 text = expectedAnswer;
             }
         }
+        else {
+            className += " invisible";
+        }
         return <div className={ className } onClick={ () => playTTS(problem.word) }>
             { text }
         </div>
     }
 
     return <div id="interactor">
-        <div id="counter">
-            <span id="counter-correct">{ answerCount[0] }</span> / <span id="counter-wrong">{ answerCount[1] }</span>
-        </div>
         <div id="hint-box">
             {(problem && options["Extra"][0]) && <>
                 <div id="hint-info">{hintInfo.map(h =>
@@ -257,15 +245,23 @@ function Interactor(props) {
         </div>
         <div id="prompt">{ prompt }</div>
         <br/>
-        <button type="button" id="generator" onClick={ handleGenerateProblem }>
-            Generate
-        </button>
+        <div id="generate-box">
+            <div className="flex-spacer"></div>
+            <button type="button" id="generator" onClick={ handleGenerateProblem }>
+                Generate
+            </button>
+            <div id="counter" className="flex-spacer">
+                <span id="counter-correct">{ answerCount[0] }</span> / <span id="counter-wrong">{ answerCount[1] }</span>
+            </div>
+        </div>
+       
         <div id="input-box">
             <form onSubmit={ handleAnswerSubmit } aria-label="submit-answer" >
                 <textarea ref={ inputRef } aria-label="input-answer" autoComplete="new-password" onChange={ handleInputChange } onKeyDown={ handleInputKeyDown }/>
             </form>
         </div>
         <div id="answer-status-box">
+            <div className="flex-spacer"></div>
             { getAnswerStatus() }
         </div>
         <OptionBox 
@@ -281,12 +277,33 @@ function Interactor(props) {
     </div>
 }
 
+function PromptItem(props) {
+    let text = props.text;
+    let className = "prompt-item";
+    if(!text) {
+        const word = props.word;
+        text = word.meaning || word?.verb?.meaning || word?.adjective?.meaning;
+        className += " " + word.type;
+
+        if(word.form) {
+            text += " (";
+            if(!word.verb && !word.adjective) {
+                text += "G: ";
+            }
+            text += word.form + ")";
+        }
+    }
+   
+    return <span className={ className }>
+        { text }
+    </span>
+}
+
 function Hint(props) {
     const word = props.word;
     return <div className={"hint" + (props.selected ? " hint-selected" : "")} onClick={ (e) => props.onClick(e, word, props.index) }>
         { word.word + (word.form && !word.verb && !word.adjective ? "*": "") }
     </div>
 }
-
 
 export default Interactor
