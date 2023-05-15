@@ -4,7 +4,7 @@
 
 
 .option-input:checked + .option-label {
-    background: blue;
+    background: #535bf2;
 }
 
 .option-label {

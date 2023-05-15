@@ -18,12 +18,12 @@
 }
 
 .hint-selected {
-    background: blue;
+    background: #535bf2;
     color: white;
 }
 
 .hint-selected:hover {
-    background: blue;
+    background: #535bf2;
     color: white;
 }
 
@@ -48,7 +48,7 @@
 #prompt {
     font-size: 2rem;
     min-height: 48px;
-    margin: 0.3em 0 0.6em 0; 
+    margin: 0.3em auto 0.6em auto; 
     background: #484848;
     display: flex;
     flex-wrap: wrap;
@@ -56,6 +56,8 @@
     padding: 0.2em 0.5em 0.2em 0.5em;
     border-radius: 10px;
     min-width: 30%;
+    width: 400px;
+    max-width: 80%;
 }
 
 .prompt-item {
@@ -69,22 +71,26 @@
 }
 
 .prompt-item.na-adjective {
-    color: red;
+    color: #F4C95D;
 }
 .prompt-item.i-adjective {
-    color: red;
+    color: #F4C95D;
 }
 
 .prompt-item.verb {
-    color:green;
+    color: #F03A47;
 }
 
 .prompt-item.particle {
-    color:aqua;
+    color: #3BB273;
 }
 
 .prompt-item.grammar {
-    color:yellow;
+    color:#2991E6;
+}
+
+.prompt-item.adverb {
+    color: #77CBB9;
 }
 
 #generate-box {
@@ -108,11 +114,11 @@
 }
 
 #counter-correct {
-    color: #519B63;
+    color: #3BB273;
 }
 
 #counter-wrong {
-    color: red;
+    color: #F03A47;
 }
 
 
@@ -148,11 +154,11 @@
 }
 
 .correct {
-    background: #519B63;
+    background: #3BB273;
 }
 
 .wrong {
-    background: red;
+    background: #F03A47;;
 }
 
 .invisible {

@@ -179,7 +179,7 @@ function Interactor(props) {
     
     function createPrompt(data, displayChars) {
         if(displayChars) {
-            setPrompt(<PromptItem text={ data.word }/>);
+            setPrompt(data.word);
         }
         else {
             if(data.children) {
@@ -187,7 +187,7 @@ function Interactor(props) {
                 setPrompt(children.map((c, i) => <PromptItem key={ data.word + "_" + i + "_" + c.word } word={ c } />));
             }
             else {
-                setPrompt(<PromptItem word={ data }/>)
+                setPrompt(data.word);
             }
             
         }
@@ -243,7 +243,9 @@ function Interactor(props) {
             { getHints() }
             </>}
         </div>
-        <div id="prompt">{ prompt }</div>
+        <div id="prompt">
+            {typeof prompt === "string" ? <PromptItem text={ prompt }/> : prompt}
+        </div>
         <br/>
         <div id="generate-box">
             <div className="flex-spacer"></div>
@@ -283,7 +285,7 @@ function PromptItem(props) {
     if(!text) {
         const word = props.word;
         text = word.meaning || word?.verb?.meaning || word?.adjective?.meaning;
-        className += " " + word.type;
+        className += " " + (word.type === "verb*" ? "verb" : word.type);
 
         if(word.form) {
             text += " (";
