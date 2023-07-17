@@ -124,10 +124,10 @@ function Interactor(props) {
                 let i = 0;
                 let curLen = 0;
                 while(problem.children[i].word !== "は") {
-                    curLen += problem.children[i].romaji.length-1;
+                    curLen += problem.children[i].romaji.length;
                     ++i;
                 }
-                correct = cleanInput.slice(0, curLen+1) + "w" + cleanInput.slice(curLen+2) === cleanExpected;
+                correct = (cleanInput.slice(0, curLen) + "w" + cleanInput.slice(curLen+1)) === cleanExpected;
             }
             if(firstSubmit) {
                 let temp = [...answerCount];
